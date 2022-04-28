@@ -64,7 +64,6 @@
 				AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */,
 				AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */,
 				AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */,
-				AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */,
 				AAA6CCD6281A20BA002E8CB3 /* Info.plist */,
 				AAA6CCCE281A20B9002E8CB3 /* Listrikku.xcdatamodeld */,
 			);
@@ -89,6 +88,7 @@
 		AAA6CCDE281A32D1002E8CB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */,
 				AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */,
 			);
 			path = View;
