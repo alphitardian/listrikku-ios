@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */; };
 		AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */; };
-		AAA6CCCA281A20B9002E8CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC9281A20B9002E8CB3 /* ViewController.swift */; };
+		AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC9281A20B9002E8CB3 /* MainViewController.swift */; };
 		AAA6CCCD281A20B9002E8CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */; };
 		AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCCE281A20B9002E8CB3 /* Listrikku.xcdatamodeld */; };
 		AAA6CCD2281A20BA002E8CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		AAA6CCC2281A20B9002E8CB3 /* Listrikku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listrikku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AAA6CCC9281A20B9002E8CB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAA6CCC9281A20B9002E8CB3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AAA6CCCC281A20B9002E8CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAA6CCCF281A20B9002E8CB3 /* Listrikku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Listrikku.xcdatamodel; sourceTree = "<group>"; };
 		AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		AAA6CCDD281A32C3002E8CB3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AAA6CCC9281A20B9002E8CB3 /* ViewController.swift */,
+				AAA6CCC9281A20B9002E8CB3 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
-				AAA6CCCA281A20B9002E8CB3 /* ViewController.swift in Sources */,
+				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 			);
