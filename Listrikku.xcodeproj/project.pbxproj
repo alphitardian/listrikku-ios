@@ -14,6 +14,8 @@
 		AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCCE281A20B9002E8CB3 /* Listrikku.xcdatamodeld */; };
 		AAA6CCD2281A20BA002E8CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */; };
 		AAA6CCD5281A20BA002E8CB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */; };
+		AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCDF281A4969002E8CB3 /* ProfileInputViewController.swift */; };
+		AADE06FB281A6AD700355955 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE06FA281A6AD700355955 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAA6CCD4281A20BA002E8CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAA6CCD6281A20BA002E8CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA6CCDF281A4969002E8CB3 /* ProfileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInputViewController.swift; sourceTree = "<group>"; };
+		AADE06FA281A6AD700355955 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		AAA6CCDC281A32BD002E8CB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AADE06FA281A6AD700355955 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA6CCC9281A20B9002E8CB3 /* MainViewController.swift */,
+				AAA6CCDF281A4969002E8CB3 /* ProfileInputViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			files = (
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
+				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
+				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

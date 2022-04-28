@@ -101,6 +101,9 @@
                                 <rect key="frame" x="52" y="699" width="286" height="47"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lanjutkan" buttonSize="large"/>
+                                <connections>
+                                    <segue destination="xsC-pd-isl" kind="show" id="T2b-Cj-zFV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z8V-84-AaE"/>
@@ -121,6 +124,124 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML1-la-GCV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1949.2307692307691" y="109.47867298578198"/>
+        </scene>
+        <!--Profile Input View Controller-->
+        <scene sceneID="4DI-XT-rus">
+            <objects>
+                <viewController id="xsC-pd-isl" customClass="ProfileInputViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1o5-2G-ZdO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Qa-l0-fOR">
+                                <rect key="frame" x="20.000000000000014" y="269" width="225.33333333333337" height="89.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isi Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vle-1o-krL">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listrikmu Yuk!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-oA-zRc">
+                                        <rect key="frame" x="0.0" y="48.666666666666686" width="225.33333333333334" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-9k-jtc">
+                                <rect key="frame" x="20" y="422.33333333333331" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori Listrik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za1-ej-Sq7">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WD-vL-149">
+                                        <rect key="frame" x="234" y="0.0" width="116" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
+                                        <connections>
+                                            <action selector="onCategoryClick:" destination="xsC-pd-isl" eventType="touchUpInside" id="ssV-08-Oky"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="HAv-c7-7Ue">
+                                <rect key="frame" x="20" y="469.33333333333331" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Pembayaran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-U0-U1f">
+                                        <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlg-8A-BB2">
+                                        <rect key="frame" x="233.66666666666666" y="0.0" width="116.33333333333334" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
+                                        <connections>
+                                            <action selector="onPaymentClick:" destination="xsC-pd-isl" eventType="touchUpInside" id="XIm-tE-s8L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="145" translatesAutoresizingMaskIntoConstraints="NO" id="RG7-s3-djW">
+                                <rect key="frame" x="20" y="516.33333333333337" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daya Listrik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwq-0c-Awm">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5W-mU-jgb">
+                                        <rect key="frame" x="233.33333333333334" y="0.0" width="116.66666666666666" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
+                                        <connections>
+                                            <action selector="onPowerClick:" destination="xsC-pd-isl" eventType="touchUpInside" id="tVO-Se-H0v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzO-xn-Wb5">
+                                <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Lanjutkan" buttonSize="large"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gDr-tO-k2i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Qa-l0-fOR" firstAttribute="top" secondItem="gDr-tO-k2i" secondAttribute="top" constant="181" id="6xX-AA-nce"/>
+                            <constraint firstItem="RG7-s3-djW" firstAttribute="leading" secondItem="gDr-tO-k2i" secondAttribute="leading" constant="20" id="84Y-Qp-5Rz"/>
+                            <constraint firstItem="gDr-tO-k2i" firstAttribute="trailing" secondItem="zZz-9k-jtc" secondAttribute="trailing" constant="20" id="9ds-7z-lCc"/>
+                            <constraint firstItem="4Qa-l0-fOR" firstAttribute="leading" secondItem="gDr-tO-k2i" secondAttribute="leading" constant="20" id="Fsg-cB-7Y0"/>
+                            <constraint firstItem="gDr-tO-k2i" firstAttribute="bottom" secondItem="kzO-xn-Wb5" secondAttribute="bottom" constant="64" id="Igu-uT-lR4"/>
+                            <constraint firstItem="gDr-tO-k2i" firstAttribute="trailing" secondItem="HAv-c7-7Ue" secondAttribute="trailing" constant="20" id="KJp-Sj-rMK"/>
+                            <constraint firstItem="RG7-s3-djW" firstAttribute="top" secondItem="HAv-c7-7Ue" secondAttribute="bottom" constant="16" id="LGn-rc-UPw"/>
+                            <constraint firstItem="gDr-tO-k2i" firstAttribute="trailing" secondItem="kzO-xn-Wb5" secondAttribute="trailing" constant="52" id="ODF-eV-oGo"/>
+                            <constraint firstItem="kzO-xn-Wb5" firstAttribute="leading" secondItem="gDr-tO-k2i" secondAttribute="leading" constant="52" id="QPn-XR-EuQ"/>
+                            <constraint firstItem="gDr-tO-k2i" firstAttribute="trailing" secondItem="RG7-s3-djW" secondAttribute="trailing" constant="20" id="R4s-yO-MG5"/>
+                            <constraint firstItem="HAv-c7-7Ue" firstAttribute="top" secondItem="zZz-9k-jtc" secondAttribute="bottom" constant="16" id="YUG-7b-Jrv"/>
+                            <constraint firstItem="zZz-9k-jtc" firstAttribute="top" secondItem="4Qa-l0-fOR" secondAttribute="bottom" constant="64" id="ZlI-cR-ohX"/>
+                            <constraint firstItem="HAv-c7-7Ue" firstAttribute="leading" secondItem="gDr-tO-k2i" secondAttribute="leading" constant="20" id="gdG-7M-FQb"/>
+                            <constraint firstItem="zZz-9k-jtc" firstAttribute="leading" secondItem="gDr-tO-k2i" secondAttribute="leading" constant="20" id="vaO-MX-sMw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ax1-5Z-4Pu"/>
+                    <connections>
+                        <outlet property="categoryButton" destination="5WD-vL-149" id="ZdE-yM-ImV"/>
+                        <outlet property="paymentButton" destination="rlg-8A-BB2" id="fyO-Ki-7Mz"/>
+                        <outlet property="powerButton" destination="Q5W-mU-jgb" id="R7u-ko-1Fz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfb-DV-Uv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889" y="109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="05A-Wx-6b6">
