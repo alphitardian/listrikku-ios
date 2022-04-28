@@ -58,16 +58,40 @@
 		AAA6CCC4281A20B9002E8CB3 /* Listrikku */ = {
 			isa = PBXGroup;
 			children = (
+				AAA6CCDE281A32D1002E8CB3 /* View */,
+				AAA6CCDD281A32C3002E8CB3 /* ViewController */,
+				AAA6CCDC281A32BD002E8CB3 /* Model */,
 				AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */,
 				AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */,
-				AAA6CCC9281A20B9002E8CB3 /* ViewController.swift */,
-				AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */,
 				AAA6CCD1281A20BA002E8CB3 /* Assets.xcassets */,
 				AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */,
 				AAA6CCD6281A20BA002E8CB3 /* Info.plist */,
 				AAA6CCCE281A20B9002E8CB3 /* Listrikku.xcdatamodeld */,
 			);
 			path = Listrikku;
+			sourceTree = "<group>";
+		};
+		AAA6CCDC281A32BD002E8CB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAA6CCDD281A32C3002E8CB3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAA6CCC9281A20B9002E8CB3 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AAA6CCDE281A32D1002E8CB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
