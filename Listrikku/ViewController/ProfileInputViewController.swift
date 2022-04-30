@@ -29,6 +29,11 @@ class ProfileInputViewController: UIViewController {
         
     }
     
+    /// Use tag to specify pickerview
+    /// Tag 0 = category
+    /// Tag 1 = payment
+    /// Tag 2 = power
+    
     @IBAction func onCategoryClick(_ sender: UIButton) {
         let categoryPickerView = setupPickerView(tag: 0)
         setupAlertPicker(viewController: categoryPickerView.0, pickerView: categoryPickerView.1) { UIAlertAction in
@@ -74,12 +79,12 @@ class ProfileInputViewController: UIViewController {
     }
     
     private func setupAlertPicker(viewController: UIViewController, pickerView: UIPickerView, selectionHandler: @escaping (UIAlertAction) -> Void) {
-        let alert = UIAlertController(title: "Select Cateogry", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Pilih Salah Satu", message: "", preferredStyle: .actionSheet)
         alert.popoverPresentationController?.sourceView = categoryButton
         alert.popoverPresentationController?.sourceRect = categoryButton.bounds
         alert.setValue(viewController, forKey: "contentViewController")
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { UIAlertAction in }))
-        alert.addAction(UIAlertAction(title: "Select", style: .default, handler: selectionHandler))
+        alert.addAction(UIAlertAction(title: "Kembali", style: .cancel, handler: { UIAlertAction in }))
+        alert.addAction(UIAlertAction(title: "Pilih", style: .default, handler: selectionHandler))
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -102,7 +107,7 @@ extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 60
+        return 48
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
