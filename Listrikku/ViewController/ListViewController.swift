@@ -11,6 +11,9 @@ import CoreData
 class ListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var calculateButton: UIButton!
+    
+    private var data: [Electronic]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,8 @@ class ListViewController: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         listTableView.separatorStyle = .none
+        
+        self.data = DatabaseHelper.sharedInstance.loadUserItems()
     }
     
     @objc private func addItem() {
@@ -31,6 +36,15 @@ class ListViewController: UIViewController {
             addViewController.modalDelegate = self
             self.navigationController?.present(addViewController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func onCalculateClick(_ sender: UIButton) {
+        // Calculate Bill
+        print("Calculate")
+    }
+    
+    private func calculateBillEstimation() {
+        
     }
 }
 
@@ -52,14 +66,22 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if let data = self.data {
+            return data.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell") as! DataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataTableViewCell
         cell.cellBackgroundView?.layer.cornerRadius = 8
-        cell.powerLabel?.text = "900"
-        cell.objectLabel?.text = "TV 43"
+        
+        if let data = self.data {
+            cell.powerLabel?.text = data[indexPath.row].power
+            cell.objectLabel?.text = data[indexPath.row].name
+        }
+        
         return cell
     }
 }
@@ -67,6 +89,7 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         // Update List after input / update data
-        print("update list")
+        self.data = DatabaseHelper.sharedInstance.loadUserItems()
+        self.listTableView.reloadData()
     }
 }

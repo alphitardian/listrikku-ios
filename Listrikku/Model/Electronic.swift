@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Electronic {
     var name: String?
     var power: String?
-    var duration: Int?
+    var duration: String?
     var image: Data?
 }

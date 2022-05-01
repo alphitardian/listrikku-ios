@@ -25,8 +25,6 @@ class ProfileInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     /// Use tag to specify pickerview
