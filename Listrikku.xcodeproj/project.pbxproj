@@ -24,7 +24,6 @@
 		AADE0709281D668700355955 /* Electronic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0708281D668700355955 /* Electronic.swift */; };
 		AAE18318281E5DEB001A8ACF /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */; };
 		AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18319281E655D001A8ACF /* InputDataViewController.swift */; };
-		AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831B281E65E8001A8ACF /* ViewComponent.swift */; };
 		AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */; };
 		AAE18321281EB18A001A8ACF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18320281EB18A001A8ACF /* Onboarding.storyboard */; };
 		AAE18323281EB1B9001A8ACF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18322281EB1B9001A8ACF /* Home.storyboard */; };
@@ -32,6 +31,8 @@
 		AAE18327281EB1CC001A8ACF /* ListData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18326281EB1CC001A8ACF /* ListData.storyboard */; };
 		AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */; };
 		AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */; };
+		AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832C281EC349001A8ACF /* DatabaseHelperDelegate.swift */; };
+		AAE18330281EC3A8001A8ACF /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,6 @@
 		AADE0708281D668700355955 /* Electronic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronic.swift; sourceTree = "<group>"; };
 		AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		AAE18319281E655D001A8ACF /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
-		AAE1831B281E65E8001A8ACF /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
 		AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalControllerDelegate.swift; sourceTree = "<group>"; };
 		AAE18320281EB18A001A8ACF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		AAE18322281EB1B9001A8ACF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		AAE18326281EB1CC001A8ACF /* ListData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListData.storyboard; sourceTree = "<group>"; };
 		AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		AAE1832C281EC349001A8ACF /* DatabaseHelperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelperDelegate.swift; sourceTree = "<group>"; };
+		AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		AAA6CCC4281A20B9002E8CB3 /* Listrikku */ = {
 			isa = PBXGroup;
 			children = (
+				AAE1832E281EC392001A8ACF /* ViewModel */,
 				AAE1831D281E6EE5001A8ACF /* Delegate */,
 				AAE18316281E5B8F001A8ACF /* Helper */,
 				AAA6CCDE281A32D1002E8CB3 /* View */,
@@ -151,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */,
-				AAE1831B281E65E8001A8ACF /* ViewComponent.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -160,8 +162,17 @@
 			isa = PBXGroup;
 			children = (
 				AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */,
+				AAE1832C281EC349001A8ACF /* DatabaseHelperDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		AAE1832E281EC392001A8ACF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,15 +255,16 @@
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
 				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
+				AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */,
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 				AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
-				AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
 				AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */,
+				AAE18330281EC3A8001A8ACF /* ListViewModel.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
 				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,

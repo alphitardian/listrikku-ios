@@ -6,7 +6,14 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="power" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="payment" optional="YES" attributeType="String"/>
+        <attribute name="power" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="UserItem" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="UserProfile" positionX="-54" positionY="18" width="128" height="89"/>
     </elements>
 </model>

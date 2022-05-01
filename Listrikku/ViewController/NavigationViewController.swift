@@ -18,7 +18,7 @@ class NavigationViewController: UINavigationController {
         let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
         let onboardingViewController = onboardingStoryboard.instantiateViewController(withIdentifier: "Greeting") as! GreetingViewController
         
-        if false {
+        if true {
             self.setViewControllers([mainViewController], animated: true)
         } else {
             self.setViewControllers([onboardingViewController], animated: true)
