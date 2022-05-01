@@ -396,6 +396,93 @@
             </objects>
             <point key="canvasLocation" x="-746.15384615384608" y="2467.5355450236966"/>
         </scene>
+        <!--Input Data View Controller-->
+        <scene sceneID="qmP-9K-A1h">
+            <objects>
+                <viewController storyboardIdentifier="Add" id="4kG-As-nZO" customClass="InputDataViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngG-fv-HMO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Barang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwV-Hb-7e3">
+                                <rect key="frame" x="20" y="405" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="147" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-H9-tFR">
+                                <rect key="frame" x="20" y="467" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daya Listrik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyV-No-dEZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvS-5k-bhw">
+                                        <rect key="frame" x="235.33333333333334" y="0.0" width="114.66666666666666" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
+                                        <connections>
+                                            <action selector="onPowerClick:" destination="4kG-As-nZO" eventType="touchUpInside" id="zyT-0f-Tjh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-xe-p3O">
+                                <rect key="frame" x="20" y="526" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durasi Pemakaian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nae-MA-uBS">
+                                        <rect key="frame" x="0.0" y="0.0" width="135.66666666666666" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjq-Ph-ag4">
+                                        <rect key="frame" x="235.66666666666666" y="0.0" width="114.33333333333334" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
+                                        <connections>
+                                            <action selector="onDurationClick:" destination="4kG-As-nZO" eventType="touchUpInside" id="Uhs-QP-EZE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-dO-VAf">
+                                <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Simpan" buttonSize="large"/>
+                                <connections>
+                                    <action selector="onSaveClick:" destination="4kG-As-nZO" eventType="touchUpInside" id="a1i-wA-3Da"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ElT-4o-Cty"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dwV-Hb-7e3" firstAttribute="leading" secondItem="ElT-4o-Cty" secondAttribute="leading" constant="20" id="7Pd-KH-UaA"/>
+                            <constraint firstItem="Mab-xe-p3O" firstAttribute="top" secondItem="5k7-H9-tFR" secondAttribute="bottom" constant="28" id="7j3-Dq-cEo"/>
+                            <constraint firstItem="ElT-4o-Cty" firstAttribute="trailing" secondItem="TZD-dO-VAf" secondAttribute="trailing" constant="52" id="BwO-GZ-B82"/>
+                            <constraint firstItem="5k7-H9-tFR" firstAttribute="top" secondItem="dwV-Hb-7e3" secondAttribute="bottom" constant="28" id="C9d-ma-2pm"/>
+                            <constraint firstItem="5k7-H9-tFR" firstAttribute="leading" secondItem="ElT-4o-Cty" secondAttribute="leading" constant="20" id="DzF-8s-aa3"/>
+                            <constraint firstItem="TZD-dO-VAf" firstAttribute="leading" secondItem="ElT-4o-Cty" secondAttribute="leading" constant="52" id="IYB-en-eak"/>
+                            <constraint firstItem="Mab-xe-p3O" firstAttribute="leading" secondItem="ElT-4o-Cty" secondAttribute="leading" constant="20" id="Lod-53-co9"/>
+                            <constraint firstItem="ElT-4o-Cty" firstAttribute="trailing" secondItem="Mab-xe-p3O" secondAttribute="trailing" constant="20" id="Luq-zw-aCX"/>
+                            <constraint firstItem="ElT-4o-Cty" firstAttribute="trailing" secondItem="dwV-Hb-7e3" secondAttribute="trailing" constant="20" id="QfV-JL-GeV"/>
+                            <constraint firstItem="dwV-Hb-7e3" firstAttribute="centerY" secondItem="ngG-fv-HMO" secondAttribute="centerY" id="Y60-r4-ebl"/>
+                            <constraint firstItem="ElT-4o-Cty" firstAttribute="trailing" secondItem="5k7-H9-tFR" secondAttribute="trailing" constant="20" id="jYr-Pr-K4P"/>
+                            <constraint firstItem="ElT-4o-Cty" firstAttribute="bottom" secondItem="TZD-dO-VAf" secondAttribute="bottom" constant="64" id="x3Y-kB-djx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="durationButton" destination="fjq-Ph-ag4" id="GyM-3g-OOu"/>
+                        <outlet property="nameTextField" destination="dwV-Hb-7e3" id="eqf-uh-cgk"/>
+                        <outlet property="powerButton" destination="zvS-5k-bhw" id="An7-7X-QCB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9m-2Q-9iK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="3203"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="1iT-Zb-L6A">
             <objects>

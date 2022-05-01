@@ -10,4 +10,6 @@ import Foundation
 struct Electronic {
     var name: String?
     var power: String?
+    var duration: Int?
+    var image: Data?
 }

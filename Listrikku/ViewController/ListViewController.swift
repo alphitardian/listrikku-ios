@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController {
 
@@ -24,7 +25,12 @@ class ListViewController: UIViewController {
     }
     
     @objc private func addItem() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
+        if let addViewController = addViewController {
+            addViewController.modalDelegate = self
+            self.navigationController?.present(addViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -34,6 +40,7 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Show Detail
         print("tapped")
     }
 }
@@ -54,5 +61,12 @@ extension ListViewController: UITableViewDataSource {
         cell.powerLabel?.text = "900"
         cell.objectLabel?.text = "TV 43"
         return cell
+    }
+}
+
+extension ListViewController: ModalControllerDelegate {
+    func modalWillDisappear<T>(_ modal: T) {
+        // Update List after input / update data
+        print("update list")
     }
 }

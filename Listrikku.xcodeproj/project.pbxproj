@@ -22,6 +22,10 @@
 		AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0702281CC6DE00355955 /* WelcomeViewController.swift */; };
 		AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0704281D649A00355955 /* DataTableViewCell.swift */; };
 		AADE0709281D668700355955 /* Electronic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0708281D668700355955 /* Electronic.swift */; };
+		AAE18318281E5DEB001A8ACF /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */; };
+		AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18319281E655D001A8ACF /* InputDataViewController.swift */; };
+		AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831B281E65E8001A8ACF /* ViewComponent.swift */; };
+		AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		AADE0702281CC6DE00355955 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		AADE0704281D649A00355955 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		AADE0708281D668700355955 /* Electronic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronic.swift; sourceTree = "<group>"; };
+		AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		AAE18319281E655D001A8ACF /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
+		AAE1831B281E65E8001A8ACF /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
+		AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,8 @@
 		AAA6CCC4281A20B9002E8CB3 /* Listrikku */ = {
 			isa = PBXGroup;
 			children = (
+				AAE1831D281E6EE5001A8ACF /* Delegate */,
+				AAE18316281E5B8F001A8ACF /* Helper */,
 				AAA6CCDE281A32D1002E8CB3 /* View */,
 				AAA6CCDD281A32C3002E8CB3 /* ViewController */,
 				AAA6CCDC281A32BD002E8CB3 /* Model */,
@@ -104,6 +114,7 @@
 				AADE06FE281BFE5C00355955 /* ListViewController.swift */,
 				AADE0700281BFE6800355955 /* ReminderViewController.swift */,
 				AADE0702281CC6DE00355955 /* WelcomeViewController.swift */,
+				AAE18319281E655D001A8ACF /* InputDataViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -116,6 +127,23 @@
 				AADE0704281D649A00355955 /* DataTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AAE18316281E5B8F001A8ACF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */,
+				AAE1831B281E65E8001A8ACF /* ViewComponent.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AAE1831D281E6EE5001A8ACF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,14 +221,18 @@
 				AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */,
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
+				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
+				AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
+				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,
+				AAE18318281E5DEB001A8ACF /* DatabaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
