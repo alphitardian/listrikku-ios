@@ -21,6 +21,17 @@ class HomeViewController: UIViewController {
         backgroundViewSetBill.layer.cornerRadius = 8
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if false {
+            // Show welcome
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
+            self.navigationController?.present(welcomeViewController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func onBillDetailClick(_ sender: UIButton) {
         // Open bill detail
     }

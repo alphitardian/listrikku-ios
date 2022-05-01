@@ -59,6 +59,12 @@ class ProfileInputViewController: UIViewController {
         }
     }
     
+    @IBAction func onSaveClick(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+        self.navigationController?.pushViewController(mainViewController, animated: true)
+    }
+    
     private func setupPickerView(tag: Int) -> (UIViewController, UIPickerView) {
         let viewController = UIViewController()
         viewController.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)

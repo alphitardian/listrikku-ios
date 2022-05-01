@@ -30,7 +30,7 @@ class ListViewController: UIViewController {
     }
     
     @objc private func addItem() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
         let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
         if let addViewController = addViewController {
             addViewController.modalDelegate = self

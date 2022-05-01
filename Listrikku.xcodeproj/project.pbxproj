@@ -26,6 +26,12 @@
 		AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18319281E655D001A8ACF /* InputDataViewController.swift */; };
 		AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831B281E65E8001A8ACF /* ViewComponent.swift */; };
 		AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */; };
+		AAE18321281EB18A001A8ACF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18320281EB18A001A8ACF /* Onboarding.storyboard */; };
+		AAE18323281EB1B9001A8ACF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18322281EB1B9001A8ACF /* Home.storyboard */; };
+		AAE18325281EB1C3001A8ACF /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18324281EB1C3001A8ACF /* Reminder.storyboard */; };
+		AAE18327281EB1CC001A8ACF /* ListData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE18326281EB1CC001A8ACF /* ListData.storyboard */; };
+		AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */; };
+		AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		AAE18319281E655D001A8ACF /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
 		AAE1831B281E65E8001A8ACF /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
 		AAE1831E281E6F03001A8ACF /* ModalControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalControllerDelegate.swift; sourceTree = "<group>"; };
+		AAE18320281EB18A001A8ACF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		AAE18322281EB1B9001A8ACF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		AAE18324281EB1C3001A8ACF /* Reminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminder.storyboard; sourceTree = "<group>"; };
+		AAE18326281EB1CC001A8ACF /* ListData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListData.storyboard; sourceTree = "<group>"; };
+		AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,8 @@
 				AADE0700281BFE6800355955 /* ReminderViewController.swift */,
 				AADE0702281CC6DE00355955 /* WelcomeViewController.swift */,
 				AAE18319281E655D001A8ACF /* InputDataViewController.swift */,
+				AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */,
+				AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -125,6 +139,10 @@
 				AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */,
 				AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */,
 				AADE0704281D649A00355955 /* DataTableViewCell.swift */,
+				AAE18320281EB18A001A8ACF /* Onboarding.storyboard */,
+				AAE18322281EB1B9001A8ACF /* Home.storyboard */,
+				AAE18324281EB1C3001A8ACF /* Reminder.storyboard */,
+				AAE18326281EB1CC001A8ACF /* ListData.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,8 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA6CCD5281A20BA002E8CB3 /* LaunchScreen.storyboard in Resources */,
+				AAE18323281EB1B9001A8ACF /* Home.storyboard in Resources */,
+				AAE18325281EB1C3001A8ACF /* Reminder.storyboard in Resources */,
+				AAE18327281EB1CC001A8ACF /* ListData.storyboard in Resources */,
 				AAA6CCD2281A20BA002E8CB3 /* Assets.xcassets in Resources */,
 				AAA6CCCD281A20B9002E8CB3 /* Main.storyboard in Resources */,
+				AAE18321281EB18A001A8ACF /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +247,11 @@
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
+				AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
 				AAE1831C281E65E8001A8ACF /* ViewComponent.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
+				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
 				AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
 				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,

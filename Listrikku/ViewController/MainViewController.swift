@@ -19,11 +19,6 @@ class MainViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        // Show welcome
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
-        self.navigationController?.present(welcomeViewController, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
