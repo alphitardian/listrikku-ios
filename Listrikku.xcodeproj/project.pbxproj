@@ -20,6 +20,8 @@
 		AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE06FE281BFE5C00355955 /* ListViewController.swift */; };
 		AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0700281BFE6800355955 /* ReminderViewController.swift */; };
 		AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0702281CC6DE00355955 /* WelcomeViewController.swift */; };
+		AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0704281D649A00355955 /* DataTableViewCell.swift */; };
+		AADE0709281D668700355955 /* Electronic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE0708281D668700355955 /* Electronic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		AADE06FE281BFE5C00355955 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AADE0700281BFE6800355955 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		AADE0702281CC6DE00355955 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		AADE0704281D649A00355955 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		AADE0708281D668700355955 /* Electronic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electronic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				AADE06FA281A6AD700355955 /* User.swift */,
+				AADE0708281D668700355955 /* Electronic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				AAA6CCD3281A20BA002E8CB3 /* LaunchScreen.storyboard */,
 				AAA6CCCB281A20B9002E8CB3 /* Main.storyboard */,
+				AADE0704281D649A00355955 /* DataTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,11 +192,13 @@
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
 				AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */,
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
+				AADE0709281D668700355955 /* Electronic.swift in Sources */,
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
+				AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,
 			);
