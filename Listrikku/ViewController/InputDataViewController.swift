@@ -27,7 +27,7 @@ class InputDataViewController: UIViewController {
     
     @IBAction func onSaveClick(_ sender: UIButton) {
         let data = Electronic(name: nameTextField.text, power: powerTextField.text, duration: durationTextField.text, image: nil)
-        listViewModel?.save(data: data)
+        listViewModel?.saveItem(data: data)
         self.dismiss(animated: true)
     }
 }

@@ -27,14 +27,14 @@ class ListViewController: UIViewController {
         listTableView.dataSource = self
         listTableView.separatorStyle = .none
         
-        self.data = listViewModel.load()
+        self.data = listViewModel.loadItems()
     }
     
     @objc private func addItem() {
         let storyboard = UIStoryboard(name: "ListData", bundle: nil)
         let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
         if let addViewController = addViewController {
-            addViewController.listViewModel = self.listViewModel
+            addViewController.listViewModel = listViewModel
             addViewController.modalDelegate = self
             self.navigationController?.present(addViewController, animated: true, completion: nil)
         }
@@ -43,23 +43,11 @@ class ListViewController: UIViewController {
     @IBAction func onCalculateClick(_ sender: UIButton) {
         // Calculate Bill
         print("Calculate")
-        calculateBillEstimation()
-    }
-    
-    private func calculateBillEstimation() {
-        if let data = data {
-            var result = 0
-            for value in data {
-                let power = Int(value.power ?? "0") ?? 0
-                let duration = Int(value.duration ?? "0") ?? 0
-                let total = power * duration
-                result += total
-            }
-            print("result: \(result)")
-        }
+        listViewModel.calculateBillEstimation()
     }
 }
 
+//MARK: - TableView Delegate
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 116
@@ -71,7 +59,7 @@ extension ListViewController: UITableViewDelegate {
     }
 }
 
-/// TableView Boilerplate
+//MARK: - TableView DataSrouce
 extension ListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -98,10 +86,11 @@ extension ListViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - Modal Controller Delegate
 extension ListViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         // Update List after input / update data
-        self.data = listViewModel.load()
+        self.data = listViewModel.loadItems()
         self.listTableView.reloadData()
     }
 }

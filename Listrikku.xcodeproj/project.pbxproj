@@ -33,6 +33,12 @@
 		AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */; };
 		AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832C281EC349001A8ACF /* DatabaseHelperDelegate.swift */; };
 		AAE18330281EC3A8001A8ACF /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */; };
+		AAE18332281ED327001A8ACF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18331281ED327001A8ACF /* OnboardingViewModel.swift */; };
+		AAE18335281FF934001A8ACF /* UserItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18334281FF934001A8ACF /* UserItemRepository.swift */; };
+		AAE18337281FFA5B001A8ACF /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE18336281FFA5B001A8ACF /* UserProfileRepository.swift */; };
+		AAE183392820013F001A8ACF /* PriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183382820013F001A8ACF /* PriceRepository.swift */; };
+		AAE1833B28201FC3001A8ACF /* NameInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1833A28201FC3001A8ACF /* NameInputViewController.swift */; };
+		AAE1833D28202281001A8ACF /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1833C28202281001A8ACF /* ViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,12 @@
 		AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		AAE1832C281EC349001A8ACF /* DatabaseHelperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelperDelegate.swift; sourceTree = "<group>"; };
 		AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		AAE18331281ED327001A8ACF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		AAE18334281FF934001A8ACF /* UserItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItemRepository.swift; sourceTree = "<group>"; };
+		AAE18336281FFA5B001A8ACF /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		AAE183382820013F001A8ACF /* PriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRepository.swift; sourceTree = "<group>"; };
+		AAE1833A28201FC3001A8ACF /* NameInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputViewController.swift; sourceTree = "<group>"; };
+		AAE1833C28202281001A8ACF /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		AAA6CCC4281A20B9002E8CB3 /* Listrikku */ = {
 			isa = PBXGroup;
 			children = (
+				AAE18333281FF906001A8ACF /* Repository */,
 				AAE1832E281EC392001A8ACF /* ViewModel */,
 				AAE1831D281E6EE5001A8ACF /* Delegate */,
 				AAE18316281E5B8F001A8ACF /* Helper */,
@@ -132,6 +145,7 @@
 				AAE18319281E655D001A8ACF /* InputDataViewController.swift */,
 				AAE18328281EBB9D001A8ACF /* GreetingViewController.swift */,
 				AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */,
+				AAE1833A28201FC3001A8ACF /* NameInputViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -154,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */,
+				AAE1833C28202281001A8ACF /* ViewComponent.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -171,8 +186,19 @@
 			isa = PBXGroup;
 			children = (
 				AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */,
+				AAE18331281ED327001A8ACF /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAE18333281FF906001A8ACF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AAE18334281FF934001A8ACF /* UserItemRepository.swift */,
+				AAE18336281FFA5B001A8ACF /* UserProfileRepository.swift */,
+				AAE183382820013F001A8ACF /* PriceRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,15 +282,21 @@
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
 				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
 				AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */,
+				AAE183392820013F001A8ACF /* PriceRepository.swift in Sources */,
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
+				AAE1833B28201FC3001A8ACF /* NameInputViewController.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
+				AAE18335281FF934001A8ACF /* UserItemRepository.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 				AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */,
+				AAE1833D28202281001A8ACF /* ViewComponent.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
+				AAE18337281FFA5B001A8ACF /* UserProfileRepository.swift in Sources */,
 				AADE0706281D649A00355955 /* DataTableViewCell.swift in Sources */,
 				AAE18330281EC3A8001A8ACF /* ListViewModel.swift in Sources */,
+				AAE18332281ED327001A8ACF /* OnboardingViewModel.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
 				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,
