@@ -8,6 +8,8 @@
 import UIKit
 
 class NavigationViewController: UINavigationController {
+    
+    private let onboardingViewModel: OnboardingViewModel = OnboardingViewModel.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,8 @@ class NavigationViewController: UINavigationController {
         let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
         let onboardingViewController = onboardingStoryboard.instantiateViewController(withIdentifier: "Greeting") as! GreetingViewController
         
-        if false {
+        let isUserAvailable = onboardingViewModel.loadUser()
+        if isUserAvailable != nil {
             self.setViewControllers([mainViewController], animated: true)
         } else {
             self.setViewControllers([onboardingViewController], animated: true)

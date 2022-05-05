@@ -28,6 +28,8 @@ class ListViewController: UIViewController {
         listTableView.separatorStyle = .none
         
         self.data = listViewModel.loadItems()
+        
+        setPrimaryButtonShadow(for: calculateButton)
     }
     
     @objc private func addItem() {
@@ -42,8 +44,15 @@ class ListViewController: UIViewController {
     
     @IBAction func onCalculateClick(_ sender: UIButton) {
         // Calculate Bill
-        print("Calculate")
-        listViewModel.calculateBillEstimation()
+        let estimation = listViewModel.calculateBillEstimation()
+        
+        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
+        let resultViewController = storyboard.instantiateViewController(withIdentifier: "Result") as? EstimationResultViewController
+        if let resultViewController = resultViewController {
+            resultViewController.estimationResult = estimation
+            resultViewController.modalDelegate = self
+            self.navigationController?.present(resultViewController, animated: true)
+        }
     }
 }
 
@@ -78,7 +87,7 @@ extension ListViewController: UITableViewDataSource {
         cell.cellBackgroundView?.layer.cornerRadius = 8
         
         if let data = self.data {
-            cell.powerLabel?.text = data[indexPath.row].power
+            cell.powerLabel?.text = "\(data[indexPath.row].power ?? "0") Watt"
             cell.objectLabel?.text = data[indexPath.row].name
         }
         

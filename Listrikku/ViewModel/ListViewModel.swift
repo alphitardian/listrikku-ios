@@ -11,6 +11,8 @@ import CoreData
 class ListViewModel {
     
     private var userItemRepository = UserItemRepository()
+    private var userProfileRepository = UserProfileRepository()
+    private var priceRepository = PriceRepository()
     private var userItems = [Electronic]()
     
     func saveItem(data: Electronic) {
@@ -18,17 +20,34 @@ class ListViewModel {
     }
     
     func loadItems() -> [Electronic] {
-        return userItemRepository.load()
+        userItems = userItemRepository.load()
+        return userItems
     }
     
-    func calculateBillEstimation() {
+    func calculateBillEstimation() -> String {
         var result = 0
+        let userCategory = getUserProfile()?.category
+        let userPower = getUserProfile()?.power
+        let basePrice = priceRepository.getPrice(category: userCategory ?? "", power: userPower ?? "")
+        
         for value in userItems {
+            let quantity = value.quantity ?? 1
             let power = Int(value.power ?? "0") ?? 0
             let duration = Int(value.duration ?? "0") ?? 0
-            let total = power * duration
+            let total = quantity * power * duration
             result += total
         }
-        print("result: \(result)")
+        
+        /// Monthly Estimation
+        let estimation = (convertToKWH(value: result) * basePrice) * 30
+        return String(estimation)
+    }
+    
+    func getUserProfile() -> User? {
+        return userProfileRepository.load().first
+    }
+    
+    func convertToKWH(value: Int) -> Double {
+        return Double(value) / 1000
     }
 }
