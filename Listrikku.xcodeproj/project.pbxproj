@@ -44,6 +44,8 @@
 		AAE183432823C68C001A8ACF /* UserBillRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183422823C68C001A8ACF /* UserBillRepository.swift */; };
 		AAE183452823F300001A8ACF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183442823F300001A8ACF /* HomeViewModel.swift */; };
 		AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183462823F486001A8ACF /* NumberFormatter.swift */; };
+		AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834828254662001A8ACF /* ReminderViewModel.swift */; };
+		AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834A282550C8001A8ACF /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		AAE183422823C68C001A8ACF /* UserBillRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBillRepository.swift; sourceTree = "<group>"; };
 		AAE183442823F300001A8ACF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AAE183462823F486001A8ACF /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		AAE1834828254662001A8ACF /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		AAE1834A282550C8001A8ACF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 				AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */,
 				AAE1833C28202281001A8ACF /* ViewComponent.swift */,
 				AAE183462823F486001A8ACF /* NumberFormatter.swift */,
+				AAE1834A282550C8001A8ACF /* DateHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */,
 				AAE18331281ED327001A8ACF /* OnboardingViewModel.swift */,
 				AAE183442823F300001A8ACF /* HomeViewModel.swift */,
+				AAE1834828254662001A8ACF /* ReminderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */,
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
 				AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */,
 				AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */,
@@ -299,6 +306,7 @@
 				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
 				AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */,
 				AAE183392820013F001A8ACF /* PriceRepository.swift in Sources */,
+				AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */,
 				AADE06FB281A6AD700355955 /* User.swift in Sources */,
 				AAE1833B28201FC3001A8ACF /* NameInputViewController.swift in Sources */,
 				AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */,
