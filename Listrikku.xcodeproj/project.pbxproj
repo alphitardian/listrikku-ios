@@ -41,6 +41,9 @@
 		AAE1833D28202281001A8ACF /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1833C28202281001A8ACF /* ViewComponent.swift */; };
 		AAE1833F2823BBC8001A8ACF /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1833E2823BBC8001A8ACF /* Bill.swift */; };
 		AAE183412823C36E001A8ACF /* EstimationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183402823C36E001A8ACF /* EstimationResultViewController.swift */; };
+		AAE183432823C68C001A8ACF /* UserBillRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183422823C68C001A8ACF /* UserBillRepository.swift */; };
+		AAE183452823F300001A8ACF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183442823F300001A8ACF /* HomeViewModel.swift */; };
+		AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183462823F486001A8ACF /* NumberFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		AAE1833C28202281001A8ACF /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
 		AAE1833E2823BBC8001A8ACF /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		AAE183402823C36E001A8ACF /* EstimationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimationResultViewController.swift; sourceTree = "<group>"; };
+		AAE183422823C68C001A8ACF /* UserBillRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBillRepository.swift; sourceTree = "<group>"; };
+		AAE183442823F300001A8ACF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AAE183462823F486001A8ACF /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,7 @@
 			children = (
 				AAE18317281E5DEB001A8ACF /* DatabaseHelper.swift */,
 				AAE1833C28202281001A8ACF /* ViewComponent.swift */,
+				AAE183462823F486001A8ACF /* NumberFormatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 			children = (
 				AAE1832F281EC3A8001A8ACF /* ListViewModel.swift */,
 				AAE18331281ED327001A8ACF /* OnboardingViewModel.swift */,
+				AAE183442823F300001A8ACF /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				AAE18334281FF934001A8ACF /* UserItemRepository.swift */,
 				AAE18336281FFA5B001A8ACF /* UserProfileRepository.swift */,
 				AAE183382820013F001A8ACF /* PriceRepository.swift */,
+				AAE183422823C68C001A8ACF /* UserBillRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
+				AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */,
 				AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */,
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
@@ -295,7 +305,9 @@
 				AAE18335281FF934001A8ACF /* UserItemRepository.swift in Sources */,
 				AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */,
 				AAE1833F2823BBC8001A8ACF /* Bill.swift in Sources */,
+				AAE183432823C68C001A8ACF /* UserBillRepository.swift in Sources */,
 				AAE18329281EBB9D001A8ACF /* GreetingViewController.swift in Sources */,
+				AAE183452823F300001A8ACF /* HomeViewModel.swift in Sources */,
 				AAE1833D28202281001A8ACF /* ViewComponent.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,

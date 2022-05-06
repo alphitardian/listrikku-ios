@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Bill {
+struct Bill: Identifiable {
+    var id: UUID?
     var billEstimation: Double?
     var date: Date?
 }

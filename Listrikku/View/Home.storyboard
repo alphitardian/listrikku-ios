@@ -24,8 +24,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set bill now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv0-u8-0gO">
-                                        <rect key="frame" x="20" y="46" width="193" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv0-u8-0gO">
+                                        <rect key="frame" x="20" y="46" width="164.33333333333334" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="onAddBillClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="nau-kn-XPs"/>
+                                            <action selector="onAddItemClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="KIs-vk-CzN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,13 +66,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSu-4j-1bh">
-                                        <rect key="frame" x="20" y="45" width="199" height="41"/>
+                                        <rect key="frame" x="20" y="45" width="220" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-RY-7kg">
-                                        <rect key="frame" x="268" y="25" width="62" height="62"/>
+                                        <rect key="frame" x="268.33333333333331" y="25" width="61.666666666666686" height="62"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" image="calendar" catalog="system" cornerStyle="capsule" buttonSize="medium">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
@@ -81,13 +81,14 @@
                                             <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="onReminderDetailClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="q8R-ZU-NPG"/>
+                                            <action selector="onBillDetailClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="mzK-pr-gHc"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="vSu-4j-1bh" firstAttribute="leading" secondItem="IPK-3o-ZtH" secondAttribute="leading" constant="20" id="2Qx-yh-Aze"/>
+                                    <constraint firstAttribute="trailing" secondItem="vSu-4j-1bh" secondAttribute="trailing" constant="110" id="6zB-kD-nDA"/>
                                     <constraint firstItem="iRW-RY-7kg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hQo-dI-bjN" secondAttribute="trailing" constant="8" symbolic="YES" id="EIh-Z3-TkZ"/>
                                     <constraint firstItem="vSu-4j-1bh" firstAttribute="top" secondItem="hQo-dI-bjN" secondAttribute="bottom" constant="4" id="EYK-dB-jFT"/>
                                     <constraint firstItem="hQo-dI-bjN" firstAttribute="top" secondItem="IPK-3o-ZtH" secondAttribute="top" constant="20" id="QNw-yD-S40"/>
@@ -95,7 +96,6 @@
                                     <constraint firstAttribute="trailing" secondItem="iRW-RY-7kg" secondAttribute="trailing" constant="20" id="bif-Bc-kcl"/>
                                     <constraint firstItem="iRW-RY-7kg" firstAttribute="centerY" secondItem="IPK-3o-ZtH" secondAttribute="centerY" id="cUC-OZ-FYC"/>
                                     <constraint firstItem="hQo-dI-bjN" firstAttribute="leading" secondItem="IPK-3o-ZtH" secondAttribute="leading" constant="20" id="jRk-YE-ima"/>
-                                    <constraint firstItem="iRW-RY-7kg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vSu-4j-1bh" secondAttribute="trailing" constant="8" symbolic="YES" id="saV-n7-qiA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -115,6 +115,7 @@
                     <connections>
                         <outlet property="backgroundViewNextBill" destination="IPK-3o-ZtH" id="Ukp-59-kG9"/>
                         <outlet property="backgroundViewSetBill" destination="lht-9Y-hWW" id="ndv-TU-xsl"/>
+                        <outlet property="nextBillLabel" destination="vSu-4j-1bh" id="wxA-wh-c1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9t-iv-s7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

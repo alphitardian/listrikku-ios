@@ -212,20 +212,56 @@
                                     <action selector="onSaveClick:" destination="lzO-pr-QgZ" eventType="touchUpInside" id="CLm-su-zt8"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="guW-LA-LwF">
+                                <rect key="frame" x="36" y="80" width="318" height="32"/>
+                                <segments>
+                                    <segment title="Postpaid"/>
+                                    <segment title="Prepaid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSegmentChanged:" destination="lzO-pr-QgZ" eventType="valueChanged" id="rKU-ai-qCn"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sbD-CM-WlQ">
+                                <rect key="frame" x="20" y="492.66666666666674" width="350" height="69"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It will last for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSK-yG-grg">
+                                        <rect key="frame" x="127.33333333333334" y="0.0" width="95.333333333333343" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvs-X0-Z6L">
+                                        <rect key="frame" x="113" y="28.333333333333311" width="124.33333333333331" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pDO-FM-38N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="guW-LA-LwF" firstAttribute="top" secondItem="pDO-FM-38N" secondAttribute="top" constant="36" id="1iv-wH-j99"/>
                             <constraint firstItem="oI1-B3-fEX" firstAttribute="leading" secondItem="pDO-FM-38N" secondAttribute="leading" constant="52" id="2m4-BC-tAi"/>
                             <constraint firstItem="pDO-FM-38N" firstAttribute="trailing" secondItem="oI1-B3-fEX" secondAttribute="trailing" constant="52" id="31K-RV-SSN"/>
+                            <constraint firstItem="sbD-CM-WlQ" firstAttribute="top" secondItem="3qL-hc-Mws" secondAttribute="bottom" constant="36" id="7hZ-ui-DAE"/>
+                            <constraint firstItem="pDO-FM-38N" firstAttribute="trailing" secondItem="guW-LA-LwF" secondAttribute="trailing" constant="36" id="C6Z-3y-lYm"/>
                             <constraint firstItem="pDO-FM-38N" firstAttribute="bottom" secondItem="oI1-B3-fEX" secondAttribute="bottom" constant="64" id="Mir-m8-4gO"/>
+                            <constraint firstItem="sbD-CM-WlQ" firstAttribute="leading" secondItem="pDO-FM-38N" secondAttribute="leading" constant="20" id="OCF-kJ-eRL"/>
                             <constraint firstItem="3qL-hc-Mws" firstAttribute="centerY" secondItem="SOa-Mw-ZA0" secondAttribute="centerY" id="Wnl-dJ-bqz"/>
                             <constraint firstItem="3qL-hc-Mws" firstAttribute="centerX" secondItem="SOa-Mw-ZA0" secondAttribute="centerX" id="foN-2Q-O6t"/>
+                            <constraint firstItem="pDO-FM-38N" firstAttribute="trailing" secondItem="sbD-CM-WlQ" secondAttribute="trailing" constant="20" id="iNM-2S-DXt"/>
+                            <constraint firstItem="guW-LA-LwF" firstAttribute="leading" secondItem="pDO-FM-38N" secondAttribute="leading" constant="36" id="vbK-Eu-KAl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="estimationLabel" destination="Bmt-K5-Py1" id="DoT-4k-YS0"/>
+                        <outlet property="prepaidDurationLabel" destination="vvs-X0-Z6L" id="yJi-0i-U3N"/>
+                        <outlet property="prepaidViewContainer" destination="sbD-CM-WlQ" id="UhW-RC-UX6"/>
                         <outlet property="saveButton" destination="oI1-B3-fEX" id="BbJ-bA-Bel"/>
+                        <outlet property="segmentedControl" destination="guW-LA-LwF" id="Qmj-Er-g6x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPg-UM-Ujo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

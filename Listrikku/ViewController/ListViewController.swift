@@ -13,7 +13,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var calculateButton: UIButton!
     
-    private let listViewModel: ListViewModel = ListViewModel()
+    private let listViewModel: ListViewModel = ListViewModel.sharedInstance
     private var data: [Electronic]?
     
     override func viewDidLoad() {
@@ -43,13 +43,9 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func onCalculateClick(_ sender: UIButton) {
-        // Calculate Bill
-        let estimation = listViewModel.calculateBillEstimation()
-        
         let storyboard = UIStoryboard(name: "ListData", bundle: nil)
         let resultViewController = storyboard.instantiateViewController(withIdentifier: "Result") as? EstimationResultViewController
         if let resultViewController = resultViewController {
-            resultViewController.estimationResult = estimation
             resultViewController.modalDelegate = self
             self.navigationController?.present(resultViewController, animated: true)
         }
@@ -101,5 +97,6 @@ extension ListViewController: ModalControllerDelegate {
         // Update List after input / update data
         self.data = listViewModel.loadItems()
         self.listTableView.reloadData()
+        print(listViewModel.loadUserBills())
     }
 }

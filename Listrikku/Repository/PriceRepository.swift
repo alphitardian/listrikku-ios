@@ -40,4 +40,33 @@ class PriceRepository {
         
         return price
     }
+    
+    func getPrepaidCost(value: Double) -> Double {
+        var price = 0.0
+        
+        switch value {
+        case 0..<20000:
+            price = 20000
+        case 20000..<50000:
+            price = 50000
+        case 50000..<100000:
+            price = 100000
+        case 100000..<200000:
+            price = 200000
+        case 200000..<500000:
+            price = 500000
+        case 500000..<1000000:
+            price = 1000000
+        case 1000000..<5000000:
+            price = 5000000
+        case 5000000..<10000000:
+            price = 10000000
+        case 10000000..<50000000:
+            price = 50000000
+        default:
+            price = 0
+        }
+        
+        return price
+    }
 }

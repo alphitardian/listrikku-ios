@@ -11,6 +11,10 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var backgroundViewNextBill: UIView!
     @IBOutlet weak var backgroundViewSetBill: UIView!
+    @IBOutlet weak var nextBillLabel: UILabel!
+    
+    private let homeViewModel: HomeViewModel = HomeViewModel()
+    private let listViewModel: ListViewModel = ListViewModel.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,10 @@ class HomeViewController: UIViewController {
         self.title = "Home"
         backgroundViewNextBill.layer.cornerRadius = 8
         backgroundViewSetBill.layer.cornerRadius = 8
+        
+        let bill = homeViewModel.loadUserBills().last?.billEstimation
+        let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill ?? 0.0)
+        nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +44,20 @@ class HomeViewController: UIViewController {
         // Open bill detail
     }
     
-    @IBAction func onAddBillClick(_ sender: UIButton) {
+    @IBAction func onAddItemClick(_ sender: UIButton) {
         // Open add item
+        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
+        let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
+        if let addViewController = addViewController {
+            addViewController.listViewModel = listViewModel
+            addViewController.modalDelegate = self
+            self.navigationController?.present(addViewController, animated: true, completion: nil)
+        }
+    }
+}
+
+extension HomeViewController: ModalControllerDelegate {
+    func modalWillDisappear<T>(_ modal: T) {
+        print(homeViewModel.loadUserBills())
     }
 }
