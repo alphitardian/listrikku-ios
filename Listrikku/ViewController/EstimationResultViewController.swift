@@ -23,14 +23,13 @@ class EstimationResultViewController: UIViewController {
         super.viewDidLoad()
 
         setDefaultSegmentView()
-        setPostpaidEstimation()
         modalDelegate?.modalWillDisappear(self)
     }
     
     @IBAction func onSaveClick(_ sender: UIButton) {
         if segmentedControl.selectedSegmentIndex == 0 {
-            let bill = listViewModel.loadUserBills().first?.billEstimation
-            let data = Bill(id: UUID(), billEstimation: bill, date: Date())
+            let bill = listViewModel.calculatePostpaidBillEstimation()
+            let data = Bill(id: UUID(), billEstimation: Double(bill), date: Date())
             listViewModel.saveUserBill(data: data)
         } else {
             let bill = listViewModel.calculatePrepaidBillEstimation().cost
@@ -53,8 +52,8 @@ class EstimationResultViewController: UIViewController {
     }
     
     private func setPostpaidEstimation() {
-        let bill = listViewModel.loadUserBills().first?.billEstimation
-        let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill ?? 0.0)
+        let bill = listViewModel.calculatePostpaidBillEstimation()
+        let formattedBill = NumberFormatterHelper.convertToRupiah(value: Double(bill) ?? 0.0)
         estimationLabel.text = "Rp. \(formattedBill ?? "0.0")"
         
         prepaidViewContainer.isHidden = true
@@ -77,8 +76,10 @@ class EstimationResultViewController: UIViewController {
         
         if user?.paymentMethod == "Pascabayar" {
             self.segmentedControl.selectedSegmentIndex = 0
+            setPostpaidEstimation()
         } else {
             self.segmentedControl.selectedSegmentIndex = 1
+            setPrepaidEstimation()
         }
     }
 }

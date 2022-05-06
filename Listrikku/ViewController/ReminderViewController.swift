@@ -31,6 +31,13 @@ class ReminderViewController: UIViewController {
         setUserNextBill()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setUserLastBill()
+        setUserNextBill()
+    }
+    
     @objc private func addReminder() {
         
     }
@@ -45,6 +52,6 @@ class ReminderViewController: UIViewController {
         let bill = reminderViewModel.getUserNextBill()
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
-        nextBillDateLabel.text = Date().getFullDate()
+        nextBillDateLabel.text = bill?.date?.getFullDate()
     }
 }

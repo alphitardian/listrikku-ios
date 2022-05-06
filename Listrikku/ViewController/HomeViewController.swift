@@ -24,13 +24,13 @@ class HomeViewController: UIViewController {
         backgroundViewNextBill.layer.cornerRadius = 8
         backgroundViewSetBill.layer.cornerRadius = 8
         
-        let bill = homeViewModel.loadUserBills().last?.billEstimation
-        let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill ?? 0.0)
-        nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
+        setUserNextBill()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        setUserNextBill()
         
         if false {
             // Show welcome
@@ -53,6 +53,12 @@ class HomeViewController: UIViewController {
             addViewController.modalDelegate = self
             self.navigationController?.present(addViewController, animated: true, completion: nil)
         }
+    }
+    
+    private func setUserNextBill() {
+        let bill = homeViewModel.loadUserBills().last?.billEstimation
+        let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill ?? 0.0)
+        nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
     }
 }
 

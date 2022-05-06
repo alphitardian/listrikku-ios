@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Electronic {
+struct Electronic: Identifiable {
+    var id: UUID
     var name: String?
     var quantity: Int?
     var power: String?

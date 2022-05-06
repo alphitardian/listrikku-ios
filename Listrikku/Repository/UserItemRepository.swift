@@ -15,6 +15,7 @@ class UserItemRepository: DatabaseHelperDelegate {
     
     func save(data: Electronic) {
         let instance = UserItem(context: databaseContext)
+        instance.id = data.id
         instance.name = data.name
         instance.quantity = Int32(data.quantity ?? 0)
         instance.power = data.power
@@ -36,7 +37,7 @@ class UserItemRepository: DatabaseHelperDelegate {
         do {
             let data = try databaseContext.fetch(fetchRequest) as! [UserItem]
             userItems = data.map { item in
-                Electronic(name: item.name, quantity: Int(item.quantity), power: item.power, duration: item.duration, image: item.image)
+                Electronic(id: item.id!, name: item.name, quantity: Int(item.quantity), power: item.power, duration: item.duration, image: item.image)
             }
             print("Data fetched!")
         } catch {

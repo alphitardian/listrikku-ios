@@ -10,7 +10,6 @@ import Foundation
 extension Date {
     func getFullDate() -> String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "id")
         formatter.dateFormat = "dd MMMM yyyy"
         return formatter.string(from: self)
     }

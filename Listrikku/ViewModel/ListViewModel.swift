@@ -78,9 +78,10 @@ class ListViewModel {
         let userCategory = getUserProfile()?.category
         let userPower = getUserProfile()?.power
         let basePrice = priceRepository.getPrice(category: userCategory ?? "", power: userPower ?? "")
-        let powerPerDay = kwh
+        var powerPerDay = kwh
         let powerFromToken = (Double(cost) ?? 0.0) / basePrice
         
+        if powerPerDay == 0 { powerPerDay = 1 } // Protection to avoid infinite result
         return Int(round(powerFromToken / powerPerDay))
     }
     

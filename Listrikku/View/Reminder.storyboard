@@ -73,7 +73,7 @@
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.76078431372549016" blue="0.79607843137254897" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="up5-1y-5Cr" firstAttribute="top" secondItem="ch4-MV-yTp" secondAttribute="bottom" constant="4" id="45N-gB-G72"/>
                                     <constraint firstItem="VJ1-55-VyP" firstAttribute="top" secondItem="up5-1y-5Cr" secondAttribute="bottom" constant="7" id="BKB-Sw-d42"/>

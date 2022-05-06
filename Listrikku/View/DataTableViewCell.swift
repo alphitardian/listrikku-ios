@@ -11,6 +11,7 @@ class DataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var powerLabel: UILabel!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var objectImage: UIImageView!
     @IBOutlet weak var cellBackgroundView: UIView!
     
     override func awakeFromNib() {

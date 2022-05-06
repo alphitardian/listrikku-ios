@@ -28,8 +28,14 @@ class ListViewController: UIViewController {
         listTableView.separatorStyle = .none
         
         self.data = listViewModel.loadItems()
+        if listViewModel.loadItems().isEmpty {
+            calculateButton.isHidden = true
+        } else {
+            calculateButton.isHidden = false
+        }
         
         setPrimaryButtonShadow(for: calculateButton)
+        calculateButton.tintColor = UIColor(red: 0/255, green: 194/255, blue: 203/255, alpha: 1)
     }
     
     @objc private func addItem() {
@@ -38,7 +44,9 @@ class ListViewController: UIViewController {
         if let addViewController = addViewController {
             addViewController.listViewModel = listViewModel
             addViewController.modalDelegate = self
-            self.navigationController?.present(addViewController, animated: true, completion: nil)
+            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
+            navigationController.navigationBar.prefersLargeTitles = true
+            self.navigationController?.present(navigationController, animated: true, completion: nil)
         }
     }
     
@@ -85,6 +93,9 @@ extension ListViewController: UITableViewDataSource {
         if let data = self.data {
             cell.powerLabel?.text = "\(data[indexPath.row].power ?? "0") Watt"
             cell.objectLabel?.text = data[indexPath.row].name
+            cell.objectImage.image = UIImage(data: data[indexPath.row].image!)
+            cell.objectImage.contentMode = .scaleAspectFill
+            cell.objectImage.layer.cornerRadius = 8
         }
         
         return cell
@@ -97,6 +108,11 @@ extension ListViewController: ModalControllerDelegate {
         // Update List after input / update data
         self.data = listViewModel.loadItems()
         self.listTableView.reloadData()
-        print(listViewModel.loadUserBills())
+        
+        if listViewModel.loadItems().isEmpty {
+            calculateButton.isHidden = true
+        } else {
+            calculateButton.isHidden = false
+        }
     }
 }
