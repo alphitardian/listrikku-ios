@@ -20,8 +20,9 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Your List"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addItem))
+        self.title = "Daftar Barang"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(addItem))
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
         
         listTableView.delegate = self
         listTableView.dataSource = self
@@ -35,7 +36,7 @@ class ListViewController: UIViewController {
         }
         
         setPrimaryButtonShadow(for: calculateButton)
-        calculateButton.tintColor = UIColor(red: 0/255, green: 194/255, blue: 203/255, alpha: 1)
+        calculateButton.tintColor = appPrimaryColor()
     }
     
     @objc private func addItem() {

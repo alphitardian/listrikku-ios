@@ -9,10 +9,12 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var closeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        closeButton.tintColor = appPrimaryColor()
     }
     
     @IBAction func onCloseClick(_ sender: UIButton) {

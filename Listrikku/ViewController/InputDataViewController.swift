@@ -72,7 +72,29 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
 
 extension InputDataViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -250, up: true)
+    }
+
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -250, up: false)
+    }
+
+    // Hide the keyboard when the return key pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        return true
+    }
+
+    // Move the text field in an animation!
+    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.animate(withDuration: moveDuration) {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+            self.objectImage.isHidden = up
+        }
     }
 }

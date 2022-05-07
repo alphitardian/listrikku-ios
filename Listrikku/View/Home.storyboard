@@ -18,14 +18,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lht-9Y-hWW">
                                 <rect key="frame" x="20" y="284" width="350" height="113"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't set your bill yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-8y-SbK">
-                                        <rect key="frame" x="20" y="20" width="170" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum menghitung tagihan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-8y-SbK">
+                                        <rect key="frame" x="20" y="20" width="212.33333333333334" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv0-u8-0gO">
-                                        <rect key="frame" x="20" y="46" width="164.33333333333334" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yuk mulai!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv0-u8-0gO">
+                                        <rect key="frame" x="20" y="46" width="163.66666666666666" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,7 +49,6 @@
                                     <constraint firstAttribute="trailing" secondItem="hhx-x0-7wK" secondAttribute="trailing" constant="20" id="28E-ex-9HP"/>
                                     <constraint firstItem="tZY-8y-SbK" firstAttribute="top" secondItem="lht-9Y-hWW" secondAttribute="top" constant="20" id="AHL-01-kiw"/>
                                     <constraint firstItem="hhx-x0-7wK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tZY-8y-SbK" secondAttribute="trailing" constant="8" symbolic="YES" id="BGT-U2-q6E"/>
-                                    <constraint firstItem="hhx-x0-7wK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bv0-u8-0gO" secondAttribute="trailing" constant="8" symbolic="YES" id="Kv2-VE-hUF"/>
                                     <constraint firstItem="bv0-u8-0gO" firstAttribute="leading" secondItem="lht-9Y-hWW" secondAttribute="leading" constant="20" id="fhG-5X-eGW"/>
                                     <constraint firstItem="tZY-8y-SbK" firstAttribute="leading" secondItem="lht-9Y-hWW" secondAttribute="leading" constant="20" id="vK4-dq-G7Y"/>
                                     <constraint firstAttribute="bottom" secondItem="bv0-u8-0gO" secondAttribute="bottom" constant="26" id="wEZ-Bb-ueR"/>
@@ -59,8 +58,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPK-3o-ZtH">
                                 <rect key="frame" x="20" y="160" width="350" height="112"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your next bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQo-dI-bjN">
-                                        <rect key="frame" x="20" y="20" width="98" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagihan berikutnya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQo-dI-bjN">
+                                        <rect key="frame" x="20" y="20" width="143.33333333333334" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

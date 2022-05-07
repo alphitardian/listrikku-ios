@@ -18,3 +18,7 @@ func setPrimaryButtonShadow(for button: UIButton?) {
         button.layer.shadowOpacity = 0.7
     }
 }
+
+func appPrimaryColor() -> UIColor {
+    return UIColor(red: 0/255, green: 194/255, blue: 203/255, alpha: 1)
+}

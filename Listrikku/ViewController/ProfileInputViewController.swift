@@ -12,8 +12,15 @@ class ProfileInputViewController: UIViewController {
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var paymentButton: UIButton!
     @IBOutlet weak var powerButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     private let onboardingViewModel: OnboardingViewModel = OnboardingViewModel.sharedInstance
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        nextButton.tintColor = appPrimaryColor()
+    }
     
     /// Use tag to specify pickerview
     /// Tag 0 = category

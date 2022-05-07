@@ -10,6 +10,7 @@ import UIKit
 class NameInputViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     private let onboardingViewModel: OnboardingViewModel = OnboardingViewModel.sharedInstance
     
@@ -17,6 +18,8 @@ class NameInputViewController: UIViewController {
         super.viewDidLoad()
         
         nameTextField.delegate = self
+        
+        nextButton.tintColor = appPrimaryColor()
     }
     
     @IBAction func onNextClick(_ sender: UIButton) {

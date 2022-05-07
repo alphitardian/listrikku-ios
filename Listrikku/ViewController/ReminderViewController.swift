@@ -21,8 +21,9 @@ class ReminderViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Reminder"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addReminder))
+        self.title = "Pengingat"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(addReminder))
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
         
         backgroundViewLastBill.layer.cornerRadius = 8
         backgroundViewNextBill.layer.cornerRadius = 8
