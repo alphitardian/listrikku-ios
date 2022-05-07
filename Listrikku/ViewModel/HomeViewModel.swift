@@ -15,4 +15,8 @@ class HomeViewModel {
     func loadUserBills() -> [Bill] {
         return userBillRepository.load()
     }
+    
+    func registerReminder() {
+        NotificationHelper.registerReminder()
+    }
 }

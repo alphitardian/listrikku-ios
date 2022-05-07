@@ -46,6 +46,7 @@
 		AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183462823F486001A8ACF /* NumberFormatter.swift */; };
 		AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834828254662001A8ACF /* ReminderViewModel.swift */; };
 		AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834A282550C8001A8ACF /* DateHelper.swift */; };
+		AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54A28265E1200375102 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		AAE183462823F486001A8ACF /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		AAE1834828254662001A8ACF /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		AAE1834A282550C8001A8ACF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		AAEBB54A28265E1200375102 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				AAE1833C28202281001A8ACF /* ViewComponent.swift */,
 				AAE183462823F486001A8ACF /* NumberFormatter.swift */,
 				AAE1834A282550C8001A8ACF /* DateHelper.swift */,
+				AAEBB54A28265E1200375102 /* NotificationHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				AAE183452823F300001A8ACF /* HomeViewModel.swift in Sources */,
 				AAE1833D28202281001A8ACF /* ViewComponent.swift in Sources */,
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
+				AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
 				AAE18337281FFA5B001A8ACF /* UserProfileRepository.swift in Sources */,

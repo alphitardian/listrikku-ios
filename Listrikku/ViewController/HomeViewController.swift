@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
         backgroundViewSetBill.layer.cornerRadius = 8
         
         setUserNextBill()
+        
+        homeViewModel.registerReminder()
     }
     
     override func viewWillAppear(_ animated: Bool) {

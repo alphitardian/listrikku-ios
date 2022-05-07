@@ -30,6 +30,7 @@ class EstimationResultViewController: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             let bill = listViewModel.calculatePostpaidBillEstimation()
             let data = Bill(id: UUID(), billEstimation: Double(bill), date: Date())
+            listViewModel.scheduleReminder(date: Date())
             listViewModel.saveUserBill(data: data)
         } else {
             let bill = listViewModel.calculatePrepaidBillEstimation().cost
@@ -38,6 +39,9 @@ class EstimationResultViewController: UIViewController {
             let today = Date()
             let calendar = Calendar.current.date(byAdding: .day, value: prepaidDuration, to: today)
             let data = Bill(id: UUID(), billEstimation: Double(bill), date: calendar)
+            if let calendar = calendar {
+                listViewModel.scheduleReminder(date: calendar)
+            }
             listViewModel.saveUserBill(data: data)
         }
         self.dismiss(animated: true)

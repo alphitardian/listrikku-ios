@@ -34,4 +34,8 @@ class ReminderViewModel {
             return nil
         }
     }
+    
+    func scheduleReminder(date: Date) {
+        NotificationHelper.scheduleReminder(date: date)
+    }
 }

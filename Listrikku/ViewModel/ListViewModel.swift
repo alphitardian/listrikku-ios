@@ -92,4 +92,8 @@ class ListViewModel {
     func convertToKWH(value: Int) -> Double {
         return Double(value) / 1000
     }
+    
+    func scheduleReminder(date: Date) {
+        NotificationHelper.scheduleReminder(date: date)
+    }
 }
