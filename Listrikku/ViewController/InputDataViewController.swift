@@ -70,6 +70,7 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
     }
 }
 
+//MARK: - Animate view when the keyboard is blocking textfield
 extension InputDataViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

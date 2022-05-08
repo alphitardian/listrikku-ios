@@ -35,7 +35,11 @@ class ReminderViewModel {
         }
     }
     
-    func scheduleReminder(date: Date) {
-        NotificationHelper.scheduleReminder(date: date)
+    func saveUserBill(data: Bill) {
+        userBillRepository.save(data: data)
+    }
+    
+    func scheduleReminder(date: Date, message: String) {
+        NotificationHelper.scheduleReminder(date: date, customMessage: message)
     }
 }

@@ -47,6 +47,7 @@
 		AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834828254662001A8ACF /* ReminderViewModel.swift */; };
 		AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834A282550C8001A8ACF /* DateHelper.swift */; };
 		AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54A28265E1200375102 /* NotificationHelper.swift */; };
+		AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54C2827F53500375102 /* AddReminderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		AAE1834828254662001A8ACF /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		AAE1834A282550C8001A8ACF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		AAEBB54A28265E1200375102 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		AAEBB54C2827F53500375102 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				AAE1832A281EBC56001A8ACF /* NavigationViewController.swift */,
 				AAE1833A28201FC3001A8ACF /* NameInputViewController.swift */,
 				AAE183402823C36E001A8ACF /* EstimationResultViewController.swift */,
+				AAEBB54C2827F53500375102 /* AddReminderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				AADE0703281CC6DE00355955 /* WelcomeViewController.swift in Sources */,
 				AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */,
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
+				AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */,
 				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
 				AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */,
 				AAE183392820013F001A8ACF /* PriceRepository.swift in Sources */,

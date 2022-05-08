@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -113,6 +114,67 @@
             </objects>
             <point key="canvasLocation" x="1975" y="1702"/>
         </scene>
+        <!--Add Reminder View Controller-->
+        <scene sceneID="jXF-vS-GND">
+            <objects>
+                <viewController storyboardIdentifier="AddReminder" id="ONI-fa-7I6" customClass="AddReminderViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJY-7q-fNM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="sGl-21-KJr">
+                                <rect key="frame" x="20" y="64" width="374" height="216"/>
+                                <connections>
+                                    <action selector="onDatePickerChanged:" destination="ONI-fa-7I6" eventType="valueChanged" id="8YX-gd-lGi"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-2d-uIm">
+                                <rect key="frame" x="52" y="734" width="310" height="47"/>
+                                <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Simpan" buttonSize="large"/>
+                                <connections>
+                                    <action selector="onSaveClick:" destination="ONI-fa-7I6" eventType="touchUpInside" id="8V2-MD-WF0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nominal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="deo-te-7dZ">
+                                <rect key="frame" x="20" y="431" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesan (Opsional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-P9-i9D">
+                                <rect key="frame" x="20" y="477" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Td0-eB-jJ3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YZz-P9-i9D" firstAttribute="top" secondItem="deo-te-7dZ" secondAttribute="bottom" constant="12" id="4QH-wB-UjL"/>
+                            <constraint firstItem="YZz-P9-i9D" firstAttribute="leading" secondItem="Td0-eB-jJ3" secondAttribute="leading" constant="20" id="7QX-vR-bBI"/>
+                            <constraint firstItem="Td0-eB-jJ3" firstAttribute="bottom" secondItem="d4z-2d-uIm" secondAttribute="bottom" constant="81" id="ADz-W0-BXb"/>
+                            <constraint firstItem="deo-te-7dZ" firstAttribute="leading" secondItem="Td0-eB-jJ3" secondAttribute="leading" constant="20" id="LVu-CG-OuW"/>
+                            <constraint firstItem="Td0-eB-jJ3" firstAttribute="trailing" secondItem="YZz-P9-i9D" secondAttribute="trailing" constant="20" id="Nkb-ou-sY6"/>
+                            <constraint firstItem="d4z-2d-uIm" firstAttribute="leading" secondItem="Td0-eB-jJ3" secondAttribute="leading" constant="52" id="OTo-tU-mkU"/>
+                            <constraint firstItem="Td0-eB-jJ3" firstAttribute="trailing" secondItem="d4z-2d-uIm" secondAttribute="trailing" constant="52" id="Qxm-6b-aAf"/>
+                            <constraint firstItem="Td0-eB-jJ3" firstAttribute="trailing" secondItem="sGl-21-KJr" secondAttribute="trailing" constant="20" id="aNO-re-9mm"/>
+                            <constraint firstItem="Td0-eB-jJ3" firstAttribute="trailing" secondItem="deo-te-7dZ" secondAttribute="trailing" constant="20" id="bnz-cj-W9m"/>
+                            <constraint firstItem="sGl-21-KJr" firstAttribute="leading" secondItem="Td0-eB-jJ3" secondAttribute="leading" constant="20" id="di2-VB-fre"/>
+                            <constraint firstItem="sGl-21-KJr" firstAttribute="top" secondItem="Td0-eB-jJ3" secondAttribute="top" constant="20" id="twr-pR-OUf"/>
+                            <constraint firstItem="deo-te-7dZ" firstAttribute="centerY" secondItem="EJY-7q-fNM" secondAttribute="centerY" id="y1Y-PO-p0a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="sGl-21-KJr" id="YqL-4x-HYp"/>
+                        <outlet property="messageTextField" destination="YZz-P9-i9D" id="jHm-ju-njn"/>
+                        <outlet property="nominalTextField" destination="deo-te-7dZ" id="Pxx-Qj-GR1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TxN-y3-Udc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2871" y="1702"/>
+        </scene>
         <!--Pengingat-->
         <scene sceneID="B7C-8y-bpl">
             <objects>
@@ -137,5 +199,8 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

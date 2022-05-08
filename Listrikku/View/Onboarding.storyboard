@@ -279,49 +279,6 @@
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="109.47867298578198"/>
         </scene>
-        <!--Welcome View Controller-->
-        <scene sceneID="9kR-aB-0fc">
-            <objects>
-                <viewController storyboardIdentifier="Welcome" id="7Wg-sa-mce" customClass="WelcomeViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tnn-WJ-eaV">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Yuk Mulai Hitung Tagihanmu!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiM-cm-Va6">
-                                <rect key="frame" x="20" y="472" width="350" height="105"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-Tb-3cz">
-                                <rect key="frame" x="52" y="699" width="286" height="47"/>
-                                <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Tutup" buttonSize="large"/>
-                                <connections>
-                                    <action selector="onCloseClick:" destination="7Wg-sa-mce" eventType="touchUpInside" id="XOA-ya-0XB"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="XjO-YY-3PI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hiM-cm-Va6" secondAttribute="trailing" constant="20" id="3qU-hW-L8s"/>
-                            <constraint firstItem="hiM-cm-Va6" firstAttribute="leading" secondItem="XjO-YY-3PI" secondAttribute="leading" constant="20" id="AUT-BV-kvV"/>
-                            <constraint firstItem="XjO-YY-3PI" firstAttribute="bottom" secondItem="5NG-Tb-3cz" secondAttribute="bottom" constant="64" id="Kar-BL-EIu"/>
-                            <constraint firstItem="5NG-Tb-3cz" firstAttribute="leading" secondItem="XjO-YY-3PI" secondAttribute="leading" constant="52" id="dsg-d3-k97"/>
-                            <constraint firstItem="XjO-YY-3PI" firstAttribute="trailing" secondItem="5NG-Tb-3cz" secondAttribute="trailing" constant="52" id="j6R-RV-Dd9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="GKr-cv-xhB"/>
-                    <connections>
-                        <outlet property="closeButton" destination="5NG-Tb-3cz" id="G4a-SH-mxR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dUr-LH-oe5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2888" y="815"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Listrikku." width="500" height="500"/>

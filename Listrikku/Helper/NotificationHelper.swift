@@ -21,18 +21,18 @@ class NotificationHelper {
         }
     }
     
-    static func scheduleReminder(date: Date) {
+    static func scheduleReminder(date: Date, customMessage: String) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
         content.title = "Listrikku Notification"
-        content.body = "Yuk jangan lupa bayar tagihanmu!"
+        content.body = customMessage.isEmpty ? "Yuk jangan lupa bayar tagihanmu!" : customMessage
         content.sound = .default
         
         let userDate = date.get(.year, .day, .month)
         let dateComponent = DateComponents(year: userDate.year, month: userDate.month, day: userDate.day, hour: 8, minute: 0)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)   // Use real date
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // For testing purpose
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         

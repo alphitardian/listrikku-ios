@@ -93,7 +93,7 @@ class ListViewModel {
         return Double(value) / 1000
     }
     
-    func scheduleReminder(date: Date) {
-        NotificationHelper.scheduleReminder(date: date)
+    func scheduleReminder(date: Date, message: String) {
+        NotificationHelper.scheduleReminder(date: date, customMessage: message)
     }
 }

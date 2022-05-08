@@ -40,7 +40,14 @@ class ReminderViewController: UIViewController {
     }
     
     @objc private func addReminder() {
-        
+        let storyboard = UIStoryboard(name: "Reminder", bundle: nil)
+        let addViewController = storyboard.instantiateViewController(withIdentifier: "AddReminder") as? AddReminderViewController
+        if let addViewController = addViewController {
+            addViewController.modalDelegate = self
+            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
+            navigationController.navigationBar.prefersLargeTitles = true
+            self.navigationController?.present(navigationController, animated: true)
+        }
     }
     
     private func setUserLastBill() {
@@ -54,5 +61,12 @@ class ReminderViewController: UIViewController {
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
         nextBillDateLabel.text = bill?.date?.getFullDate()
+    }
+}
+
+extension ReminderViewController: ModalControllerDelegate {
+    func modalWillDisappear<T>(_ modal: T) {
+        setUserNextBill()
+        setUserLastBill()
     }
 }
