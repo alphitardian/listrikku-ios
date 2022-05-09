@@ -33,17 +33,17 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setUserNextBill()
-        
-        if false {
-            // Show welcome
-            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
-            self.navigationController?.present(welcomeViewController, animated: true, completion: nil)
-        }
     }
     
     @IBAction func onBillDetailClick(_ sender: UIButton) {
         // Open bill detail
+        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
+        let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
+        if let sheet = welcomeViewController.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+        }
+        self.navigationController?.present(welcomeViewController, animated: true)
     }
     
     @IBAction func onAddItemClick(_ sender: UIButton) {
@@ -53,7 +53,9 @@ class HomeViewController: UIViewController {
         if let addViewController = addViewController {
             addViewController.listViewModel = listViewModel
             addViewController.modalDelegate = self
-            self.navigationController?.present(addViewController, animated: true, completion: nil)
+            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
+            navigationController.navigationBar.prefersLargeTitles = true
+            self.navigationController?.present(navigationController, animated: true, completion: nil)
         }
     }
     

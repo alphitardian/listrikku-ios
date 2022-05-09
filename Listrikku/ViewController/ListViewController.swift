@@ -39,6 +39,12 @@ class ListViewController: UIViewController {
         calculateButton.tintColor = appPrimaryColor()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.data = listViewModel.loadItems()
+        self.listTableView.reloadData()
+    }
+    
     @objc private func addItem() {
         let storyboard = UIStoryboard(name: "ListData", bundle: nil)
         let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
@@ -69,7 +75,20 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Show Detail
-        print("tapped")
+        if let data = self.data {
+            let index = indexPath.row
+            let storyboard = UIStoryboard(name: "ListData", bundle: nil)
+            let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
+            if let addViewController = addViewController {
+                addViewController.listViewModel = listViewModel
+                addViewController.modalDelegate = self
+                addViewController.isUpdateData = true // For update data
+                addViewController.avaliableData = data[index]
+                let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
+                navigationController.navigationBar.prefersLargeTitles = true
+                self.navigationController?.present(navigationController, animated: true, completion: nil)
+            }
+        }
     }
 }
 

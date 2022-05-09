@@ -117,6 +117,99 @@
             </objects>
             <point key="canvasLocation" x="-207" y="1736"/>
         </scene>
+        <!--List Sheet View Controller-->
+        <scene sceneID="K94-ag-hjX">
+            <objects>
+                <viewController storyboardIdentifier="List" id="5wJ-xK-EqI" customClass="ListSheetViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Snb-5C-gaH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jsn-Ds-Qtp">
+                                <rect key="frame" x="20" y="76" width="184.33333333333334" height="52.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal tagihan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saX-yh-I6t">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.66666666666667" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 September 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh0-OQ-5Gd">
+                                        <rect key="frame" x="0.0" y="28.333333333333329" width="184.33333333333334" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RW-vX-bCT">
+                                <rect key="frame" x="20" y="148.33333333333334" width="198.33333333333334" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uFS-h7-Qh4">
+                                <rect key="frame" x="0.0" y="221" width="390" height="589"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="pwb-Mn-jj4" customClass="DataSheetTableViewCell" customModule="Listrikku" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pwb-Mn-jj4" id="tTL-FX-9tq">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV 43 Inch (100W)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvY-1d-3kN">
+                                                    <rect key="frame" x="20" y="11.999999999999998" width="143.66666666666666" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oon-qi-bpR">
+                                                    <rect key="frame" x="326.33333333333331" y="11.999999999999998" width="43.666666666666686" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DvY-1d-3kN" firstAttribute="centerY" secondItem="tTL-FX-9tq" secondAttribute="centerY" id="3mD-6u-oIY"/>
+                                                <constraint firstItem="oon-qi-bpR" firstAttribute="centerY" secondItem="tTL-FX-9tq" secondAttribute="centerY" id="DSw-OK-TO3"/>
+                                                <constraint firstItem="DvY-1d-3kN" firstAttribute="leading" secondItem="tTL-FX-9tq" secondAttribute="leadingMargin" id="IAn-gY-cf5"/>
+                                                <constraint firstItem="oon-qi-bpR" firstAttribute="trailing" secondItem="tTL-FX-9tq" secondAttribute="trailingMargin" id="Wdn-PH-7a9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="DvY-1d-3kN" id="8qI-U4-vA5"/>
+                                            <outlet property="quantityLabel" destination="oon-qi-bpR" id="Uoa-xY-Fz1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hXv-bz-4d3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5RW-vX-bCT" firstAttribute="leading" secondItem="hXv-bz-4d3" secondAttribute="leading" constant="20" id="2Bn-Dt-V2v"/>
+                            <constraint firstItem="hXv-bz-4d3" firstAttribute="trailing" secondItem="uFS-h7-Qh4" secondAttribute="trailing" id="3BX-2d-dHk"/>
+                            <constraint firstItem="uFS-h7-Qh4" firstAttribute="top" secondItem="5RW-vX-bCT" secondAttribute="bottom" constant="32" id="5F5-En-PMq"/>
+                            <constraint firstItem="5RW-vX-bCT" firstAttribute="top" secondItem="jsn-Ds-Qtp" secondAttribute="bottom" constant="20" id="BYF-YO-nQH"/>
+                            <constraint firstItem="hXv-bz-4d3" firstAttribute="bottom" secondItem="uFS-h7-Qh4" secondAttribute="bottom" id="EpO-iL-yyl"/>
+                            <constraint firstItem="jsn-Ds-Qtp" firstAttribute="top" secondItem="hXv-bz-4d3" secondAttribute="top" constant="32" id="MJ7-n8-rU4"/>
+                            <constraint firstItem="uFS-h7-Qh4" firstAttribute="leading" secondItem="hXv-bz-4d3" secondAttribute="leading" id="fsR-Ze-1pP"/>
+                            <constraint firstItem="jsn-Ds-Qtp" firstAttribute="leading" secondItem="hXv-bz-4d3" secondAttribute="leading" constant="20" id="wRn-Qe-6yn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="billLabel" destination="5RW-vX-bCT" id="RDQ-Qh-WEM"/>
+                        <outlet property="dateLabel" destination="Kh0-OQ-5Gd" id="WUD-Gk-PNv"/>
+                        <outlet property="tableView" destination="uFS-h7-Qh4" id="KEL-Zf-AmH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDb-lg-rzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793.84615384615381" y="1734.5971563981043"/>
+        </scene>
         <!--Input Data View Controller-->
         <scene sceneID="C9b-uv-aik">
             <objects>

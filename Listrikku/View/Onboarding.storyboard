@@ -41,6 +41,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61R-5j-T2F">
                                 <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tap to go to the next page" label="Next page button"/>
                                 <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lanjutkan" buttonSize="large"/>

@@ -17,11 +17,14 @@ class InputDataViewController: UIViewController {
     
     var listViewModel: ListViewModel?
     var modalDelegate: ModalControllerDelegate?
+    var isUpdateData: Bool?
+    var avaliableData: Electronic?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Input Data"
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
         objectImage.layer.cornerRadius = 8
         
         nameTextField.delegate = self
@@ -32,6 +35,16 @@ class InputDataViewController: UIViewController {
         // Tap anywhere on screen to close keyboard
         let tapToDismiss = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         self.view.addGestureRecognizer(tapToDismiss)
+        
+        if isUpdateData ?? false {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Hapus", style: .plain, target: self, action: #selector(deleteItem))
+            
+            nameTextField.text = avaliableData?.name
+            quantityTextField.text = "\(avaliableData?.quantity ?? 1)"
+            powerTextField.text = avaliableData?.power
+            durationTextField.text = avaliableData?.duration
+            objectImage.image = UIImage(data: (avaliableData?.image)!)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,7 +61,18 @@ class InputDataViewController: UIViewController {
             duration: durationTextField.text,
             image: objectImage.image?.pngData()
         )
-        listViewModel?.saveItem(data: data)
+        
+        if isUpdateData ?? false {
+            listViewModel?.updateItem(id: self.avaliableData?.id ?? UUID(), data: data)
+        } else {
+            listViewModel?.saveItem(data: data)
+        }
+        
+        self.dismiss(animated: true)
+    }
+    
+    @objc private func deleteItem() {
+        listViewModel?.deleteItem(id: self.avaliableData?.id ?? UUID())
         self.dismiss(animated: true)
     }
 }

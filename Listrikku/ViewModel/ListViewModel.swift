@@ -27,12 +27,28 @@ class ListViewModel {
         return userItems
     }
     
+    func updateItem(id: UUID, data: Electronic) {
+        userItemRepository.update(id: id, data: data)
+    }
+    
+    func deleteItem(id: UUID) {
+        userItemRepository.delete(id: id)
+    }
+    
     func saveUserBill(data: Bill) {
         userBillRepository.save(data: data)
     }
     
     func loadUserBills() -> [Bill] {
         return userBillRepository.load()
+    }
+    
+    func getUserNextBill() -> Bill? {
+        var data: Bill?
+        if !userBillRepository.load().isEmpty {
+            data = userBillRepository.load().last
+        }
+        return data
     }
     
     func calculatePostpaidBillEstimation() -> String {
