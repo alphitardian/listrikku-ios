@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
 class InputDataViewController: UIViewController {
     
@@ -80,17 +82,59 @@ class InputDataViewController: UIViewController {
 extension InputDataViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBAction func onCameraClick(_ sender: UIButton) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .camera
-        self.present(picker, animated: true)
+        DispatchQueue.main.async {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = .camera
+            self.present(picker, animated: true)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let pickedImage = info[.originalImage] as? UIImage else { return }
         objectImage.image = pickedImage
         objectImage.contentMode = .scaleAspectFill
+        
+        guard let ciImage = CIImage(image: pickedImage) else {
+            fatalError("Not able to convert UIImage to CIImage")
+        }
+        detectImage(image: ciImage)
         picker.dismiss(animated: true)
+    }
+    
+    func detectImage(image: CIImage) {
+        let defaultConfig = MLModelConfiguration()
+        
+        let imageClassifierWrapper = try? ElectronicImageClassifier_1(configuration: defaultConfig)
+        guard let imageClassifier = imageClassifierWrapper else {
+            fatalError("App failed to create an image classifier model instance.")
+        }
+        
+        let imageClassifierModel = imageClassifier.model
+        guard let imageClassifierVisionModel = try? VNCoreMLModel(for: imageClassifierModel) else {
+            fatalError("App failed to create a `VNCoreMLModel` instance.")
+        }
+        
+        let request = VNCoreMLRequest(model: imageClassifierVisionModel) { request, error in
+            guard let results = request.results as? [VNClassificationObservation], let topResult = results.first else {
+                fatalError("Unexpected result type from VNCoreMLRequest")
+            }
+            
+            let name = topResult.identifier
+            
+            DispatchQueue.main.async {
+                self.nameTextField.text = name
+            }
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        DispatchQueue.global(qos: .userInteractive).async {
+            do {
+                try handler.perform([request])
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 

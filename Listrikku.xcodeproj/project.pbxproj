@@ -49,6 +49,7 @@
 		AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54C2827F53500375102 /* AddReminderViewController.swift */; };
 		AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54E2828B94800375102 /* ListSheetViewController.swift */; };
 		AAEBB5512828BC4B00375102 /* DataSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB5502828BC4B00375102 /* DataSheetTableViewCell.swift */; };
+		AAEBB5532828C4F400375102 /* ElectronicImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		AAEBB54C2827F53500375102 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		AAEBB54E2828B94800375102 /* ListSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetViewController.swift; sourceTree = "<group>"; };
 		AAEBB5502828BC4B00375102 /* DataSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSheetTableViewCell.swift; sourceTree = "<group>"; };
+		AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ElectronicImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		AAA6CCDC281A32BD002E8CB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */,
 				AADE06FA281A6AD700355955 /* User.swift */,
 				AADE0708281D668700355955 /* Electronic.swift */,
 				AAE1833E2823BBC8001A8ACF /* Bill.swift */,
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAEBB5532828C4F400375102 /* ElectronicImageClassifier 1.mlmodel in Sources */,
 				AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */,
 				AAA6CCD0281A20B9002E8CB3 /* Listrikku.xcdatamodeld in Sources */,
 				AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */,
