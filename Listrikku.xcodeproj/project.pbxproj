@@ -50,6 +50,8 @@
 		AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54E2828B94800375102 /* ListSheetViewController.swift */; };
 		AAEBB5512828BC4B00375102 /* DataSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB5502828BC4B00375102 /* DataSheetTableViewCell.swift */; };
 		AAEBB5532828C4F400375102 /* ElectronicImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */; };
+		AAEBB5552828D4AA00375102 /* ImageDetectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB5542828D4AA00375102 /* ImageDetectionHelper.swift */; };
+		AAEBB55728295C5300375102 /* ElectronicImageClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB55628295C5300375102 /* ElectronicImageClassifier 2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		AAEBB54E2828B94800375102 /* ListSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetViewController.swift; sourceTree = "<group>"; };
 		AAEBB5502828BC4B00375102 /* DataSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSheetTableViewCell.swift; sourceTree = "<group>"; };
 		AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ElectronicImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		AAEBB5542828D4AA00375102 /* ImageDetectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectionHelper.swift; sourceTree = "<group>"; };
+		AAEBB55628295C5300375102 /* ElectronicImageClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ElectronicImageClassifier 2.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		AAA6CCDC281A32BD002E8CB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AAEBB55628295C5300375102 /* ElectronicImageClassifier 2.mlmodel */,
 				AAEBB5522828C4F400375102 /* ElectronicImageClassifier 1.mlmodel */,
 				AADE06FA281A6AD700355955 /* User.swift */,
 				AADE0708281D668700355955 /* Electronic.swift */,
@@ -199,6 +204,7 @@
 				AAE183462823F486001A8ACF /* NumberFormatter.swift */,
 				AAE1834A282550C8001A8ACF /* DateHelper.swift */,
 				AAEBB54A28265E1200375102 /* NotificationHelper.swift */,
+				AAEBB5542828D4AA00375102 /* ImageDetectionHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				AADE0701281BFE6800355955 /* ReminderViewController.swift in Sources */,
 				AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */,
 				AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */,
+				AAEBB55728295C5300375102 /* ElectronicImageClassifier 2.mlmodel in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
 				AAE18337281FFA5B001A8ACF /* UserProfileRepository.swift in Sources */,
@@ -343,6 +350,7 @@
 				AAE183412823C36E001A8ACF /* EstimationResultViewController.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
 				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,
+				AAEBB5552828D4AA00375102 /* ImageDetectionHelper.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,
 				AAE18318281E5DEB001A8ACF /* DatabaseHelper.swift in Sources */,
 			);

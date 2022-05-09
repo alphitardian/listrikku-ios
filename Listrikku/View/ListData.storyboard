@@ -40,7 +40,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-So-iRE">
-                                                            <rect key="frame" x="104" y="13.666666666666671" width="86.666666666666686" height="73"/>
+                                                            <rect key="frame" x="104" y="13.666666666666671" width="226" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tko-iv-j2b">
                                                                     <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="24.333333333333332"/>
@@ -64,6 +64,7 @@
                                                     <constraints>
                                                         <constraint firstItem="uhJ-Ts-uFy" firstAttribute="centerY" secondItem="p1g-sv-XRD" secondAttribute="centerY" id="1HN-qN-WdW"/>
                                                         <constraint firstItem="uhJ-Ts-uFy" firstAttribute="leading" secondItem="p1g-sv-XRD" secondAttribute="leading" constant="20" id="6aT-68-yIy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PRJ-So-iRE" secondAttribute="trailing" constant="20" id="Exl-XR-oTk"/>
                                                         <constraint firstItem="PRJ-So-iRE" firstAttribute="leading" secondItem="uhJ-Ts-uFy" secondAttribute="trailing" constant="20" id="py3-Qw-dG8"/>
                                                         <constraint firstItem="PRJ-So-iRE" firstAttribute="centerY" secondItem="p1g-sv-XRD" secondAttribute="centerY" id="tNr-Yk-HcJ"/>
                                                         <constraint firstItem="uhJ-Ts-uFy" firstAttribute="top" secondItem="p1g-sv-XRD" secondAttribute="top" constant="14" id="zU7-vo-TaP"/>

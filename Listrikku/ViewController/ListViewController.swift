@@ -28,21 +28,15 @@ class ListViewController: UIViewController {
         listTableView.dataSource = self
         listTableView.separatorStyle = .none
         
-        self.data = listViewModel.loadItems()
-        if listViewModel.loadItems().isEmpty {
-            calculateButton.isHidden = true
-        } else {
-            calculateButton.isHidden = false
-        }
-        
         setPrimaryButtonShadow(for: calculateButton)
         calculateButton.tintColor = appPrimaryColor()
+        calculateButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.data = listViewModel.loadItems()
-        self.listTableView.reloadData()
+        
+        fetchListData()
     }
     
     @objc private func addItem() {
@@ -63,6 +57,20 @@ class ListViewController: UIViewController {
         if let resultViewController = resultViewController {
             resultViewController.modalDelegate = self
             self.navigationController?.present(resultViewController, animated: true)
+        }
+    }
+    
+    private func fetchListData() {
+        DispatchQueue.main.async {
+            self.data = self.listViewModel.loadItems()
+            
+            if self.listViewModel.loadItems().isEmpty {
+                self.calculateButton.isHidden = true
+            } else {
+                self.calculateButton.isHidden = false
+            }
+            
+            self.listTableView.reloadData()
         }
     }
 }
@@ -126,13 +134,6 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         // Update List after input / update data
-        self.data = listViewModel.loadItems()
-        self.listTableView.reloadData()
-        
-        if listViewModel.loadItems().isEmpty {
-            calculateButton.isHidden = true
-        } else {
-            calculateButton.isHidden = false
-        }
+        fetchListData()
     }
 }
