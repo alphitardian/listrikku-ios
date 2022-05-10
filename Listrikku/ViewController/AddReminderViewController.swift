@@ -42,7 +42,7 @@ class AddReminderViewController: UIViewController {
     }
     
     @IBAction func onSaveClick(_ sender: UIButton) {
-        let data = Bill(id: UUID(), billEstimation: Double(nominalTextField.text ?? "0.0"), date: pickedDate)
+        let data = Bill(id: UUID(), billEstimation: Double(nominalTextField.text ?? "0.0"), date: pickedDate ?? Date())
         reminderViewModel.saveUserBill(data: data)
         reminderViewModel.scheduleReminder(date: pickedDate ?? Date(), message: messageTextField.text ?? "")
         self.dismiss(animated: true)
