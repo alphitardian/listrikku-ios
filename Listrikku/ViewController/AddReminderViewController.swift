@@ -21,6 +21,7 @@ class AddReminderViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Tambah Pengingat"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
         
         nominalTextField.delegate = self
         messageTextField.delegate = self
@@ -44,6 +45,10 @@ class AddReminderViewController: UIViewController {
         let data = Bill(id: UUID(), billEstimation: Double(nominalTextField.text ?? "0.0"), date: pickedDate)
         reminderViewModel.saveUserBill(data: data)
         reminderViewModel.scheduleReminder(date: pickedDate ?? Date(), message: messageTextField.text ?? "")
+        self.dismiss(animated: true)
+    }
+    
+    @objc private func closeModal() {
         self.dismiss(animated: true)
     }
 }

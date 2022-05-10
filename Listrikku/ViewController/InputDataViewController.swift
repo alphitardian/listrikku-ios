@@ -25,6 +25,8 @@ class InputDataViewController: UIViewController {
         
         self.title = "Input Data"
         self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
+        
         objectImage.contentMode = .scaleAspectFill
         objectImage.layer.cornerRadius = 8
         
@@ -76,6 +78,10 @@ class InputDataViewController: UIViewController {
         listViewModel?.deleteItem(id: self.avaliableData?.id ?? UUID())
         self.dismiss(animated: true)
     }
+    
+    @objc private func closeModal() {
+        self.dismiss(animated: true)
+    }
 }
 
 extension InputDataViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -108,6 +114,9 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
             let name = result.identifier
             self.nameTextField.text = name
         }
+        ImageDetectionHelper.detectText(image: image) { result in
+            self.powerTextField.text = "\(result)"
+        }
     }
 }
 
@@ -115,12 +124,12 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
 extension InputDataViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -250, up: true)
+        moveTextField(textField, moveDistance: -150, up: true)
     }
 
     // Finish Editing The Text Field
     func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -250, up: false)
+        moveTextField(textField, moveDistance: -150, up: false)
     }
 
     // Hide the keyboard when the return key pressed

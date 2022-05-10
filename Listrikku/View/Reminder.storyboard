@@ -72,6 +72,9 @@
                                             </preferredSymbolConfiguration>
                                             <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onReminderDetailClick:" destination="mNJ-fO-jPD" eventType="touchUpInside" id="v2j-jI-cjY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.76078431372549016" blue="0.79607843137254897" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>

@@ -56,7 +56,8 @@ class ListViewController: UIViewController {
         let resultViewController = storyboard.instantiateViewController(withIdentifier: "Result") as? EstimationResultViewController
         if let resultViewController = resultViewController {
             resultViewController.modalDelegate = self
-            self.navigationController?.present(resultViewController, animated: true)
+            let navigationController = UINavigationController(rootViewController: resultViewController)
+            self.navigationController?.present(navigationController, animated: true)
         }
     }
     

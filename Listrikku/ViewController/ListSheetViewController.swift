@@ -37,6 +37,10 @@ class ListSheetViewController: UIViewController {
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         billLabel.text = "Rp. \(formattedBill ?? "0.0")"
     }
+    
+    @objc private func closeModal() {
+        self.dismiss(animated: true)
+    }
 }
 
 extension ListSheetViewController: UITableViewDelegate {

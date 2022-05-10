@@ -62,6 +62,17 @@ class ReminderViewController: UIViewController {
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
         nextBillDateLabel.text = bill?.date?.getFullDate()
     }
+    
+    @IBAction func onReminderDetailClick(_ sender: UIButton) {
+        // Open bill detail
+        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
+        let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
+        if let sheet = welcomeViewController.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+        }
+        self.navigationController?.present(welcomeViewController, animated: true)
+    }
 }
 
 extension ReminderViewController: ModalControllerDelegate {

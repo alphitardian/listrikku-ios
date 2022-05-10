@@ -21,6 +21,9 @@ class EstimationResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Estimasi"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
 
         setDefaultSegmentView()
         modalDelegate?.modalWillDisappear(self)
@@ -30,18 +33,21 @@ class EstimationResultViewController: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             let bill = listViewModel.calculatePostpaidBillEstimation()
             let data = Bill(id: UUID(), billEstimation: Double(bill), date: Date())
+            
             listViewModel.scheduleReminder(date: Date(), message: "")
             listViewModel.saveUserBill(data: data)
         } else {
             let bill = listViewModel.calculatePrepaidBillEstimation().cost
             let powerPerDay = listViewModel.calculatePrepaidBillEstimation().kwh
             let prepaidDuration = listViewModel.calculatePrepaidDuration(cost: bill, kwh: powerPerDay)
+            
             let today = Date()
             let calendar = Calendar.current.date(byAdding: .day, value: prepaidDuration, to: today)
             let data = Bill(id: UUID(), billEstimation: Double(bill), date: calendar)
             if let calendar = calendar {
                 listViewModel.scheduleReminder(date: calendar, message: "")
             }
+            
             listViewModel.saveUserBill(data: data)
         }
         self.dismiss(animated: true)
@@ -70,7 +76,7 @@ class EstimationResultViewController: UIViewController {
         estimationLabel.text = "Rp. \(formattedBill ?? "0.0")"
         
         let prepaidDuration = listViewModel.calculatePrepaidDuration(cost: bill, kwh: powerPerDay)
-        prepaidDurationLabel.text = "\(prepaidDuration) days"
+        prepaidDurationLabel.text = "\(prepaidDuration) hari"
         
         prepaidViewContainer.isHidden = false
     }
@@ -85,5 +91,9 @@ class EstimationResultViewController: UIViewController {
             self.segmentedControl.selectedSegmentIndex = 1
             setPrepaidEstimation()
         }
+    }
+    
+    @objc private func closeModal() {
+        self.dismiss(animated: true)
     }
 }

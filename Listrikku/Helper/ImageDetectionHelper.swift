@@ -8,6 +8,7 @@
 import CoreML
 import Vision
 import CoreImage
+import UIKit
 
 class ImageDetectionHelper {
     static func detectImage(image: CIImage, completion: @escaping (_ results: VNClassificationObservation) -> Void) {
@@ -39,5 +40,48 @@ class ImageDetectionHelper {
                 print(error)
             }
         }
+    }
+    
+    static func detectText(image: CIImage, completion: @escaping (_ result: Int) -> Void) {
+        var result = [Int]()
+        
+        let handler = VNImageRequestHandler(ciImage: image, options: [:])
+        let request = VNRecognizeTextRequest { request, error in
+            guard let observations = request.results as? [VNRecognizedTextObservation], error == nil else { return }
+            
+            let text = observations.compactMap { value in
+                value.topCandidates(1).first?.string
+            }
+            
+            for (index, value) in text.enumerated() {
+                if isItWatt(word: value) {
+                    print(text[index])
+                    
+                    // Get number from string. eg: 200W -> 200
+                    let string = text[index]
+                    if let number = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                        // Do something with this number
+                        result.append(number)
+                    }
+                }
+            }
+        }
+        
+        do {
+            try handler.perform([request])
+            completion(result.first ?? 0)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func isItWatt(word: String) -> Bool {
+        if let i = word.firstIndex(of: "W") {
+            let index: Int = word.distance(from: word.startIndex, to: i)
+            if (index == word.count - 1){
+                return true
+            }
+        }
+        return false
     }
 }
