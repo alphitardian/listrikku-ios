@@ -40,6 +40,7 @@ class InputDataViewController: UIViewController {
         self.view.addGestureRecognizer(tapToDismiss)
         
         if isUpdateData ?? false {
+            self.title = "Update Data"
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Hapus", style: .plain, target: self, action: #selector(deleteItem))
             
             nameTextField.text = avaliableData?.name
@@ -52,6 +53,7 @@ class InputDataViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setAccessibility()
         setTextfieldPlaceholderColor()
     }
     
@@ -105,6 +107,14 @@ class InputDataViewController: UIViewController {
             string: "Durasi Penggunaan (per jam)",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
+    }
+    
+    private func setAccessibility() {
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+    
+        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol hapus"
+        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol hapus digunakan untuk menghapus barang yang telah dipilih"
     }
 }
 

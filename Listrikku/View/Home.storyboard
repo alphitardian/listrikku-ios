@@ -33,6 +33,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhx-x0-7wK">
                                         <rect key="frame" x="268" y="25.666666666666686" width="62" height="62"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol tambah barang digunakan untuk mulai menambahkan barang yang ingin dihitung" label="Tombol Tambah barang"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" image="plus.app" catalog="system" cornerStyle="capsule" buttonSize="medium">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
@@ -67,14 +68,16 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSu-4j-1bh">
                                         <rect key="frame" x="20" y="45" width="220" height="41"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Biaya tagihan listrik yang harus dibayar selanjutnya" label="Biaya tagihan listrik"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-RY-7kg">
                                         <rect key="frame" x="268.33333333333331" y="25" width="61.666666666666686" height="62"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol info tagihan digunakan untuk menampilkan rangkuman tagihan" label="Info Tagihan"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" image="calendar" catalog="system" cornerStyle="capsule" buttonSize="medium">
+                                        <buttonConfiguration key="configuration" style="tinted" image="info.circle" catalog="system" cornerStyle="capsule" buttonSize="medium">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             </preferredSymbolConfiguration>
@@ -126,7 +129,11 @@
         <scene sceneID="weB-R3-igR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SW2-eo-HGi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="pRc-Qg-Wjh"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="pRc-Qg-Wjh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Home"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="55D-tW-9sU">
@@ -144,8 +151,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <namedColor name="backgroundViewColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

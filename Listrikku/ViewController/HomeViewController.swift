@@ -32,6 +32,9 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Set accessibility in navigation bar
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        
         setUserNextBill()
     }
     
@@ -63,6 +66,11 @@ class HomeViewController: UIViewController {
         let bill = homeViewModel.loadUserBills().last?.billEstimation
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill ?? 0.0)
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
+        setAccessibility(nextBillNominal: formattedBill ?? "0")
+    }
+    
+    private func setAccessibility(nextBillNominal: String) {
+        nextBillLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
     }
 }
 

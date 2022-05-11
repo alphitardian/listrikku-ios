@@ -35,7 +35,7 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        setAccessibility()
         fetchListData()
     }
     
@@ -73,6 +73,14 @@ class ListViewController: UIViewController {
             
             self.listTableView.reloadData()
         }
+    }
+    
+    private func setAccessibility() {
+        // Set accessibility in navigation bar
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah barang"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah barang digunakan untuk mulai menambahkan barang yang ingin dihitung"
     }
 }
 

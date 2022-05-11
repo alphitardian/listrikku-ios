@@ -227,6 +227,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgd-Sj-z0B">
                                         <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya" label="Tombol simpan"/>
                                         <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Simpan" buttonSize="large"/>
@@ -245,11 +246,13 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Barang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9z-B8-7j4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="298.66666666666669" height="34"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Tuliskan nama barang yang ingin ditambahkan pada bidang ini" label="Bidang teks nama barang"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEp-1a-iGc">
                                                                 <rect key="frame" x="304.66666666666669" y="0.0" width="45.333333333333314" height="34"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Tombol kamera digunakan untuk membuka kamera untuk melakukan deteksi benda maupun label" label="Tombol Kamera"/>
                                                                 <color key="tintColor" red="0.0" green="0.65024009599999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="tinted" image="camera.circle.fill" catalog="system" cornerStyle="dynamic">
@@ -271,16 +274,19 @@
                                             </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jumlah Barang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GAb-Yg-dFX">
                                                 <rect key="frame" x="0.0" y="102.33333333333331" width="350" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Tuliskan jumlah barang yang ingin ditambahkan pada bidang ini" label="Bidang teks jumlah barang"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Daya Listrik (watt)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-VS-Bdb">
                                                 <rect key="frame" x="0.0" y="152.33333333333331" width="350" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Tuliskan daya listrik barang dalam watt yang ingin ditambahkan pada bidang ini" label="Bidang teks daya listrik"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Durasi Penggunaan (per jam)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4l-E1-4mC">
                                                 <rect key="frame" x="0.0" y="202.33333333333337" width="350" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Tuliskan durasi penggunaan barang dalam jam yang ingin ditambahkan pada bidang ini" label="Bidang teks durasi penggunaan"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
@@ -288,6 +294,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="6K7-jz-Xui">
                                         <rect key="frame" x="117" y="128" width="156" height="156"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Foto barang yang telah diambil akan ditampilkan disini" label="Foto barang"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="156" id="bv8-uf-eGl"/>
                                         </constraints>
@@ -453,7 +460,7 @@
         <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
         <image name="undraw_payments" width="1144" height="746"/>
         <namedColor name="backgroundCellColor">
-            <color red="0.0" green="0.76078431372549016" blue="0.79607843137254897" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.76099997758865356" blue="0.79600000381469727" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="backgroundViewColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

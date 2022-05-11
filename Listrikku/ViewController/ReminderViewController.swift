@@ -35,6 +35,9 @@ class ReminderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Set accessibility in navigation bar
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        
         setUserLastBill()
         setUserNextBill()
     }

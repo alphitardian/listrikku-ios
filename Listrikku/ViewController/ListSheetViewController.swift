@@ -36,10 +36,17 @@ class ListSheetViewController: UIViewController {
         
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         billLabel.text = "Rp. \(formattedBill ?? "0.0")"
+        
+        setAccessibility(nextBillNominal: formattedBill ?? "0")
     }
     
     @objc private func closeModal() {
         self.dismiss(animated: true)
+    }
+    
+    private func setAccessibility(nextBillNominal: String) {
+        dateLabel.accessibilityHint = "Anda harus membayar tagihan pada tanggal \(dateLabel.text ?? "")"
+        billLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
     }
 }
 
