@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BNS-dm-hzx">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="onW-Vz-3wP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="onW-Vz-3wP" firstAttribute="trailing" secondItem="61R-5j-T2F" secondAttribute="trailing" constant="52" id="7xu-5D-E0A"/>
                             <constraint firstItem="onW-Vz-3wP" firstAttribute="trailing" secondItem="S8h-6M-jSk" secondAttribute="trailing" constant="264" id="8ud-eK-dSQ"/>
@@ -114,7 +114,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QFW-62-ld5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="QFW-62-ld5" firstAttribute="bottom" secondItem="wbb-LL-9UV" secondAttribute="bottom" constant="64" id="2Ue-4o-lst"/>
                             <constraint firstItem="OjJ-cn-PNg" firstAttribute="leading" secondItem="QFW-62-ld5" secondAttribute="leading" constant="20" id="Aa4-fc-lrd"/>
@@ -232,7 +232,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AIp-rJ-s8i"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundViewColor"/>
                         <constraints>
                             <constraint firstItem="5eW-JW-aZM" firstAttribute="top" secondItem="dUZ-ox-4gs" secondAttribute="bottom" constant="64" id="1yf-Yt-36C"/>
                             <constraint firstItem="5eW-JW-aZM" firstAttribute="leading" secondItem="AIp-rJ-s8i" secondAttribute="leading" constant="20" id="4k9-Pb-PUn"/>
@@ -283,8 +283,8 @@
     </scenes>
     <resources>
         <image name="Listrikku." width="500" height="500"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="backgroundViewColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

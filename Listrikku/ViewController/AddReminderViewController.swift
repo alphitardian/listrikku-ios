@@ -31,6 +31,11 @@ class AddReminderViewController: UIViewController {
         self.view.addGestureRecognizer(tapToDismiss)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextfieldPlaceholderColor()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         modalDelegate?.modalWillDisappear(self)
@@ -50,6 +55,17 @@ class AddReminderViewController: UIViewController {
     
     @objc private func closeModal() {
         self.dismiss(animated: true)
+    }
+    
+    private func setTextfieldPlaceholderColor() {
+        nominalTextField.attributedPlaceholder = NSAttributedString(
+            string: "Nominal (Rp)",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        messageTextField.attributedPlaceholder = NSAttributedString(
+            string: "Pesan (Opsional)",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
     }
 }
 

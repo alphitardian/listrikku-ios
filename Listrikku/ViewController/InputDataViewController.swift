@@ -50,6 +50,11 @@ class InputDataViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextfieldPlaceholderColor()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         modalDelegate?.modalWillDisappear(self)
@@ -81,6 +86,25 @@ class InputDataViewController: UIViewController {
     
     @objc private func closeModal() {
         self.dismiss(animated: true)
+    }
+    
+    private func setTextfieldPlaceholderColor() {
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Nama Barang",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        quantityTextField.attributedPlaceholder = NSAttributedString(
+            string: "Jumlah Barang",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        powerTextField.attributedPlaceholder = NSAttributedString(
+            string: "Daya Listrik (Watt)",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        durationTextField.attributedPlaceholder = NSAttributedString(
+            string: "Durasi Penggunaan (per jam)",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
     }
 }
 

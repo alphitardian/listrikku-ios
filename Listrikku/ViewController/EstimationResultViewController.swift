@@ -63,7 +63,7 @@ class EstimationResultViewController: UIViewController {
     
     private func setPostpaidEstimation() {
         let bill = listViewModel.calculatePostpaidBillEstimation()
-        let formattedBill = NumberFormatterHelper.convertToRupiah(value: Double(bill) ?? 0.0)
+        let formattedBill = NumberFormatterHelper.convertToRupiah(value: Double(bill)?.rounded() ?? 0.0)
         estimationLabel.text = "Rp. \(formattedBill ?? "0.0")"
         
         prepaidViewContainer.isHidden = true
