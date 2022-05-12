@@ -55,11 +55,17 @@ class ProfileInputViewController: UIViewController {
     }
     
     @IBAction func onSaveClick(_ sender: UIButton) {
-        onboardingViewModel.saveUser()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
-        self.navigationController?.pushViewController(mainViewController, animated: true)
+        if onboardingViewModel.selectedCategory != nil && onboardingViewModel.selectedPower != nil && onboardingViewModel.selectedPaymentMethod != nil {
+            onboardingViewModel.saveUser()
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+            self.navigationController?.pushViewController(mainViewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Perhatian", message: "Pilih profil yang sesuai dengan kebutuhan anda untuk melanjutkan.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alert, animated: true)
+        }
     }
 }
 

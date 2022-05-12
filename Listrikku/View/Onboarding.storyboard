@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BNS-dm-hzx">
-    <device id="retina6_0" orientation="portrait" appearance="dark"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Listrikku." translatesAutoresizingMaskIntoConstraints="NO" id="S8h-6M-jSk">
                                 <rect key="frame" x="20" y="216" width="106" height="130"/>
+                                <accessibility key="accessibilityConfiguration" label="Logo aplikasi Listrikku"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="gQy-gY-Ixq"/>
                                 </constraints>
@@ -41,7 +43,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61R-5j-T2F">
                                 <rect key="frame" x="52" y="699" width="286" height="47"/>
-                                <accessibility key="accessibilityConfiguration" hint="Tap to go to the next page" label="Next page button"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tombol lanjutkan digunakan untuk melanjutkan ke halaman berikutnya" label="Tombol lanjutkan"/>
                                 <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lanjutkan" buttonSize="large"/>
@@ -99,19 +101,26 @@
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tulis disini" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OjJ-cn-PNg">
                                 <rect key="frame" x="20" y="405" width="350" height="34"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tuliskan nama anda pada bidang ini" label="Bidang teks nama"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-LL-9UV">
                                 <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tombol lanjutkan digunakan untuk melanjutkan ke halaman berikutnya" label="Tombol lanjutkan"/>
                                 <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lanjutkan" buttonSize="large"/>
                                 <connections>
                                     <action selector="onNextClick:" destination="hqP-Ne-a4W" eventType="touchUpInside" id="HcC-Dg-chO"/>
-                                    <segue destination="DDE-xJ-KJf" kind="show" id="TQM-cG-YYj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tolong isi namamu dulu yuk!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTv-VQ-2Wz">
+                                <rect key="frame" x="20" y="447" width="160" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QFW-62-ld5"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
@@ -119,7 +128,9 @@
                             <constraint firstItem="QFW-62-ld5" firstAttribute="bottom" secondItem="wbb-LL-9UV" secondAttribute="bottom" constant="64" id="2Ue-4o-lst"/>
                             <constraint firstItem="OjJ-cn-PNg" firstAttribute="leading" secondItem="QFW-62-ld5" secondAttribute="leading" constant="20" id="Aa4-fc-lrd"/>
                             <constraint firstItem="QFW-62-ld5" firstAttribute="trailing" secondItem="OjJ-cn-PNg" secondAttribute="trailing" constant="20" id="Iwd-0f-pbV"/>
+                            <constraint firstItem="PTv-VQ-2Wz" firstAttribute="top" secondItem="OjJ-cn-PNg" secondAttribute="bottom" constant="8" id="JZ0-ku-WZF"/>
                             <constraint firstItem="OjJ-cn-PNg" firstAttribute="centerY" secondItem="JXS-Be-xto" secondAttribute="centerY" id="KfE-wg-V5n"/>
+                            <constraint firstItem="PTv-VQ-2Wz" firstAttribute="leading" secondItem="QFW-62-ld5" secondAttribute="leading" constant="20" id="XnM-jC-aBT"/>
                             <constraint firstItem="QFW-62-ld5" firstAttribute="trailing" secondItem="wbb-LL-9UV" secondAttribute="trailing" constant="52" id="ZZb-AQ-I48"/>
                             <constraint firstItem="UQY-hO-4mA" firstAttribute="top" secondItem="QFW-62-ld5" secondAttribute="top" constant="181" id="dif-U4-Hq8"/>
                             <constraint firstItem="wbb-LL-9UV" firstAttribute="leading" secondItem="QFW-62-ld5" secondAttribute="leading" constant="52" id="eDd-qz-DxC"/>
@@ -129,6 +140,7 @@
                     <navigationItem key="navigationItem" id="Ai1-oH-n07"/>
                     <connections>
                         <outlet property="nameTextField" destination="OjJ-cn-PNg" id="ZBG-na-aHk"/>
+                        <outlet property="nameTextFieldErrorLabel" destination="PTv-VQ-2Wz" id="wN8-2X-l1m"/>
                         <outlet property="nextButton" destination="wbb-LL-9UV" id="588-Kc-OSA"/>
                     </connections>
                 </viewController>
@@ -139,13 +151,13 @@
         <!--Profile Input View Controller-->
         <scene sceneID="eZI-KH-EkJ">
             <objects>
-                <viewController id="DDE-xJ-KJf" customClass="ProfileInputViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileInput" id="DDE-xJ-KJf" customClass="ProfileInputViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y3F-Qx-GFX">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dUZ-ox-4gs">
-                                <rect key="frame" x="20.000000000000014" y="269" width="225.33333333333337" height="89.333333333333314"/>
+                                <rect key="frame" x="20.000000000000014" y="225.00000000000003" width="225.33333333333337" height="89.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isi Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jS-77-JX7">
                                         <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="40.666666666666664"/>
@@ -162,7 +174,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="5eW-JW-aZM">
-                                <rect key="frame" x="20" y="422.33333333333331" width="350" height="31"/>
+                                <rect key="frame" x="20" y="378.33333333333331" width="350" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori Listrik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXN-kI-j86">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="31"/>
@@ -172,6 +184,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ew-Rk-kSn">
                                         <rect key="frame" x="234" y="0.0" width="116" height="31"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol ini digunakan untuk memilih kategori listrik yang sesuai" label="Tombol pilih kategori listrik"/>
                                         <color key="tintColor" red="0.0" green="0.65024009599999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
@@ -182,7 +195,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="gJ8-f3-0xe">
-                                <rect key="frame" x="20" y="469.33333333333331" width="350" height="31"/>
+                                <rect key="frame" x="20" y="425.33333333333331" width="350" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Pembayaran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wC-fO-fne">
                                         <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="31"/>
@@ -192,6 +205,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFS-gd-trT">
                                         <rect key="frame" x="233.66666666666666" y="0.0" width="116.33333333333334" height="31"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol ini digunakan untuk memilih jenis pembayaran listrik yang dilakukan" label="Tombol pilih jenis pembayaran listrik"/>
                                         <color key="tintColor" red="0.0" green="0.65024009599999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
@@ -202,7 +216,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="Zm6-3y-mZV">
-                                <rect key="frame" x="20" y="516.33333333333337" width="350" height="31"/>
+                                <rect key="frame" x="20" y="472.33333333333331" width="350" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daya Listrik (VA)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-SF-Zmt">
                                         <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="31"/>
@@ -212,6 +226,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryG-KG-izX">
                                         <rect key="frame" x="233.66666666666666" y="0.0" width="116.33333333333334" height="31"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol ini digunakan untuk memilih daya listrik yang sesuai" label="Tombol pilih daya listrik"/>
                                         <color key="tintColor" red="0.0" green="0.65024009599999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Pilih Disini"/>
@@ -223,6 +238,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkJ-d4-vD6">
                                 <rect key="frame" x="52" y="699" width="286" height="47"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tombol simpan digunakan untuk menyimpan data-data yang telah dipilih sebelumnya" label="Tombol simpan"/>
                                 <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Simpan" buttonSize="large"/>
@@ -286,5 +302,8 @@
         <namedColor name="backgroundViewColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
