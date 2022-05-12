@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8B3AF3282CA54D00F8AD7E /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B3AF2282CA54D00F8AD7E /* UIFontHelper.swift */; };
 		AAA6CCC6281A20B9002E8CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */; };
 		AAA6CCC8281A20B9002E8CB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */; };
 		AAA6CCCA281A20B9002E8CB3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6CCC9281A20B9002E8CB3 /* MainViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA8B3AF2282CA54D00F8AD7E /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
 		AAA6CCC2281A20B9002E8CB3 /* Listrikku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listrikku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA6CCC5281A20B9002E8CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA6CCC7281A20B9002E8CB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				AAE1834A282550C8001A8ACF /* DateHelper.swift */,
 				AAEBB54A28265E1200375102 /* NotificationHelper.swift */,
 				AAEBB5542828D4AA00375102 /* ImageDetectionHelper.swift */,
+				AA8B3AF2282CA54D00F8AD7E /* UIFontHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				AADE0709281D668700355955 /* Electronic.swift in Sources */,
 				AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */,
 				AAE1831F281E6F03001A8ACF /* ModalControllerDelegate.swift in Sources */,
+				AA8B3AF3282CA54D00F8AD7E /* UIFontHelper.swift in Sources */,
 				AAE1832D281EC349001A8ACF /* DatabaseHelperDelegate.swift in Sources */,
 				AAE183392820013F001A8ACF /* PriceRepository.swift in Sources */,
 				AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */,

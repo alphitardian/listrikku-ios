@@ -13,6 +13,8 @@ class ProfileInputViewController: UIViewController {
     @IBOutlet weak var paymentButton: UIButton!
     @IBOutlet weak var powerButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var greetingLabelOne: UILabel!
+    @IBOutlet weak var greetingLabelTwo: UILabel!
     
     private let onboardingViewModel: OnboardingViewModel = OnboardingViewModel.sharedInstance
     
@@ -20,6 +22,8 @@ class ProfileInputViewController: UIViewController {
         super.viewDidLoad()
         
         nextButton.tintColor = appPrimaryColor()
+        
+        setCustomLabel()
     }
     
     /// Use tag to specify pickerview
@@ -67,10 +71,15 @@ class ProfileInputViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+    
+    private func setCustomLabel() {
+        greetingLabelOne.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        greetingLabelTwo.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+    }
 }
 
 //MARK: - PickerView Delegate & DataSource
-extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -87,7 +96,7 @@ extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 48
+        return 64
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -101,8 +110,13 @@ extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSour
             label.text = onboardingViewModel.power[row]
         }
         
-        label.sizeToFit()
+        label.font = UIFont.preferredFont(for: .body, weight: .regular)
+        label.textAlignment = .center
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, accessibilityLabelForComponent component: Int) -> String? {
+        return "Pilih salah satu nilai yang sesuai dengan kebutuhan anda"
     }
 }
 
@@ -127,6 +141,11 @@ extension ProfileInputViewController {
     
     private func setupAlertPicker(viewController: UIViewController, pickerView: UIPickerView, selectionHandler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: "Pilih Salah Satu", message: "", preferredStyle: .actionSheet)
+        
+        let titleAttribute = [NSAttributedString.Key.font: UIFont.preferredFont(for: .body, weight: .medium)]
+        let titleString = NSAttributedString(string: "Pilih Salah Satu", attributes: titleAttribute)
+        alert.setValue(titleString, forKey: "attributedTitle")
+ 
         alert.popoverPresentationController?.sourceView = categoryButton
         alert.popoverPresentationController?.sourceRect = categoryButton.bounds
         alert.setValue(viewController, forKey: "contentViewController")

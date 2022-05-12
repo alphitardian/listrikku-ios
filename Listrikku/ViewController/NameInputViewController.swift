@@ -12,6 +12,8 @@ class NameInputViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nameTextFieldErrorLabel: UILabel!
+    @IBOutlet weak var greetingLabelOne: UILabel!
+    @IBOutlet weak var greetingLabelTwo: UILabel!
     
     private let onboardingViewModel: OnboardingViewModel = OnboardingViewModel.sharedInstance
     
@@ -23,7 +25,13 @@ class NameInputViewController: UIViewController {
         nextButton.tintColor = appPrimaryColor()
         
         nameTextField.addTarget(self, action: #selector(didTextFieldChange(_:)), for: .editingChanged)
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Tulis Disini",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
         nameTextFieldErrorLabel.isHidden = true
+        
+        setCustomLabel()
     }
     
     @IBAction func onNextClick(_ sender: UIButton) {
@@ -40,6 +48,11 @@ class NameInputViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func setCustomLabel() {
+        greetingLabelOne.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        greetingLabelTwo.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 
