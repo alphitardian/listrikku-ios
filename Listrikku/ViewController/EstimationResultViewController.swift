@@ -29,6 +29,11 @@ class EstimationResultViewController: UIViewController {
         modalDelegate?.modalWillDisappear(self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setCustomLabel()
+    }
+    
     @IBAction func onSaveClick(_ sender: UIButton) {
         if segmentedControl.selectedSegmentIndex == 0 {
             let bill = listViewModel.calculatePostpaidBillEstimation()
@@ -66,6 +71,8 @@ class EstimationResultViewController: UIViewController {
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: Double(bill)?.rounded() ?? 0.0)
         estimationLabel.text = "Rp. \(formattedBill ?? "0.0")"
         
+        setAccessibility(estimation: formattedBill ?? "0", duration: 0)
+        
         prepaidViewContainer.isHidden = true
     }
     
@@ -77,6 +84,8 @@ class EstimationResultViewController: UIViewController {
         
         let prepaidDuration = listViewModel.calculatePrepaidDuration(cost: bill, kwh: powerPerDay)
         prepaidDurationLabel.text = "\(prepaidDuration) hari"
+        
+        setAccessibility(estimation: formattedBill ?? "0", duration: prepaidDuration)
         
         prepaidViewContainer.isHidden = false
     }
@@ -91,6 +100,22 @@ class EstimationResultViewController: UIViewController {
             self.segmentedControl.selectedSegmentIndex = 1
             setPrepaidEstimation()
         }
+    }
+    
+    private func setCustomLabel() {
+        estimationLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        prepaidDurationLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+    }
+    
+    private func setAccessibility(estimation: String, duration: Int) {
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+        
+        estimationLabel.accessibilityLabel = "Biaya tagihan listrik"
+        estimationLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar adalah \(estimation) rupiah"
+        
+        prepaidDurationLabel.accessibilityLabel = "Durasi penggunaan listrik"
+        prepaidDurationLabel.accessibilityHint = "Listrik dapat bertahan selama \(duration) hari"
     }
     
     @objc private func closeModal() {

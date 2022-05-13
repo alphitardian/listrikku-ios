@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLa-l2-bVK">
-                                <rect key="frame" x="20" y="160" width="374" height="112"/>
+                                <rect key="frame" x="20" y="160" width="374" height="104"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagihan sebelumnya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6q-1y-qvO">
-                                        <rect key="frame" x="20" y="20" width="155" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagihan sebelumnya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6q-1y-qvO">
+                                        <rect key="frame" x="20" y="20" width="282" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42t-wS-Y4u">
-                                        <rect key="frame" x="20" y="45" width="282" height="41"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42t-wS-Y4u">
+                                        <rect key="frame" x="20" y="41" width="282" height="37"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -39,32 +39,34 @@
                                     <constraint firstAttribute="trailing" secondItem="42t-wS-Y4u" secondAttribute="trailing" constant="72" id="Hd1-x1-oU9"/>
                                     <constraint firstItem="Z6q-1y-qvO" firstAttribute="top" secondItem="OLa-l2-bVK" secondAttribute="top" constant="20" id="TaF-T0-i5T"/>
                                     <constraint firstAttribute="bottom" secondItem="42t-wS-Y4u" secondAttribute="bottom" constant="26" id="hQz-Zd-dJI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z6q-1y-qvO" secondAttribute="trailing" constant="72" id="teP-rq-aU0"/>
                                     <constraint firstItem="42t-wS-Y4u" firstAttribute="leading" secondItem="OLa-l2-bVK" secondAttribute="leading" constant="20" id="xGC-CP-0pQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ht-Ti-Qb5">
-                                <rect key="frame" x="20" y="284" width="374" height="143"/>
+                                <rect key="frame" x="20" y="276" width="374" height="134"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagihan berikutnya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-MV-yTp">
-                                        <rect key="frame" x="20" y="20" width="143.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagihan berikutnya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-MV-yTp">
+                                        <rect key="frame" x="20" y="20" width="244" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 September 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up5-1y-5Cr">
-                                        <rect key="frame" x="20" y="45" width="185" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 September 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up5-1y-5Cr">
+                                        <rect key="frame" x="20" y="41" width="244" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-55-VyP">
-                                        <rect key="frame" x="20" y="76" width="244" height="41"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-55-VyP">
+                                        <rect key="frame" x="20" y="71" width="244" height="37"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-nl-wBi">
-                                        <rect key="frame" x="292" y="40.5" width="62" height="62"/>
+                                        <rect key="frame" x="292" y="36" width="62" height="62"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Tombol info tagihan digunakan untuk menampilkan rangkuman tagihan" label="Info Tagihan"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" image="info.circle" catalog="system" cornerStyle="capsule" buttonSize="large">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
@@ -84,11 +86,13 @@
                                     <constraint firstItem="up5-1y-5Cr" firstAttribute="leading" secondItem="2ht-Ti-Qb5" secondAttribute="leading" constant="20" id="Dt5-4j-gHE"/>
                                     <constraint firstItem="Izw-nl-wBi" firstAttribute="centerY" secondItem="2ht-Ti-Qb5" secondAttribute="centerY" id="NKp-WY-EAq"/>
                                     <constraint firstAttribute="trailing" secondItem="Izw-nl-wBi" secondAttribute="trailing" constant="20" id="ONN-kp-96G"/>
+                                    <constraint firstAttribute="trailing" secondItem="up5-1y-5Cr" secondAttribute="trailing" constant="110" id="RB2-Hv-WnX"/>
                                     <constraint firstAttribute="bottom" secondItem="VJ1-55-VyP" secondAttribute="bottom" constant="26" id="U6C-O6-QxS"/>
                                     <constraint firstItem="VJ1-55-VyP" firstAttribute="leading" secondItem="2ht-Ti-Qb5" secondAttribute="leading" constant="20" id="cV0-k2-RGk"/>
                                     <constraint firstItem="ch4-MV-yTp" firstAttribute="top" secondItem="2ht-Ti-Qb5" secondAttribute="top" constant="20" id="fbK-hB-d3w"/>
                                     <constraint firstItem="ch4-MV-yTp" firstAttribute="leading" secondItem="2ht-Ti-Qb5" secondAttribute="leading" constant="20" id="pnl-eG-JCP"/>
                                     <constraint firstAttribute="trailing" secondItem="VJ1-55-VyP" secondAttribute="trailing" constant="110" id="uiv-xp-fNJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ch4-MV-yTp" secondAttribute="trailing" constant="110" id="vww-sW-pgQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -97,7 +101,6 @@
                         <constraints>
                             <constraint firstItem="2ht-Ti-Qb5" firstAttribute="top" secondItem="OLa-l2-bVK" secondAttribute="bottom" constant="12" id="RfJ-mu-kRX"/>
                             <constraint firstItem="FyN-LQ-Axi" firstAttribute="trailing" secondItem="OLa-l2-bVK" secondAttribute="trailing" constant="20" id="aW3-5b-H8i"/>
-                            <constraint firstItem="2ht-Ti-Qb5" firstAttribute="top" secondItem="Dc6-zE-h4I" secondAttribute="top" constant="284" id="gOR-6d-c1f"/>
                             <constraint firstItem="OLa-l2-bVK" firstAttribute="leading" secondItem="FyN-LQ-Axi" secondAttribute="leading" constant="20" id="hka-SJ-lI5"/>
                             <constraint firstItem="2ht-Ti-Qb5" firstAttribute="leading" secondItem="FyN-LQ-Axi" secondAttribute="leading" constant="20" id="q5o-17-zng"/>
                             <constraint firstItem="OLa-l2-bVK" firstAttribute="top" secondItem="FyN-LQ-Axi" secondAttribute="top" constant="20" id="s8Z-1M-gqs"/>
@@ -133,6 +136,7 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-2d-uIm">
                                 <rect key="frame" x="52" y="734" width="310" height="47"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya" label="Tombol"/>
                                 <color key="tintColor" red="0.0" green="0.76078431369999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Simpan" buttonSize="large"/>
@@ -140,14 +144,16 @@
                                     <action selector="onSaveClick:" destination="ONI-fa-7I6" eventType="touchUpInside" id="8V2-MD-WF0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nominal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="deo-te-7dZ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nominal" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="deo-te-7dZ">
                                 <rect key="frame" x="20" y="431" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tuliskan nominal tagihan pada bidang ini" label="Bidang teks nominal tagihan"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesan (Opsional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-P9-i9D">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesan (Opsional)" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-P9-i9D">
                                 <rect key="frame" x="20" y="477" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tuliskan pesan notifikasi pada bidang ini" label="Bidang teks pesan notifikasi"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>

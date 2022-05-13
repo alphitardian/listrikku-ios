@@ -16,7 +16,8 @@ class DataTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        objectLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

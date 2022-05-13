@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backgroundViewNextBill: UIView!
     @IBOutlet weak var backgroundViewSetBill: UIView!
     @IBOutlet weak var nextBillLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
     
     private let homeViewModel: HomeViewModel = HomeViewModel()
     private let listViewModel: ListViewModel = ListViewModel.sharedInstance
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController {
         let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
         if let sheet = welcomeViewController.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
         }
         self.navigationController?.present(welcomeViewController, animated: true)
     }
@@ -71,6 +71,9 @@ class HomeViewController: UIViewController {
     
     private func setAccessibility(nextBillNominal: String) {
         nextBillLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
+        
+        nextBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        startLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 

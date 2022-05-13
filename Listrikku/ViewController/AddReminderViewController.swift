@@ -22,6 +22,8 @@ class AddReminderViewController: UIViewController {
         
         self.title = "Tambah Pengingat"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
         
         nominalTextField.delegate = self
         messageTextField.delegate = self
@@ -33,6 +35,7 @@ class AddReminderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setAccessibility()
         setTextfieldPlaceholderColor()
     }
     
@@ -66,6 +69,11 @@ class AddReminderViewController: UIViewController {
             string: "Pesan (Opsional)",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
+    }
+    
+    private func setAccessibility() {
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
     }
 }
 

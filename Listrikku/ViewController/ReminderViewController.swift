@@ -37,9 +37,12 @@ class ReminderViewController: UIViewController {
         
         // Set accessibility in navigation bar
         self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah pengingat"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah pengingat digunakan untuk menambah pengingat dengan tanggal yang anda tentukan"
         
         setUserLastBill()
         setUserNextBill()
+        setCustomLabel()
     }
     
     @objc private func addReminder() {
@@ -57,6 +60,9 @@ class ReminderViewController: UIViewController {
         let bill = reminderViewModel.getUserLastBill()
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         lastBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
+        
+        lastBillLabel.accessibilityLabel = "Biaya tagihan sebelumnya"
+        lastBillLabel.accessibilityHint = "Biaya tagihan sebelumnya sebesar \(formattedBill ?? "0") rupiah"
     }
     
     private func setUserNextBill() {
@@ -64,6 +70,11 @@ class ReminderViewController: UIViewController {
         let formattedBill = NumberFormatterHelper.convertToRupiah(value: bill?.billEstimation ?? 0.0)
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
         nextBillDateLabel.text = bill?.date?.getFullDate()
+        
+        nextBillLabel.accessibilityLabel = "Biaya tagihan selanjutnya"
+        nextBillLabel.accessibilityHint = "Biaya tagihan selanjutnya sebesar \(formattedBill ?? "0") rupiah"
+        nextBillDateLabel.accessibilityLabel = "Tenggat waktu tagihan selanjutnya"
+        nextBillDateLabel.accessibilityHint = "Anda harus membayar tagihan sebelum tanggal \(bill?.date?.getFullDate() ?? "")"
     }
     
     @IBAction func onReminderDetailClick(_ sender: UIButton) {
@@ -72,9 +83,14 @@ class ReminderViewController: UIViewController {
         let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
         if let sheet = welcomeViewController.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
         }
         self.navigationController?.present(welcomeViewController, animated: true)
+    }
+    
+    private func setCustomLabel() {
+        lastBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        nextBillDateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
+        nextBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 

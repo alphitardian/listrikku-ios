@@ -47,6 +47,9 @@ class ListSheetViewController: UIViewController {
     private func setAccessibility(nextBillNominal: String) {
         dateLabel.accessibilityHint = "Anda harus membayar tagihan pada tanggal \(dateLabel.text ?? "")"
         billLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
+        
+        dateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
+        billLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 

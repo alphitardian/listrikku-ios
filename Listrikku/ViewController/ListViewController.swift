@@ -133,6 +133,10 @@ extension ListViewController: UITableViewDataSource {
             cell.objectImage.image = UIImage(data: data[indexPath.row].image!)
             cell.objectImage.contentMode = .scaleAspectFill
             cell.objectImage.layer.cornerRadius = 8
+            
+            // Setup accessibility
+            cell.accessibilityLabel = "\(data[indexPath.row].name ?? "") dengan daya \(data[indexPath.row].power ?? "0")"
+            cell.objectImage.accessibilityLabel = "Foto \(data[indexPath.row].name ?? "")"
         }
         
         return cell
