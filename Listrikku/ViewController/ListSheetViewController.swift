@@ -18,6 +18,9 @@ class ListSheetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Rincian"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
 
         tableView.delegate = self
         tableView.dataSource = self

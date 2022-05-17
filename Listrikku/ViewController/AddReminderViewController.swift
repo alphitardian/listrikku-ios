@@ -21,9 +21,9 @@ class AddReminderViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Tambah Pengingat"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .done, target: self, action: #selector(saveReminder))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
         
         nominalTextField.delegate = self
         messageTextField.delegate = self
@@ -49,7 +49,7 @@ class AddReminderViewController: UIViewController {
         print(datePicker.date)
     }
     
-    @IBAction func onSaveClick(_ sender: UIButton) {
+    @objc private func saveReminder() {
         let data = Bill(id: UUID(), billEstimation: Double(nominalTextField.text ?? "0.0"), date: pickedDate ?? Date())
         reminderViewModel.saveUserBill(data: data)
         reminderViewModel.scheduleReminder(date: pickedDate ?? Date(), message: messageTextField.text ?? "")
@@ -72,37 +72,20 @@ class AddReminderViewController: UIViewController {
     }
     
     private func setAccessibility() {
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol simpan"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya"
+        
+        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
     }
 }
 
 //MARK: - Animate view when the keyboard is blocking textfield
 extension AddReminderViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -100, up: true)
-    }
-
-    // Finish Editing The Text Field
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -100, up: false)
-    }
 
     // Hide the keyboard when the return key pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-
-    // Move the text field in an animation!
-    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
-        let moveDuration = 0.3
-        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
-        
-        UIView.animate(withDuration: moveDuration) {
-            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-            self.datePicker.isHidden = up
-        }
     }
 }

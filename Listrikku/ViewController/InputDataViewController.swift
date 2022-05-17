@@ -14,6 +14,7 @@ class InputDataViewController: UIViewController {
     @IBOutlet weak var powerTextField: UITextField!
     @IBOutlet weak var durationTextField: UITextField!
     @IBOutlet weak var objectImage: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var listViewModel: ListViewModel?
     var modalDelegate: ModalControllerDelegate?
@@ -25,10 +26,13 @@ class InputDataViewController: UIViewController {
         
         self.title = "Input Data"
         self.navigationController?.navigationBar.tintColor = appPrimaryColor()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .done, target: self, action: #selector(saveItem))
         
         objectImage.contentMode = .scaleAspectFill
         objectImage.layer.cornerRadius = 8
+        deleteButton.isHidden = true
         
         nameTextField.delegate = self
         quantityTextField.delegate = self
@@ -41,7 +45,8 @@ class InputDataViewController: UIViewController {
         
         if isUpdateData ?? false {
             self.title = "Update Data"
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Hapus", style: .plain, target: self, action: #selector(deleteItem))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
+            deleteButton.isHidden = false
             
             nameTextField.text = avaliableData?.name
             quantityTextField.text = "\(avaliableData?.quantity ?? 1)"
@@ -62,7 +67,7 @@ class InputDataViewController: UIViewController {
         modalDelegate?.modalWillDisappear(self)
     }
     
-    @IBAction func onSaveClick(_ sender: UIButton) {
+    @objc private func saveItem() {
         let data = Electronic(
             id: UUID(),
             name: nameTextField.text,
@@ -81,7 +86,7 @@ class InputDataViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @objc private func deleteItem() {
+    @IBAction private func deleteItem(_ sender: UIButton) {
         listViewModel?.deleteItem(id: self.avaliableData?.id ?? UUID())
         self.dismiss(animated: true)
     }
@@ -110,11 +115,11 @@ class InputDataViewController: UIViewController {
     }
     
     private func setAccessibility() {
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
     
-        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol hapus"
-        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol hapus digunakan untuk menghapus barang yang telah dipilih"
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol simpan"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya"
     }
 }
 
@@ -179,7 +184,6 @@ extension InputDataViewController: UITextFieldDelegate {
         
         UIView.animate(withDuration: moveDuration) {
             self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-            self.objectImage.isHidden = up
         }
     }
 }

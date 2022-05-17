@@ -42,11 +42,12 @@ class HomeViewController: UIViewController {
     @IBAction func onBillDetailClick(_ sender: UIButton) {
         // Open bill detail
         let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
-        if let sheet = welcomeViewController.sheetPresentationController {
+        let summaryViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
+        let navigationController = UINavigationController(rootViewController: summaryViewController)
+        if let sheet = navigationController.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
         }
-        self.navigationController?.present(welcomeViewController, animated: true)
+        self.navigationController?.present(navigationController, animated: true)
     }
     
     @IBAction func onAddItemClick(_ sender: UIButton) {
@@ -57,7 +58,6 @@ class HomeViewController: UIViewController {
             addViewController.listViewModel = listViewModel
             addViewController.modalDelegate = self
             let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-            navigationController.navigationBar.prefersLargeTitles = true
             self.navigationController?.present(navigationController, animated: true, completion: nil)
         }
     }

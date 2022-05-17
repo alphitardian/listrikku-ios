@@ -46,7 +46,6 @@ class ListViewController: UIViewController {
             addViewController.listViewModel = listViewModel
             addViewController.modalDelegate = self
             let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-            navigationController.navigationBar.prefersLargeTitles = true
             self.navigationController?.present(navigationController, animated: true, completion: nil)
         }
     }
@@ -102,7 +101,6 @@ extension ListViewController: UITableViewDelegate {
                 addViewController.isUpdateData = true // For update data
                 addViewController.avaliableData = data[index]
                 let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-                navigationController.navigationBar.prefersLargeTitles = true
                 self.navigationController?.present(navigationController, animated: true, completion: nil)
             }
         }
