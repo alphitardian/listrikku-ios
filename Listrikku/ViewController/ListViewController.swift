@@ -124,8 +124,6 @@ extension ListViewController: UITableViewDataSource {
             cell.powerLabel?.text = "\(data[indexPath.row].power ?? "0") Watt"
             cell.objectLabel?.text = data[indexPath.row].name
             cell.objectImage.image = UIImage(data: data[indexPath.row].image!)
-            cell.objectImage.contentMode = .scaleAspectFill
-            cell.objectImage.layer.cornerRadius = 8
             
             // Setup accessibility
             cell.accessibilityLabel = "\(data[indexPath.row].name ?? "") dengan daya \(data[indexPath.row].power ?? "0")"
