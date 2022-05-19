@@ -53,6 +53,9 @@ class ListSheetViewController: UIViewController {
         
         dateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
         billLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
     }
 }
 
@@ -80,6 +83,7 @@ extension ListSheetViewController: UITableViewDataSource {
             let item = data[indexPath.row]
             cell.nameLabel.text = "\(item.name ?? "") (\(item.power ?? "0")W)"
             cell.quantityLabel.text = "Qty: \(item.quantity ?? 0)"
+            cell.accessibilityLabel = "\(item.name ?? "") dengan jumlah \(item.quantity ?? 0)"
         }
         
         return cell

@@ -85,9 +85,6 @@ class ListViewController: UIViewController {
 
 //MARK: - TableView Delegate
 extension ListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 116
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Show Detail

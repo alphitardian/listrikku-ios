@@ -14,6 +14,7 @@ class EstimationResultViewController: UIViewController {
     @IBOutlet weak var prepaidViewContainer: UIStackView!
     @IBOutlet weak var prepaidDurationLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var modalDelegate: ModalControllerDelegate?
     
@@ -31,6 +32,7 @@ class EstimationResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        imageView.layer.cornerRadius = 8
         setCustomLabel()
     }
     

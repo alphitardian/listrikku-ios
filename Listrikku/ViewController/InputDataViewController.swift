@@ -26,7 +26,6 @@ class InputDataViewController: UIViewController {
         
         self.title = "Input Data"
         self.navigationController?.navigationBar.tintColor = appPrimaryColor()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .done, target: self, action: #selector(saveItem))
         
