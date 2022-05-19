@@ -54,9 +54,7 @@ class ImageDetectionHelper {
             }
             
             for (index, value) in text.enumerated() {
-                if isItWatt(word: value) {
-                    print(text[index])
-                    
+                if isItWatt(word: value) {                    
                     // Get number from string. eg: 200W -> 200
                     let string = text[index]
                     if let number = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {

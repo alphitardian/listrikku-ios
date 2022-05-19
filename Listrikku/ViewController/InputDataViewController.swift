@@ -96,19 +96,19 @@ class InputDataViewController: UIViewController {
     
     private func setTextfieldPlaceholderColor() {
         nameTextField.attributedPlaceholder = NSAttributedString(
-            string: "Nama Barang",
+            string: "Contoh: Kulkas",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
         quantityTextField.attributedPlaceholder = NSAttributedString(
-            string: "Jumlah Barang",
+            string: "Contoh: 1",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
         powerTextField.attributedPlaceholder = NSAttributedString(
-            string: "Daya Listrik (Watt)",
+            string: "Contoh: 100",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
         durationTextField.attributedPlaceholder = NSAttributedString(
-            string: "Durasi Penggunaan (per jam)",
+            string: "Contoh: 12",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
         )
     }
@@ -153,7 +153,10 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
             self.nameTextField.text = name
         }
         ImageDetectionHelper.detectText(image: image) { result in
-            self.powerTextField.text = "\(result)"
+            // If result 0 then it don't detect any label
+            if result != 0 {
+                self.powerTextField.text = "\(result)"
+            }
         }
     }
 }

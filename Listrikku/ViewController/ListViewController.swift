@@ -12,6 +12,7 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var isHiddenLabel: UILabel!
     
     private let listViewModel: ListViewModel = ListViewModel.sharedInstance
     private var data: [Electronic]?
@@ -31,6 +32,7 @@ class ListViewController: UIViewController {
         setPrimaryButtonShadow(for: calculateButton)
         calculateButton.tintColor = appPrimaryColor()
         calculateButton.isHidden = true
+        isHiddenLabel.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,12 +65,8 @@ class ListViewController: UIViewController {
     private func fetchListData() {
         DispatchQueue.main.async {
             self.data = self.listViewModel.loadItems()
-            
-            if self.listViewModel.loadItems().isEmpty {
-                self.calculateButton.isHidden = true
-            } else {
-                self.calculateButton.isHidden = false
-            }
+            self.calculateButton.isHidden = self.listViewModel.loadItems().isEmpty
+            self.isHiddenLabel.isHidden = !self.listViewModel.loadItems().isEmpty
             
             self.listTableView.reloadData()
         }

@@ -106,6 +106,13 @@
                                     <action selector="onCalculateClick:" destination="xBn-cx-fGD" eventType="touchUpInside" id="h9Y-kS-Dg8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidak ada data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="Io0-uz-pmr">
+                                <rect key="frame" x="0.0" y="400" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V3w-Dq-lmh"/>
                         <color key="backgroundColor" name="backgroundViewColor"/>
@@ -121,6 +128,7 @@
                     <navigationItem key="navigationItem" id="RnG-7Y-9GM"/>
                     <connections>
                         <outlet property="calculateButton" destination="RjN-Mr-I7i" id="ahA-nS-xZJ"/>
+                        <outlet property="isHiddenLabel" destination="Io0-uz-pmr" id="Qli-w8-2zp"/>
                         <outlet property="listTableView" destination="FCX-1N-i6r" id="J9W-EF-PiA"/>
                     </connections>
                 </viewController>
