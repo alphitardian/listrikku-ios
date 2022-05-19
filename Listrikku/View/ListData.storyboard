@@ -25,27 +25,26 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" id="l62-bA-eME" customClass="DataTableViewCell" customModule="Listrikku" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="116.33333587646484"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l62-bA-eME" id="hcW-t9-MpD">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="116.33333587646484"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1g-sv-XRD">
-                                                    <rect key="frame" x="20" y="6" width="350" height="104.33333333333333"/>
+                                                    <rect key="frame" x="20" y="6" width="350" height="104"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhJ-Ts-uFy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="104.33333333333333"/>
+                                                            <rect key="frame" x="0.0" y="-0.3333333333333357" width="105" height="105"/>
                                                             <accessibility key="accessibilityConfiguration" label="Foto barang">
                                                                 <bool key="isElement" value="YES"/>
                                                             </accessibility>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="104" id="8yK-MP-UxL"/>
-                                                                <constraint firstAttribute="width" constant="104" id="aRM-qW-3Hm"/>
+                                                                <constraint firstAttribute="width" constant="105" id="ioR-gI-fRg"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-So-iRE">
-                                                            <rect key="frame" x="124" y="15.333333333333336" width="206" height="73.666666666666657"/>
+                                                            <rect key="frame" x="125" y="15.333333333333336" width="205" height="73.333333333333314"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tko-iv-j2b">
                                                                     <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="36"/>
@@ -58,7 +57,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oW-Zp-03k">
-                                                                    <rect key="frame" x="0.0" y="36" width="73.333333333333329" height="37.666666666666657"/>
+                                                                    <rect key="frame" x="0.0" y="36" width="73.333333333333329" height="37.333333333333343"/>
                                                                     <accessibility key="accessibilityConfiguration" label="Nama barang"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                                     <nil key="textColor"/>
@@ -69,15 +68,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" name="backgroundCellColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="uhJ-Ts-uFy" firstAttribute="centerY" secondItem="p1g-sv-XRD" secondAttribute="centerY" id="1HN-qN-WdW"/>
-                                                        <constraint firstItem="uhJ-Ts-uFy" firstAttribute="leading" secondItem="p1g-sv-XRD" secondAttribute="leading" id="6aT-68-yIy"/>
                                                         <constraint firstAttribute="trailing" secondItem="PRJ-So-iRE" secondAttribute="trailing" constant="20" id="Exl-XR-oTk"/>
+                                                        <constraint firstItem="uhJ-Ts-uFy" firstAttribute="centerY" secondItem="p1g-sv-XRD" secondAttribute="centerY" id="QNg-Cr-LJC"/>
                                                         <constraint firstAttribute="bottom" secondItem="PRJ-So-iRE" secondAttribute="bottom" constant="15.33" id="bs3-4K-FHA"/>
                                                         <constraint firstItem="PRJ-So-iRE" firstAttribute="top" secondItem="p1g-sv-XRD" secondAttribute="top" constant="15.33" id="g8W-Qj-9cP"/>
-                                                        <constraint firstItem="uhJ-Ts-uFy" firstAttribute="top" secondItem="p1g-sv-XRD" secondAttribute="top" id="oid-Nu-fea"/>
                                                         <constraint firstItem="PRJ-So-iRE" firstAttribute="leading" secondItem="uhJ-Ts-uFy" secondAttribute="trailing" constant="20" id="py3-Qw-dG8"/>
                                                         <constraint firstItem="PRJ-So-iRE" firstAttribute="centerY" secondItem="p1g-sv-XRD" secondAttribute="centerY" id="tNr-Yk-HcJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="uhJ-Ts-uFy" secondAttribute="bottom" id="wzA-CV-Mr2"/>
+                                                        <constraint firstItem="uhJ-Ts-uFy" firstAttribute="leading" secondItem="p1g-sv-XRD" secondAttribute="leading" id="ubt-5L-VFH"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -89,6 +86,9 @@
                                                 <constraint firstItem="p1g-sv-XRD" firstAttribute="leading" secondItem="hcW-t9-MpD" secondAttribute="leading" constant="20" id="wRW-SZ-ZuQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="uhJ-Ts-uFy" firstAttribute="height" secondItem="l62-bA-eME" secondAttribute="height" multiplier="0.905172" id="rB0-d5-3QP"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="cellBackgroundView" destination="p1g-sv-XRD" id="rd8-gq-6dU"/>
                                             <outlet property="objectImage" destination="uhJ-Ts-uFy" id="haw-SP-ZbV"/>

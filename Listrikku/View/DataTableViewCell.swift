@@ -20,9 +20,7 @@ class DataTableViewCell: UITableViewCell {
         objectLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
         
         objectImage.contentMode = .scaleAspectFill
-        objectImage.clipsToBounds = true
         objectImage.layer.cornerRadius = 8
-        objectImage.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
