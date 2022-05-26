@@ -28,8 +28,8 @@ class ProfileInputViewController: UIViewController {
     // Tag 1 = payment
     // Tag 2 = power
     @IBAction func onCategoryClick(_ sender: UIButton) {
-        let categoryPickerView = setupPickerView(tag: 0)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 0), viewController: categoryPickerView.controller, pickerView: categoryPickerView.view) { UIAlertAction in
+        let categoryPickerView = setupPickerView(tag: 0, sender: self)
+        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 0), viewController: categoryPickerView.controller, pickerView: categoryPickerView.view, sender: self) { UIAlertAction in
             self.onboardingViewModel.setCategory(at: categoryPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.category[self.onboardingViewModel.selectedCategory ?? 0]
             self.categoryButton.setTitle(selected, for: .normal)
@@ -37,8 +37,8 @@ class ProfileInputViewController: UIViewController {
     }
     
     @IBAction func onPaymentClick(_ sender: UIButton) {
-        let paymentPickerView = setupPickerView(tag: 1)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 1), viewController: paymentPickerView.controller, pickerView: paymentPickerView.view) { UIAlertAction in
+        let paymentPickerView = setupPickerView(tag: 1, sender: self)
+        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 1), viewController: paymentPickerView.controller, pickerView: paymentPickerView.view, sender: self) { UIAlertAction in
             self.onboardingViewModel.setSelectedPaymentMethod(at: paymentPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.payment[self.onboardingViewModel.selectedPaymentMethod ?? 0]
             self.paymentButton.setTitle(selected, for: .normal)
@@ -46,8 +46,8 @@ class ProfileInputViewController: UIViewController {
     }
     
     @IBAction func onPowerClick(_ sender: UIButton) {
-        let powerPickerView = setupPickerView(tag: 2)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 2), viewController: powerPickerView.controller, pickerView: powerPickerView.view) { UIAlertAction in
+        let powerPickerView = setupPickerView(tag: 2, sender: self)
+        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 2), viewController: powerPickerView.controller, pickerView: powerPickerView.view, sender: self) { UIAlertAction in
             self.onboardingViewModel.setSelectedPower(at: powerPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.power[self.onboardingViewModel.selectedPower ?? 0]
             self.powerButton.setTitle("\(selected)", for: .normal)
@@ -105,41 +105,6 @@ extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSour
     
     func pickerView(_ pickerView: UIPickerView, accessibilityLabelForComponent component: Int) -> String? {
         return "Pilih salah satu nilai yang sesuai dengan kebutuhan anda"
-    }
-}
-
-//MARK: - Custom Picker Setup
-extension ProfileInputViewController {
-    private func setupPickerView(tag: Int) -> (controller: UIViewController, view: UIPickerView) {
-        let viewController = UIViewController()
-        viewController.preferredContentSize = CGSize(width: UI_SCREEN_WIDTH, height: UI_SCREEN_HEIGHT)
-        
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: UI_SCREEN_WIDTH, height: UI_SCREEN_HEIGHT))
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.tag = tag
-        
-        viewController.view.addSubview(pickerView)
-        
-        pickerView.centerXAnchor.constraint(equalTo: viewController.view.centerXAnchor).isActive = true
-        pickerView.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor).isActive = true
-        
-        return (controller: viewController, view: pickerView)
-    }
-    
-    private func setupAlertPicker(messageDetail: String, viewController: UIViewController, pickerView: UIPickerView, selectionHandler: @escaping (UIAlertAction) -> Void) {
-        let alert = UIAlertController(title: "Pilih Salah Satu", message: messageDetail, preferredStyle: .actionSheet)
-        
-        let titleAttribute = [NSAttributedString.Key.font: UIFont.preferredFont(for: .body, weight: .medium)]
-        let titleString = NSAttributedString(string: "Pilih Salah Satu", attributes: titleAttribute)
-        alert.setValue(titleString, forKey: "attributedTitle")
- 
-        alert.popoverPresentationController?.sourceView = categoryButton
-        alert.popoverPresentationController?.sourceRect = categoryButton.bounds
-        alert.setValue(viewController, forKey: "contentViewController")
-        alert.addAction(UIAlertAction(title: "Kembali", style: .cancel, handler: { UIAlertAction in }))
-        alert.addAction(UIAlertAction(title: "Pilih", style: .default, handler: selectionHandler))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
