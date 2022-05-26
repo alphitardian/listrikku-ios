@@ -116,7 +116,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pengingat" id="qvE-OC-MMe">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="zTW-jR-gXx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zTW-jR-gXx">
                             <connections>
                                 <segue destination="mpD-7c-2f4" kind="presentation" identifier="goToAddReminder" id="GwG-PK-Ubm"/>
                             </connections>
@@ -176,7 +176,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tambah Pengingat" id="IiX-Ro-VTd">
-                        <barButtonItem key="leftBarButtonItem" title="Tutup" style="plain" id="w1c-mi-fgP">
+                        <barButtonItem key="leftBarButtonItem" title="Tutup" id="w1c-mi-fgP">
                             <connections>
                                 <action selector="onCloseClick:" destination="ONI-fa-7I6" id="9Fm-4s-gOF"/>
                             </connections>

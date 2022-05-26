@@ -129,7 +129,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daftar Barang" id="RnG-7Y-9GM">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="qce-Ah-S0m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qce-Ah-S0m">
                             <connections>
                                 <action selector="onAddItemClick:" destination="xBn-cx-fGD" id="kwt-J4-Ntg"/>
                             </connections>
@@ -421,7 +421,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Input Data" id="sY5-Vr-YIz">
-                        <barButtonItem key="leftBarButtonItem" title="Tutup" style="plain" id="Csk-J4-IDn">
+                        <barButtonItem key="leftBarButtonItem" title="Tutup" id="Csk-J4-IDn">
                             <connections>
                                 <action selector="onCloseClick:" destination="fTS-lm-Wf5" id="1wZ-nj-pIH"/>
                             </connections>
@@ -563,7 +563,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Estimasi" id="bu8-7P-gXE">
-                        <barButtonItem key="rightBarButtonItem" title="Tutup" image="xmark.circle.fill" catalog="system" style="plain" id="eYy-ty-7Tc">
+                        <barButtonItem key="rightBarButtonItem" title="Tutup" image="xmark.circle.fill" catalog="system" style="done" id="eYy-ty-7Tc">
                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                             <connections>
                                 <action selector="onCloseClick:" destination="4in-2b-b5p" id="Jcu-1I-gJI"/>

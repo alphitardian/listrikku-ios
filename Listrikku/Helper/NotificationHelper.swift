@@ -32,8 +32,8 @@ class NotificationHelper {
         
         let userDate = date.get(.year, .day, .month)
         let dateComponent = DateComponents(year: userDate.year, month: userDate.month, day: userDate.day, hour: 8, minute: 0)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)   // Use real date
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // For testing purpose
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)   // Use real date
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // For testing purpose
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         center.add(request)
