@@ -13,6 +13,12 @@ class UserProfileRepository: DatabaseHelperDelegate {
     
     private let databaseContext = DatabaseHelper.sharedInstance.context
     
+    let componentInfo = [
+        "Kategori listrik merupakan kategori yang digunakan untuk menentukan golongan tarif.",
+        "Jenis pembayaran berdasarkan tagihan (pascabayar) atau token (prabayar).",
+        "Daya listrik merupakan tegangan listrik yang telah terpasang."
+    ]
+    
     func save(data: User) {
         let instance = UserProfile(context: databaseContext)
         instance.name = data.name

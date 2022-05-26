@@ -38,6 +38,10 @@ class OnboardingViewModel {
         return userProfileRepository.load().first
     }
     
+    func loadComponentDetail(tag: Int) -> String {
+        return userProfileRepository.componentInfo[tag]
+    }
+    
     func setUserName(name: String) {
         userName = name
     }
