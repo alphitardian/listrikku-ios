@@ -19,47 +19,21 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = "Daftar Barang"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(addItem))
-        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
         
         listTableView.delegate = self
         listTableView.dataSource = self
         listTableView.separatorStyle = .none
-        
-        setPrimaryButtonShadow(for: calculateButton)
-        calculateButton.tintColor = appPrimaryColor()
-        calculateButton.isHidden = true
-        isHiddenLabel.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setAccessibility()
         fetchListData()
+        setCustomView()
     }
     
-    @objc private func addItem() {
-        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
-        if let addViewController = addViewController {
-            addViewController.listViewModel = listViewModel
-            addViewController.modalDelegate = self
-            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-            self.navigationController?.present(navigationController, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func onCalculateClick(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let resultViewController = storyboard.instantiateViewController(withIdentifier: "Result") as? EstimationResultViewController
-        if let resultViewController = resultViewController {
-            resultViewController.modalDelegate = self
-            let navigationController = UINavigationController(rootViewController: resultViewController)
-            self.navigationController?.present(navigationController, animated: true)
-        }
+    @IBAction func onAddItemClick(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: Constant.SegueNavigation.goToInput, sender: sender)
     }
     
     private func fetchListData() {
@@ -71,38 +45,17 @@ class ListViewController: UIViewController {
             self.listTableView.reloadData()
         }
     }
-    
-    private func setAccessibility() {
-        // Set accessibility in navigation bar
-        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
-        
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah barang"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah barang digunakan untuk mulai menambahkan barang yang ingin dihitung"
-    }
 }
 
 //MARK: - TableView Delegate
 extension ListViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Show Detail
-        if let data = self.data {
-            let index = indexPath.row
-            let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-            let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
-            if let addViewController = addViewController {
-                addViewController.listViewModel = listViewModel
-                addViewController.modalDelegate = self
-                addViewController.isUpdateData = true // For update data
-                addViewController.avaliableData = data[index]
-                let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-                self.navigationController?.present(navigationController, animated: true, completion: nil)
-            }
-        }
+        // Open input data screen
+        performSegue(withIdentifier: Constant.SegueNavigation.goToInput, sender: indexPath)
     }
 }
 
-//MARK: - TableView DataSrouce
+//MARK: - TableView DataSource
 extension ListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -117,7 +70,7 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.dataCell, for: indexPath) as! DataTableViewCell
         cell.cellBackgroundView?.layer.cornerRadius = 8
         
         if let data = self.data {
@@ -139,5 +92,56 @@ extension ListViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         // Update List after input / update data
         fetchListData()
+    }
+}
+
+//MARK: - Set Custom UI & Accessibility
+extension ListViewController {
+    private func setAccessibility() {
+        // Set accessibility in navigation bar
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah barang"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah barang digunakan untuk mulai menambahkan barang yang ingin dihitung"
+    }
+    
+    private func setCustomView() {
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        
+        setPrimaryButtonShadow(for: calculateButton)
+        calculateButton.tintColor = appPrimaryColor()
+        calculateButton.isHidden = true
+        isHiddenLabel.isHidden = true
+    }
+}
+
+//MARK: - Segue Preparation
+extension ListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Open input data screen
+        if segue.identifier == Constant.SegueNavigation.goToInput {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? InputDataViewController {
+                    if let data = self.data {
+                        viewController.modalDelegate = self
+                        
+                        // Check if it come from tableview or navbar
+                        if let indexPath = sender as? IndexPath {
+                            viewController.isUpdateData = true
+                            viewController.avaliableData = data[indexPath.row]
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Open estimation screen
+        if segue.identifier == Constant.SegueNavigation.goToEstimation {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? EstimationResultViewController {
+                    viewController.modalDelegate = self
+                }
+            }
+        }
     }
 }

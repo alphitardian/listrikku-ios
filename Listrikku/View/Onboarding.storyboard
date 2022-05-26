@@ -112,6 +112,9 @@
                                         <accessibility key="accessibilityConfiguration" hint="Tuliskan nama anda pada bidang ini" label="Bidang teks nama"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onTextFieldChange:" destination="hqP-Ne-a4W" eventType="editingChanged" id="JMn-Ym-4bE"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tolong isi namamu dulu yuk!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTv-VQ-2Wz">
                                         <rect key="frame" x="0.0" y="42" width="350" height="14.333333333333336"/>
@@ -153,6 +156,7 @@
                         <outlet property="nameTextField" destination="OjJ-cn-PNg" id="ZBG-na-aHk"/>
                         <outlet property="nameTextFieldErrorLabel" destination="PTv-VQ-2Wz" id="wN8-2X-l1m"/>
                         <outlet property="nextButton" destination="wbb-LL-9UV" id="588-Kc-OSA"/>
+                        <segue destination="EnF-ak-oQ1" kind="show" identifier="goToInputProfile" id="9Ae-cx-oPe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmF-U0-3Lz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,6 +308,7 @@
                             <constraint firstItem="VeE-hm-CRA" firstAttribute="width" secondItem="KcV-x5-9CU" secondAttribute="width" multiplier="0.35" id="eix-Fk-lfo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cxP-TN-Gqp"/>
                     <connections>
                         <outlet property="categoryButton" destination="7SP-wN-3Js" id="p79-Xf-lXp"/>
                         <outlet property="greetingLabelOne" destination="TSn-vc-L0z" id="2Jk-Rz-8zl"/>
@@ -311,11 +316,22 @@
                         <outlet property="nextButton" destination="5G7-RW-t6A" id="CaW-JF-jxB"/>
                         <outlet property="paymentButton" destination="Gfz-mz-1cV" id="k01-vl-Ds2"/>
                         <outlet property="powerButton" destination="VeE-hm-CRA" id="l9e-ZZ-46A"/>
+                        <segue destination="6c6-wQ-nWj" kind="show" identifier="goToMain" id="yFE-3e-zy5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsj-c8-1pN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2826" y="107"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="J4F-a6-caP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Main" id="6c6-wQ-nWj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dB4-DJ-YST"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAf-ys-UNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QTF-nB-Sax">

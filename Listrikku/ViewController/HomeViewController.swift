@@ -15,51 +15,16 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var startLabel: UILabel!
     
     private let homeViewModel: HomeViewModel = HomeViewModel()
-    private let listViewModel: ListViewModel = ListViewModel.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = "Home"
-        backgroundViewNextBill.layer.cornerRadius = 8
-        backgroundViewSetBill.layer.cornerRadius = 8
-        
-        setUserNextBill()
-        
         homeViewModel.registerReminder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Set accessibility in navigation bar
-        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
-        
         setUserNextBill()
-    }
-    
-    @IBAction func onBillDetailClick(_ sender: UIButton) {
-        // Open bill detail
-        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let summaryViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
-        let navigationController = UINavigationController(rootViewController: summaryViewController)
-        if let sheet = navigationController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-        }
-        self.navigationController?.present(navigationController, animated: true)
-    }
-    
-    @IBAction func onAddItemClick(_ sender: UIButton) {
-        // Open add item
-        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let addViewController = storyboard.instantiateViewController(withIdentifier: "Add") as? InputDataViewController
-        if let addViewController = addViewController {
-            addViewController.listViewModel = listViewModel
-            addViewController.modalDelegate = self
-            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-            self.navigationController?.present(navigationController, animated: true, completion: nil)
-        }
+        setCustomView()
     }
     
     private func setUserNextBill() {
@@ -68,17 +33,51 @@ class HomeViewController: UIViewController {
         nextBillLabel.text = "Rp. \(formattedBill ?? "0.0")"
         setAccessibility(nextBillNominal: formattedBill ?? "0")
     }
-    
+}
+
+//MARK: - Modal Controller Delegate Implementation
+extension HomeViewController: ModalControllerDelegate {
+    func modalWillDisappear<T>(_ modal: T) {
+        // Update data when modal closed
+    }
+}
+
+//MARK: - Set Custom UI & Accessibility
+extension HomeViewController {
     private func setAccessibility(nextBillNominal: String) {
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        
         nextBillLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
         
         nextBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
         startLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
+    
+    private func setCustomView() {
+        backgroundViewNextBill.layer.cornerRadius = 8
+        backgroundViewSetBill.layer.cornerRadius = 8
+    }
 }
 
-extension HomeViewController: ModalControllerDelegate {
-    func modalWillDisappear<T>(_ modal: T) {
-        print(homeViewModel.loadUserBills())
+//MARK: - Segue Preparation
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Open bill detail
+        if segue.identifier == Constant.SegueNavigation.goToListSheet {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let sheet = navigationController.sheetPresentationController {
+                    sheet.detents = [.medium(), .large()]
+                }
+            }
+        }
+        
+        // Open input data screen
+        if segue.identifier == Constant.SegueNavigation.goToInput {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? InputDataViewController {
+                    viewController.modalDelegate = self
+                }
+            }
+        }
     }
 }

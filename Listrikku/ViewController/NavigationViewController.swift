@@ -14,7 +14,6 @@ class NavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! MainViewController

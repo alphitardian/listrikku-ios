@@ -46,6 +46,7 @@
 		AAE183472823F486001A8ACF /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE183462823F486001A8ACF /* NumberFormatter.swift */; };
 		AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834828254662001A8ACF /* ReminderViewModel.swift */; };
 		AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834A282550C8001A8ACF /* DateHelper.swift */; };
+		AAE824BA283E4E9A0065E370 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE824B9283E4E9A0065E370 /* Constant.swift */; };
 		AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54A28265E1200375102 /* NotificationHelper.swift */; };
 		AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54C2827F53500375102 /* AddReminderViewController.swift */; };
 		AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54E2828B94800375102 /* ListSheetViewController.swift */; };
@@ -97,6 +98,7 @@
 		AAE183462823F486001A8ACF /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		AAE1834828254662001A8ACF /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		AAE1834A282550C8001A8ACF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		AAE824B9283E4E9A0065E370 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AAEBB54A28265E1200375102 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		AAEBB54C2827F53500375102 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		AAEBB54E2828B94800375102 /* ListSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		AAA6CCC4281A20B9002E8CB3 /* Listrikku */ = {
 			isa = PBXGroup;
 			children = (
+				AAE824B8283E4E870065E370 /* Util */,
 				AAE18333281FF906001A8ACF /* Repository */,
 				AAE1832E281EC392001A8ACF /* ViewModel */,
 				AAE1831D281E6EE5001A8ACF /* Delegate */,
@@ -243,6 +246,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		AAE824B8283E4E870065E370 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AAE824B9283E4E9A0065E370 /* Constant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,6 +356,7 @@
 				AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */,
 				AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */,
 				AAEBB55728295C5300375102 /* ElectronicImageClassifier 2.mlmodel in Sources */,
+				AAE824BA283E4E9A0065E370 /* Constant.swift in Sources */,
 				AADE06FD281BFE3F00355955 /* HomeViewController.swift in Sources */,
 				AAE1832B281EBC56001A8ACF /* NavigationViewController.swift in Sources */,
 				AAE18337281FFA5B001A8ACF /* UserProfileRepository.swift in Sources */,

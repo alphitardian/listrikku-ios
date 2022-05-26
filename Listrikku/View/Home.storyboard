@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="PCs-Oa-3Fr">
             <objects>
                 <viewController id="cAq-MC-6Dd" customClass="HomeViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="onAddItemClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="KIs-vk-CzN"/>
+                                            <segue destination="s5H-pY-Dh0" kind="presentation" identifier="goToInput" id="WuS-Ca-I5S"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,7 +86,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="onBillDetailClick:" destination="cAq-MC-6Dd" eventType="touchUpInside" id="mzK-pr-gHc"/>
+                                            <segue destination="3vE-qT-Seb" kind="presentation" identifier="goToListSheet" modalPresentationStyle="pageSheet" id="Pri-dv-raD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -115,7 +115,7 @@
                             <constraint firstItem="cf7-QL-8Dk" firstAttribute="trailing" secondItem="IPK-3o-ZtH" secondAttribute="trailing" constant="20" id="iL8-BU-OhQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AXj-Ee-Rbq"/>
+                    <navigationItem key="navigationItem" title="Home" id="AXj-Ee-Rbq"/>
                     <connections>
                         <outlet property="backgroundViewNextBill" destination="IPK-3o-ZtH" id="Ukp-59-kG9"/>
                         <outlet property="backgroundViewSetBill" destination="lht-9Y-hWW" id="ndv-TU-xsl"/>
@@ -126,6 +126,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9t-iv-s7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581" y="1777"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="D6D-Ku-nJN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListData" referencedIdentifier="List" id="3vE-qT-Seb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YAT-3P-OIy"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIi-eR-iXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="1721"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="jBG-8e-n3n">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListData" referencedIdentifier="Add" id="s5H-pY-Dh0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOF-Dh-50W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="1834"/>
         </scene>
         <!--Home-->
         <scene sceneID="weB-R3-igR">

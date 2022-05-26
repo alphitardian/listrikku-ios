@@ -24,7 +24,6 @@ class UserItemRepository: DatabaseHelperDelegate {
         
         do {
             try databaseContext.save()
-            print("Data saved!")
         } catch {
             print(error.localizedDescription)
         }
@@ -39,7 +38,6 @@ class UserItemRepository: DatabaseHelperDelegate {
             userItems = data.map { item in
                 Electronic(id: item.id!, name: item.name, quantity: Int(item.quantity), power: item.power, duration: item.duration, image: item.image)
             }
-            print("Data fetched!")
         } catch {
             print(error.localizedDescription)
         }

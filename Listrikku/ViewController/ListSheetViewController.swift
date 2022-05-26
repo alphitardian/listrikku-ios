@@ -19,13 +19,7 @@ class ListSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Rincian"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
-
-        tableView.delegate = self
         tableView.dataSource = self
-        
-        self.data = listViewModel.loadItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +28,14 @@ class ListSheetViewController: UIViewController {
         self.data = listViewModel.loadItems()
         self.tableView.reloadData()
         
+        setUserNextBill()
+    }
+    
+    @IBAction func onCloseClick(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    private func setUserNextBill() {
         let bill = listViewModel.getUserNextBill()
         dateLabel.text = bill?.date?.getFullDate()
         
@@ -42,27 +44,9 @@ class ListSheetViewController: UIViewController {
         
         setAccessibility(nextBillNominal: formattedBill ?? "0")
     }
-    
-    @objc private func closeModal() {
-        self.dismiss(animated: true)
-    }
-    
-    private func setAccessibility(nextBillNominal: String) {
-        dateLabel.accessibilityHint = "Anda harus membayar tagihan pada tanggal \(dateLabel.text ?? "")"
-        billLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
-        
-        dateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
-        billLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
-        
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
-    }
 }
 
-extension ListSheetViewController: UITableViewDelegate {
-    // Default table view
-}
-
+//MARK: TableView DataSource
 extension ListSheetViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -77,7 +61,7 @@ extension ListSheetViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DataSheetTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.dataCell, for: indexPath) as! DataSheetTableViewCell
         
         if let data = self.data {
             let item = data[indexPath.row]
@@ -87,5 +71,19 @@ extension ListSheetViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+//MARK: Set Custom UI & Accessibility
+extension ListSheetViewController {
+    private func setAccessibility(nextBillNominal: String) {
+        dateLabel.accessibilityHint = "Anda harus membayar tagihan pada tanggal \(dateLabel.text ?? "")"
+        billLabel.accessibilityHint = "Biaya tagihan listrik yang harus dibayar selanjutnya sebesar \(nextBillNominal) rupiah"
+        
+        dateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
+        billLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
     }
 }

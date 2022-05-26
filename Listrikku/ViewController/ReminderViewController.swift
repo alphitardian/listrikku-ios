@@ -17,42 +17,11 @@ class ReminderViewController: UIViewController {
     
     private let reminderViewModel: ReminderViewModel = ReminderViewModel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = "Pengingat"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(addReminder))
-        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
-        
-        backgroundViewLastBill.layer.cornerRadius = 8
-        backgroundViewNextBill.layer.cornerRadius = 8
-        
-        setUserLastBill()
-        setUserNextBill()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Set accessibility in navigation bar
-        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah pengingat"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah pengingat digunakan untuk menambah pengingat dengan tanggal yang anda tentukan"
-        
         setUserLastBill()
         setUserNextBill()
-        setCustomLabel()
-    }
-    
-    @objc private func addReminder() {
-        let storyboard = UIStoryboard(name: "Reminder", bundle: nil)
-        let addViewController = storyboard.instantiateViewController(withIdentifier: "AddReminder") as? AddReminderViewController
-        if let addViewController = addViewController {
-            addViewController.modalDelegate = self
-            let navigationController: UINavigationController = UINavigationController(rootViewController: addViewController)
-            self.navigationController?.present(navigationController, animated: true)
-        }
+        setCustomView()
     }
     
     private func setUserLastBill() {
@@ -75,28 +44,56 @@ class ReminderViewController: UIViewController {
         nextBillDateLabel.accessibilityLabel = "Tenggat waktu tagihan selanjutnya"
         nextBillDateLabel.accessibilityHint = "Anda harus membayar tagihan sebelum tanggal \(bill?.date?.getFullDate() ?? "")"
     }
-    
-    @IBAction func onReminderDetailClick(_ sender: UIButton) {
-        // Open bill detail
-        let storyboard = UIStoryboard(name: "ListData", bundle: nil)
-        let summaryViewController = storyboard.instantiateViewController(withIdentifier: "List") as! ListSheetViewController
-        let navigationController = UINavigationController(rootViewController: summaryViewController)
-        if let sheet = navigationController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-        }
-        self.navigationController?.present(navigationController, animated: true)
-    }
-    
-    private func setCustomLabel() {
-        lastBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
-        nextBillDateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
-        nextBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
-    }
 }
 
+//MARK: - Modal Controller Delegate
 extension ReminderViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         setUserNextBill()
         setUserLastBill()
+    }
+}
+
+//MARK: - Set Custom View & Accessibility
+extension ReminderViewController {
+    private func setCustomView() {
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        
+        backgroundViewLastBill.layer.cornerRadius = 8
+        backgroundViewNextBill.layer.cornerRadius = 8
+        
+        lastBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        nextBillDateLabel.font = UIFont.preferredFont(for: .title2, weight: .semibold)
+        nextBillLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+    }
+    
+    private func setAccessibility() {
+        self.navigationItem.accessibilityLabel = "Anda berada di halaman \(self.title ?? "")"
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol tambah pengingat"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol tambah pengingat digunakan untuk menambah pengingat dengan tanggal yang anda tentukan"
+    }
+}
+
+//MARK: - Segue Preparation
+extension ReminderViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Open add reminder screen
+        if segue.identifier == Constant.SegueNavigation.goToAddReminder {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? AddReminderViewController {
+                    viewController.modalDelegate = self
+                    viewController.reminderViewModel = reminderViewModel
+                }
+            }
+        }
+        
+        // Open bill detail
+        if segue.identifier == Constant.SegueNavigation.goToListSheet {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let sheet = navigationController.sheetPresentationController {
+                    sheet.detents = [.medium(), .large()]
+                }
+            }
+        }
     }
 }

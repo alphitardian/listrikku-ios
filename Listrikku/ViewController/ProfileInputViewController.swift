@@ -20,17 +20,13 @@ class ProfileInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nextButton.tintColor = appPrimaryColor()
-        
-        setCustomLabel()
+        setCustomView()
     }
     
-    /// Use tag to specify pickerview
-    /// Tag 0 = category
-    /// Tag 1 = payment
-    /// Tag 2 = power
-    
+    // Use tag to specify pickerview
+    // Tag 0 = category
+    // Tag 1 = payment
+    // Tag 2 = power
     @IBAction func onCategoryClick(_ sender: UIButton) {
         let categoryPickerView = setupPickerView(tag: 0)
         setupAlertPicker(viewController: categoryPickerView.controller, pickerView: categoryPickerView.view) { UIAlertAction in
@@ -61,20 +57,12 @@ class ProfileInputViewController: UIViewController {
     @IBAction func onSaveClick(_ sender: UIButton) {
         if onboardingViewModel.selectedCategory != nil && onboardingViewModel.selectedPower != nil && onboardingViewModel.selectedPaymentMethod != nil {
             onboardingViewModel.saveUser()
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
-            self.navigationController?.pushViewController(mainViewController, animated: true)
+            performSegue(withIdentifier: Constant.SegueNavigation.goToMain, sender: self)
         } else {
             let alert = UIAlertController(title: "Perhatian", message: "Pilih profil yang sesuai dengan kebutuhan anda untuk melanjutkan.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true)
         }
-    }
-    
-    private func setCustomLabel() {
-        greetingLabelOne.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
-        greetingLabelTwo.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 
@@ -152,6 +140,16 @@ extension ProfileInputViewController {
         alert.addAction(UIAlertAction(title: "Kembali", style: .cancel, handler: { UIAlertAction in }))
         alert.addAction(UIAlertAction(title: "Pilih", style: .default, handler: selectionHandler))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+//MARK: - Set Custom View & Accessibility
+extension ProfileInputViewController {
+    private func setCustomView() {
+        nextButton.tintColor = appPrimaryColor()
+        
+        greetingLabelOne.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+        greetingLabelTwo.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
 }
 

@@ -22,9 +22,6 @@ class EstimationResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Estimasi"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
 
         setDefaultSegmentView()
         modalDelegate?.modalWillDisappear(self)
@@ -32,8 +29,7 @@ class EstimationResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        imageView.layer.cornerRadius = 8
-        setCustomLabel()
+        setCustomView()
     }
     
     @IBAction func onSaveClick(_ sender: UIButton) {
@@ -66,6 +62,10 @@ class EstimationResultViewController: UIViewController {
         } else {
             setPrepaidEstimation()
         }
+    }
+    
+    @IBAction func onCloseClick(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
     private func setPostpaidEstimation() {
@@ -103,8 +103,13 @@ class EstimationResultViewController: UIViewController {
             setPrepaidEstimation()
         }
     }
-    
-    private func setCustomLabel() {
+}
+
+//MARK: - Set Custom View & Accessibility
+extension EstimationResultViewController {
+    private func setCustomView() {
+        imageView.layer.cornerRadius = 8
+        
         estimationLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
         prepaidDurationLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
@@ -118,9 +123,5 @@ class EstimationResultViewController: UIViewController {
         
         prepaidDurationLabel.accessibilityLabel = "Durasi penggunaan listrik"
         prepaidDurationLabel.accessibilityHint = "Listrik dapat bertahan selama \(duration) hari"
-    }
-    
-    @objc private func closeModal() {
-        self.dismiss(animated: true)
     }
 }

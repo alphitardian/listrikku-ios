@@ -22,7 +22,6 @@ class UserProfileRepository: DatabaseHelperDelegate {
         
         do {
             try databaseContext.save()
-            print("Data saved!")
         } catch {
             print(error.localizedDescription)
         }
@@ -37,7 +36,6 @@ class UserProfileRepository: DatabaseHelperDelegate {
             userProfiles = data.map { item in
                 User(name: item.name, category: item.category, paymentMethod: item.payment, power: item.power)
             }
-            print("Data fetched!")
         } catch {
             print(error.localizedDescription)
         }

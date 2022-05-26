@@ -16,22 +16,13 @@ class InputDataViewController: UIViewController {
     @IBOutlet weak var objectImage: UIImageView!
     @IBOutlet weak var deleteButton: UIButton!
     
-    var listViewModel: ListViewModel?
+    private let listViewModel: ListViewModel = ListViewModel.sharedInstance
     var modalDelegate: ModalControllerDelegate?
     var isUpdateData: Bool?
     var avaliableData: Electronic?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Input Data"
-        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .done, target: self, action: #selector(saveItem))
-        
-        objectImage.contentMode = .scaleAspectFill
-        objectImage.layer.cornerRadius = 8
-        deleteButton.isHidden = true
         
         nameTextField.delegate = self
         quantityTextField.delegate = self
@@ -42,9 +33,9 @@ class InputDataViewController: UIViewController {
         let tapToDismiss = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         self.view.addGestureRecognizer(tapToDismiss)
         
+        deleteButton.isHidden = true
         if isUpdateData ?? false {
             self.title = "Update Data"
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Tutup", style: .plain, target: self, action: #selector(closeModal))
             deleteButton.isHidden = false
             
             nameTextField.text = avaliableData?.name
@@ -59,6 +50,7 @@ class InputDataViewController: UIViewController {
         super.viewWillAppear(animated)
         setAccessibility()
         setTextfieldPlaceholderColor()
+        setCustomView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,7 +58,7 @@ class InputDataViewController: UIViewController {
         modalDelegate?.modalWillDisappear(self)
     }
     
-    @objc private func saveItem() {
+    @IBAction func onSaveClick(_ sender: Any) {
         let data = Electronic(
             id: UUID(),
             name: nameTextField.text,
@@ -77,53 +69,26 @@ class InputDataViewController: UIViewController {
         )
         
         if isUpdateData ?? false {
-            listViewModel?.updateItem(id: self.avaliableData?.id ?? UUID(), data: data)
+            listViewModel.updateItem(id: self.avaliableData?.id ?? UUID(), data: data)
         } else {
-            listViewModel?.saveItem(data: data)
+            listViewModel.saveItem(data: data)
         }
         
         self.dismiss(animated: true)
     }
     
+    @IBAction func onCloseClick(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     @IBAction private func deleteItem(_ sender: UIButton) {
-        listViewModel?.deleteItem(id: self.avaliableData?.id ?? UUID())
+        listViewModel.deleteItem(id: self.avaliableData?.id ?? UUID())
         self.dismiss(animated: true)
-    }
-    
-    @objc private func closeModal() {
-        self.dismiss(animated: true)
-    }
-    
-    private func setTextfieldPlaceholderColor() {
-        nameTextField.attributedPlaceholder = NSAttributedString(
-            string: "Contoh: Kulkas",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
-        )
-        quantityTextField.attributedPlaceholder = NSAttributedString(
-            string: "Contoh: 1",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
-        )
-        powerTextField.attributedPlaceholder = NSAttributedString(
-            string: "Contoh: 100",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
-        )
-        durationTextField.attributedPlaceholder = NSAttributedString(
-            string: "Contoh: 12",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
-        )
-    }
-    
-    private func setAccessibility() {
-        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol tutup"
-        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
-    
-        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol simpan"
-        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya"
     }
 }
 
+//MARK: - Image Picker Delegate
 extension InputDataViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
     @IBAction func onCameraClick(_ sender: UIButton) {
         DispatchQueue.main.async {
             let picker = UIImagePickerController()
@@ -158,6 +123,43 @@ extension InputDataViewController: UINavigationControllerDelegate, UIImagePicker
                 self.powerTextField.text = "\(result)"
             }
         }
+    }
+}
+
+//MARK: - Set Custom View & Accessibility
+extension InputDataViewController {
+    private func setTextfieldPlaceholderColor() {
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Contoh: Kulkas",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        quantityTextField.attributedPlaceholder = NSAttributedString(
+            string: "Contoh: 1",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        powerTextField.attributedPlaceholder = NSAttributedString(
+            string: "Contoh: 100",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+        durationTextField.attributedPlaceholder = NSAttributedString(
+            string: "Contoh: 12",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+    }
+    
+    private func setCustomView() {
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        
+        objectImage.contentMode = .scaleAspectFill
+        objectImage.layer.cornerRadius = 8
+    }
+    
+    private func setAccessibility() {
+        self.navigationItem.leftBarButtonItem?.accessibilityLabel = "Tombol tutup"
+        self.navigationItem.leftBarButtonItem?.accessibilityHint = "Tombol tutup digunakan untuk menutup halaman input data"
+    
+        self.navigationItem.rightBarButtonItem?.accessibilityLabel = "Tombol simpan"
+        self.navigationItem.rightBarButtonItem?.accessibilityHint = "Tombol simpan digunakan untuk menyimpan data yang telah dimasukkan sebelumnya"
     }
 }
 

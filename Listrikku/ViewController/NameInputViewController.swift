@@ -21,17 +21,16 @@ class NameInputViewController: UIViewController {
         super.viewDidLoad()
         
         nameTextField.delegate = self
-        
-        nextButton.tintColor = appPrimaryColor()
-        
-        nameTextField.addTarget(self, action: #selector(didTextFieldChange(_:)), for: .editingChanged)
-        nameTextField.attributedPlaceholder = NSAttributedString(
-            string: "Tulis Disini",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
-        )
         nameTextFieldErrorLabel.isHidden = true
         
         setCustomLabel()
+        setCustomView()
+    }
+    
+    @IBAction func onTextFieldChange(_ sender: UITextField) {
+        if sender.text?.count ?? 0 > 0 {
+            nameTextFieldErrorLabel.isHidden = true
+        }
     }
     
     @IBAction func onNextClick(_ sender: UIButton) {
@@ -40,22 +39,30 @@ class NameInputViewController: UIViewController {
                 nameTextFieldErrorLabel.isHidden = false
             } else {
                 onboardingViewModel.setUserName(name: name)
-                
-                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-                let profileInputViewController = storyboard.instantiateViewController(withIdentifier: "ProfileInput") as? ProfileInputViewController
-                if let profileInputViewController = profileInputViewController {
-                    self.navigationController?.pushViewController(profileInputViewController, animated: true)
-                }
+                performSegue(withIdentifier: Constant.SegueNavigation.goToInputProfile, sender: self)
             }
         }
     }
-    
+}
+
+//MARK: - Set Custom View & Accessibility
+extension NameInputViewController {
     private func setCustomLabel() {
         greetingLabelOne.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
         greetingLabelTwo.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
     }
+    
+    private func setCustomView() {
+        nextButton.tintColor = appPrimaryColor()
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Tulis Disini",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textfieldPlaceholderColor")!]
+        )
+    }
 }
 
+//MARK: - Text Field Delegate
 extension NameInputViewController: UITextFieldDelegate {
     // close keyboard when user tap return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -64,11 +71,5 @@ extension NameInputViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         nameTextFieldErrorLabel.isHidden = true
-    }
-    
-    @objc private func didTextFieldChange(_ textField: UITextField) {
-        if textField.text?.count ?? 0 > 0 {
-            nameTextFieldErrorLabel.isHidden = true
-        }
     }
 }

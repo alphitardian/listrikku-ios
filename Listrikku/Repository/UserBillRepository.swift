@@ -21,7 +21,6 @@ class UserBillRepository: DatabaseHelperDelegate {
         
         do {
             try databaseContext.save()
-            print("Bill saved")
         } catch {
             print(error.localizedDescription)
         }

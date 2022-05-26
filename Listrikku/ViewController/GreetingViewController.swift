@@ -15,15 +15,22 @@ class GreetingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
-        nextButton.tintColor = appPrimaryColor()
-        
+        setCustomView()
         setCustomLabel()
     }
     
+    
+}
+
+//MARK: - Set Custom View & Accessibility
+extension GreetingViewController {
     private func setCustomLabel() {
         greetingLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
         appNameLabel.font = UIFont.preferredFont(for: .largeTitle, weight: .bold)
+    }
+    
+    private func setCustomView() {
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        nextButton.tintColor = appPrimaryColor()
     }
 }

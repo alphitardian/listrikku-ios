@@ -3,13 +3,14 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--Daftar Barang-->
         <scene sceneID="n74-Yv-xwV">
             <objects>
                 <viewController id="xBn-cx-fGD" customClass="ListViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,7 +106,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Hitung" buttonSize="large"/>
                                 <connections>
-                                    <action selector="onCalculateClick:" destination="xBn-cx-fGD" eventType="touchUpInside" id="h9Y-kS-Dg8"/>
+                                    <segue destination="2Y1-cM-zx4" kind="presentation" identifier="goToEstimation" id="Dox-Oq-txw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidak ada data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="Io0-uz-pmr">
@@ -127,27 +128,34 @@
                             <constraint firstItem="V3w-Dq-lmh" firstAttribute="trailing" secondItem="FCX-1N-i6r" secondAttribute="trailing" id="qPP-1X-SaY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RnG-7Y-9GM"/>
+                    <navigationItem key="navigationItem" title="Daftar Barang" id="RnG-7Y-9GM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="qce-Ah-S0m">
+                            <connections>
+                                <action selector="onAddItemClick:" destination="xBn-cx-fGD" id="kwt-J4-Ntg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calculateButton" destination="RjN-Mr-I7i" id="ahA-nS-xZJ"/>
                         <outlet property="isHiddenLabel" destination="Io0-uz-pmr" id="Qli-w8-2zp"/>
                         <outlet property="listTableView" destination="FCX-1N-i6r" id="J9W-EF-PiA"/>
+                        <segue destination="7ij-Sm-CbY" kind="presentation" identifier="goToInput" id="Rrc-xJ-q6Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l59-WF-aWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-207" y="1736"/>
         </scene>
-        <!--List Sheet View Controller-->
+        <!--Rincian-->
         <scene sceneID="K94-ag-hjX">
             <objects>
-                <viewController storyboardIdentifier="List" id="5wJ-xK-EqI" customClass="ListSheetViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5wJ-xK-EqI" customClass="ListSheetViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Snb-5C-gaH">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jsn-Ds-Qtp">
-                                <rect key="frame" x="20" y="76" width="350" height="48"/>
+                                <rect key="frame" x="20" y="120" width="350" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal tagihan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saX-yh-I6t">
                                         <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="17"/>
@@ -164,16 +172,16 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RW-vX-bCT">
-                                <rect key="frame" x="20" y="144" width="350" height="37"/>
+                                <rect key="frame" x="20" y="188" width="350" height="37"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uFS-h7-Qh4">
-                                <rect key="frame" x="0.0" y="213" width="390" height="597"/>
+                                <rect key="frame" x="0.0" y="257" width="390" height="553"/>
                                 <color key="backgroundColor" name="backgroundViewColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="pwb-Mn-jj4" customClass="DataSheetTableViewCell" customModule="Listrikku" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" id="pwb-Mn-jj4" customClass="DataSheetTableViewCell" customModule="Listrikku" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pwb-Mn-jj4" id="tTL-FX-9tq">
@@ -228,6 +236,15 @@
                             <constraint firstItem="jsn-Ds-Qtp" firstAttribute="leading" secondItem="hXv-bz-4d3" secondAttribute="leading" constant="20" id="wRn-Qe-6yn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Rincian" id="N5l-mt-ATP">
+                        <barButtonItem key="rightBarButtonItem" title="Tutup" style="done" id="4Ip-W6-YVb">
+                            <imageReference key="image" image="xmark.circle.fill" catalog="system" renderingMode="template"/>
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <connections>
+                                <action selector="onCloseClick:" destination="5wJ-xK-EqI" id="8T4-oA-cpu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billLabel" destination="5RW-vX-bCT" id="RDQ-Qh-WEM"/>
                         <outlet property="dateLabel" destination="Kh0-OQ-5Gd" id="WUD-Gk-PNv"/>
@@ -236,18 +253,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDb-lg-rzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793.84615384615381" y="1734.5971563981043"/>
+            <point key="canvasLocation" x="1880" y="1735"/>
         </scene>
-        <!--Input Data View Controller-->
+        <!--Input Data-->
         <scene sceneID="CSH-Y6-mfI">
             <objects>
-                <viewController storyboardIdentifier="Add" id="fTS-lm-Wf5" customClass="InputDataViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fTS-lm-Wf5" customClass="InputDataViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9vy-DT-hXl">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ji1-5a-6f6">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="56" width="390" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZL-MI-F82">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="736.66666666666663"/>
@@ -341,7 +358,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contoh: 100" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZm-UA-uBo">
-                                                                <rect key="frame" x="0.0" y="19.333333333333314" width="350" height="34"/>
+                                                                <rect key="frame" x="0.0" y="19.333333333333371" width="350" height="34"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Tuliskan daya listrik barang dalam watt yang ingin ditambahkan pada bidang ini" label="Bidang teks daya listrik"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -403,6 +420,18 @@
                             <constraint firstItem="ji1-5a-6f6" firstAttribute="bottom" secondItem="IG2-U6-cjQ" secondAttribute="bottom" id="k6a-n7-vOz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Input Data" id="sY5-Vr-YIz">
+                        <barButtonItem key="leftBarButtonItem" title="Tutup" style="plain" id="Csk-J4-IDn">
+                            <connections>
+                                <action selector="onCloseClick:" destination="fTS-lm-Wf5" id="1wZ-nj-pIH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Simpan" style="done" id="8ZN-uA-qpf">
+                            <connections>
+                                <action selector="onSaveClick:" destination="fTS-lm-Wf5" id="Fd8-P0-XiH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="deleteButton" destination="5s7-c3-uoH" id="4Zt-vJ-FFJ"/>
                         <outlet property="durationTextField" destination="nvf-F5-ecC" id="8HN-Tm-wW5"/>
@@ -414,18 +443,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUz-yc-xD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1229" y="2431"/>
+            <point key="canvasLocation" x="-208" y="2470"/>
         </scene>
-        <!--Estimation Result View Controller-->
+        <!--Estimasi-->
         <scene sceneID="pGy-ga-wJd">
             <objects>
                 <viewController storyboardIdentifier="Result" id="4in-2b-b5p" customClass="EstimationResultViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RSA-XN-WfM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ls1-xK-Eca">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="56" width="390" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By5-Tp-1Bu">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="706"/>
@@ -533,6 +562,14 @@
                             <constraint firstItem="Ls1-xK-Eca" firstAttribute="leading" secondItem="msB-LE-Ge0" secondAttribute="leading" id="O3U-pJ-L9e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Estimasi" id="bu8-7P-gXE">
+                        <barButtonItem key="rightBarButtonItem" title="Tutup" image="xmark.circle.fill" catalog="system" style="plain" id="eYy-ty-7Tc">
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <connections>
+                                <action selector="onCloseClick:" destination="4in-2b-b5p" id="Jcu-1I-gJI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="estimationLabel" destination="pRa-0f-tOW" id="9AG-BK-1aX"/>
                         <outlet property="imageView" destination="sGs-fW-daF" id="Ahq-hZ-V4M"/>
@@ -544,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aik-cW-5rQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="2431"/>
+            <point key="canvasLocation" x="1946.1538461538462" y="2469.6682464454975"/>
         </scene>
         <!--Daftar Barang-->
         <scene sceneID="58x-Zj-EYU">
@@ -566,12 +603,67 @@
             </objects>
             <point key="canvasLocation" x="-1228" y="1736"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F0w-cv-Xbq">
+            <objects>
+                <navigationController storyboardIdentifier="List" automaticallyAdjustsScrollViewInsets="NO" id="Lff-Oy-xNq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KcZ-37-dQh">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5wJ-xK-EqI" kind="relationship" relationship="rootViewController" id="dAo-J8-la3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9Q-7o-fEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="1735"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d8y-8X-oUV">
+            <objects>
+                <navigationController storyboardIdentifier="Add" automaticallyAdjustsScrollViewInsets="NO" id="7ij-Sm-CbY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WZb-wz-n4I">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fTS-lm-Wf5" kind="relationship" relationship="rootViewController" id="3C1-Q0-n3F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tva-Xe-WYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1229" y="2471"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pyJ-iu-pzu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Y1-cM-zx4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cVQ-Lh-QfH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4in-2b-b5p" kind="relationship" relationship="rootViewController" id="7Mm-1z-fnW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfZ-IA-wNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.9230769230769" y="2469.6682464454975"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ImagePlaceholder" width="500" height="500"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
         <image name="undraw_payments" width="1144" height="746"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="backgroundCellColor">
             <color red="0.0" green="0.76099997758865356" blue="0.79600000381469727" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

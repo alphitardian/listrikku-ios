@@ -14,7 +14,7 @@ class PriceRepository {
     let paymentMethodList = ["Pascabayar", "Prabayar"]
     
     func getPrice(category: String, power: String) -> Double {
-        /// Rupiah per kwh
+        // Rupiah per kwh
         var price = 0.0
         
         switch category {

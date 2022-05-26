@@ -66,7 +66,7 @@ class ListViewModel {
             result += total
         }
         
-        /// Monthly Estimation
+        // Monthly Estimation
         let estimation = (convertToKWH(value: result) * basePrice) * 30
         return String(estimation)
     }
@@ -85,7 +85,7 @@ class ListViewModel {
             result += total
         }
         
-        /// Monthly Estimation
+        // Monthly Estimation
         let estimation = (convertToKWH(value: result) * basePrice) * 30
         let cost = priceRepository.getPrepaidCost(value: estimation)
         return (cost: "\(cost)", kwh: convertToKWH(value: result))
