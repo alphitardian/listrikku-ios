@@ -29,7 +29,12 @@ class ProfileInputViewController: UIViewController {
     // Tag 2 = power
     @IBAction func onCategoryClick(_ sender: UIButton) {
         let categoryPickerView = setupPickerView(tag: 0, sender: self)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 0), viewController: categoryPickerView.controller, pickerView: categoryPickerView.view, sender: self) { UIAlertAction in
+        setupAlertPicker(
+            messageDetail: onboardingViewModel.loadComponentDetail(tag: 0),
+            viewController: categoryPickerView.controller,
+            pickerView: categoryPickerView.view,
+            sender: self
+        ) { UIAlertAction in
             self.onboardingViewModel.setCategory(at: categoryPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.category[self.onboardingViewModel.selectedCategory ?? 0]
             self.categoryButton.setTitle(selected, for: .normal)
@@ -38,7 +43,12 @@ class ProfileInputViewController: UIViewController {
     
     @IBAction func onPaymentClick(_ sender: UIButton) {
         let paymentPickerView = setupPickerView(tag: 1, sender: self)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 1), viewController: paymentPickerView.controller, pickerView: paymentPickerView.view, sender: self) { UIAlertAction in
+        setupAlertPicker(
+            messageDetail: onboardingViewModel.loadComponentDetail(tag: 1),
+            viewController: paymentPickerView.controller,
+            pickerView: paymentPickerView.view,
+            sender: self
+        ) { UIAlertAction in
             self.onboardingViewModel.setSelectedPaymentMethod(at: paymentPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.payment[self.onboardingViewModel.selectedPaymentMethod ?? 0]
             self.paymentButton.setTitle(selected, for: .normal)
@@ -47,7 +57,12 @@ class ProfileInputViewController: UIViewController {
     
     @IBAction func onPowerClick(_ sender: UIButton) {
         let powerPickerView = setupPickerView(tag: 2, sender: self)
-        setupAlertPicker(messageDetail: onboardingViewModel.loadComponentDetail(tag: 2), viewController: powerPickerView.controller, pickerView: powerPickerView.view, sender: self) { UIAlertAction in
+        setupAlertPicker(
+            messageDetail: onboardingViewModel.loadComponentDetail(tag: 2),
+            viewController: powerPickerView.controller,
+            pickerView: powerPickerView.view,
+            sender: self
+        ) { UIAlertAction in
             self.onboardingViewModel.setSelectedPower(at: powerPickerView.view.selectedRow(inComponent: 0))
             let selected = self.onboardingViewModel.power[self.onboardingViewModel.selectedPower ?? 0]
             self.powerButton.setTitle("\(selected)", for: .normal)
@@ -59,7 +74,11 @@ class ProfileInputViewController: UIViewController {
             onboardingViewModel.saveUser()
             performSegue(withIdentifier: Constant.SegueNavigation.goToMain, sender: self)
         } else {
-            let alert = UIAlertController(title: "Perhatian", message: "Pilih profil yang sesuai dengan kebutuhan anda untuk melanjutkan.", preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "Perhatian",
+                message: "Pilih profil yang sesuai dengan kebutuhan anda untuk melanjutkan.",
+                preferredStyle: .alert
+            )
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true)
         }
@@ -68,7 +87,6 @@ class ProfileInputViewController: UIViewController {
 
 //MARK: - PickerView Delegate & DataSource
 extension ProfileInputViewController: UIPickerViewDelegate, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

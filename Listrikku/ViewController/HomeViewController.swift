@@ -54,6 +54,8 @@ extension HomeViewController {
     }
     
     private func setCustomView() {
+        self.navigationController?.navigationBar.tintColor = appPrimaryColor()
+        
         backgroundViewNextBill.layer.cornerRadius = 8
         backgroundViewSetBill.layer.cornerRadius = 8
     }
@@ -76,6 +78,15 @@ extension HomeViewController {
             if let navigationController = segue.destination as? UINavigationController {
                 if let viewController = navigationController.viewControllers.first as? InputDataViewController {
                     viewController.modalDelegate = self
+                }
+            }
+        }
+        
+        // Open profile screen
+        if segue.identifier == Constant.SegueNavigation.goToProfile {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? ProfileViewController {
+                    viewController.homeViewModel = homeViewModel
                 }
             }
         }

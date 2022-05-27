@@ -26,6 +26,7 @@ class OnboardingViewModel {
     
     func saveUser() {
         let user = User(
+            id: UUID(),
             name: userName ?? "",
             category: category[selectedCategory ?? 0],
             paymentMethod: payment[selectedPaymentMethod ?? 0],

@@ -119,7 +119,7 @@
                     <navigationItem key="navigationItem" title="Home" id="AXj-Ee-Rbq">
                         <barButtonItem key="rightBarButtonItem" title="Profil" image="person" catalog="system" id="8PO-Vd-soF">
                             <connections>
-                                <segue destination="aob-vG-bQ1" kind="presentation" id="OgR-Qw-Z50"/>
+                                <segue destination="aob-vG-bQ1" kind="presentation" identifier="goToProfile" id="OgR-Qw-Z50"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -137,27 +137,130 @@
         <!--Profil-->
         <scene sceneID="SQV-er-QPu">
             <objects>
-                <viewController id="mME-tA-sEW" sceneMemberID="viewController">
+                <viewController id="mME-tA-sEW" customClass="ProfileViewController" customModule="Listrikku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2HK-Gz-JOr">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x06-Em-Oj0">
-                                <rect key="frame" x="75" y="120" width="240" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="v9j-Fo-Syy"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_profile" translatesAutoresizingMaskIntoConstraints="NO" id="x06-Em-Oj0">
+                                <rect key="frame" x="75" y="120" width="240" height="237"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="63H-He-PS4">
+                                <rect key="frame" x="20" y="429" width="350" height="125"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S3H-77-doP">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori Listrik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-bg-BEL">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-Ia-Xjg">
+                                                <rect key="frame" x="185" y="0.0" width="165" height="31"/>
+                                                <color key="tintColor" name="listrikkuPrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Pilih"/>
+                                                <connections>
+                                                    <action selector="onCategoryClick:" destination="mME-tA-sEW" eventType="touchUpInside" id="vch-Zl-KiA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WL1-Ia-Xjg" firstAttribute="width" secondItem="S3H-77-doP" secondAttribute="width" multiplier="0.471" id="FNZ-Tm-hVE"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="heV-hr-d7d">
+                                        <rect key="frame" x="0.0" y="47" width="350" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Pembayaran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hW-VZ-D8X">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3u-E7-g1Z">
+                                                <rect key="frame" x="185" y="0.0" width="165" height="31"/>
+                                                <color key="tintColor" name="listrikkuPrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Pilih"/>
+                                                <connections>
+                                                    <action selector="onPaymentClick:" destination="mME-tA-sEW" eventType="touchUpInside" id="fpe-Ef-wLg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="F3u-E7-g1Z" firstAttribute="width" secondItem="heV-hr-d7d" secondAttribute="width" multiplier="0.471" id="ckN-mi-UTY"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-FR-KFt">
+                                        <rect key="frame" x="0.0" y="94" width="350" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daya Listrik (VA)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79Z-7S-Q1t">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-wm-ZL3">
+                                                <rect key="frame" x="185" y="0.0" width="165" height="31"/>
+                                                <color key="tintColor" name="listrikkuPrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Pilih"/>
+                                                <connections>
+                                                    <action selector="onPowerClick:" destination="mME-tA-sEW" eventType="touchUpInside" id="GTH-sO-ZTH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ynd-wm-ZL3" firstAttribute="width" secondItem="jTk-FR-KFt" secondAttribute="width" multiplier="0.471" id="aR4-Vw-aqG"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-1C-jeW">
+                                <rect key="frame" x="52" y="679" width="286" height="47"/>
+                                <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Hapus Profile" buttonSize="large"/>
+                                <connections>
+                                    <action selector="onDeleteClick:" destination="mME-tA-sEW" eventType="touchUpInside" id="JYp-oJ-kLw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y4c-PM-e8P"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="x06-Em-Oj0" firstAttribute="height" secondItem="2HK-Gz-JOr" secondAttribute="height" multiplier="0.3" id="9xP-G1-yaK"/>
                             <constraint firstItem="Y4c-PM-e8P" firstAttribute="trailing" secondItem="x06-Em-Oj0" secondAttribute="trailing" constant="75" id="BHY-we-Gq6"/>
                             <constraint firstItem="x06-Em-Oj0" firstAttribute="leading" secondItem="Y4c-PM-e8P" secondAttribute="leading" constant="75" id="HjL-yF-N8v"/>
                             <constraint firstItem="x06-Em-Oj0" firstAttribute="top" secondItem="Y4c-PM-e8P" secondAttribute="top" constant="64" id="Jic-wb-hcc"/>
+                            <constraint firstItem="Y4c-PM-e8P" firstAttribute="trailing" secondItem="63H-He-PS4" secondAttribute="trailing" constant="20" id="N6r-72-qVM"/>
+                            <constraint firstItem="63H-He-PS4" firstAttribute="leading" secondItem="Y4c-PM-e8P" secondAttribute="leading" constant="20" id="ZHb-RI-VUO"/>
+                            <constraint firstItem="Y4c-PM-e8P" firstAttribute="bottom" secondItem="Kr1-1C-jeW" secondAttribute="bottom" constant="64" id="awo-YF-j75"/>
+                            <constraint firstItem="63H-He-PS4" firstAttribute="top" secondItem="x06-Em-Oj0" secondAttribute="bottom" constant="72" id="kuZ-fk-7bR"/>
+                            <constraint firstItem="Kr1-1C-jeW" firstAttribute="leading" secondItem="Y4c-PM-e8P" secondAttribute="leading" constant="52" id="rL2-cn-OlS"/>
+                            <constraint firstItem="Y4c-PM-e8P" firstAttribute="trailing" secondItem="Kr1-1C-jeW" secondAttribute="trailing" constant="52" id="wHQ-4e-CIv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profil" id="NqR-F0-RbW"/>
+                    <navigationItem key="navigationItem" title="Profil" id="NqR-F0-RbW">
+                        <barButtonItem key="leftBarButtonItem" title="Tutup" id="4k8-W5-jOB">
+                            <connections>
+                                <action selector="onCloseClick:" destination="mME-tA-sEW" id="iuY-MH-pTw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ubah" style="done" id="r0O-93-onG">
+                            <connections>
+                                <action selector="onUpdateClick:" destination="mME-tA-sEW" id="1TR-Ww-UIq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryButton" destination="WL1-Ia-Xjg" id="8r4-EN-2ng"/>
+                        <outlet property="paymentButton" destination="F3u-E7-g1Z" id="u6N-Ur-O4L"/>
+                        <outlet property="powerButton" destination="Ynd-wm-ZL3" id="PHL-j1-ZmO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2m-0B-RPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,8 +332,12 @@
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
+        <image name="undraw_profile" width="980" height="873"/>
         <namedColor name="backgroundViewColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="listrikkuPrimaryColor">
+            <color red="0.0" green="0.63200002908706665" blue="0.66900002956390381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

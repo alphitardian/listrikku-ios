@@ -47,6 +47,7 @@
 		AAE1834928254662001A8ACF /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834828254662001A8ACF /* ReminderViewModel.swift */; };
 		AAE1834B282550C8001A8ACF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1834A282550C8001A8ACF /* DateHelper.swift */; };
 		AAE824BA283E4E9A0065E370 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE824B9283E4E9A0065E370 /* Constant.swift */; };
+		AAE824BC28410F6E0065E370 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE824BB28410F6E0065E370 /* ProfileViewController.swift */; };
 		AAEBB54B28265E1200375102 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54A28265E1200375102 /* NotificationHelper.swift */; };
 		AAEBB54D2827F53500375102 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54C2827F53500375102 /* AddReminderViewController.swift */; };
 		AAEBB54F2828B94800375102 /* ListSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEBB54E2828B94800375102 /* ListSheetViewController.swift */; };
@@ -99,6 +100,7 @@
 		AAE1834828254662001A8ACF /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		AAE1834A282550C8001A8ACF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		AAE824B9283E4E9A0065E370 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AAE824BB28410F6E0065E370 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AAEBB54A28265E1200375102 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		AAEBB54C2827F53500375102 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		AAEBB54E2828B94800375102 /* ListSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				AAE183402823C36E001A8ACF /* EstimationResultViewController.swift */,
 				AAEBB54C2827F53500375102 /* AddReminderViewController.swift */,
 				AAEBB54E2828B94800375102 /* ListSheetViewController.swift */,
+				AAE824BB28410F6E0065E370 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				AAE18332281ED327001A8ACF /* OnboardingViewModel.swift in Sources */,
 				AAE183412823C36E001A8ACF /* EstimationResultViewController.swift in Sources */,
 				AADE06FF281BFE5C00355955 /* ListViewController.swift in Sources */,
+				AAE824BC28410F6E0065E370 /* ProfileViewController.swift in Sources */,
 				AAE1831A281E655D001A8ACF /* InputDataViewController.swift in Sources */,
 				AAEBB5552828D4AA00375102 /* ImageDetectionHelper.swift in Sources */,
 				AAA6CCE0281A4969002E8CB3 /* ProfileInputViewController.swift in Sources */,

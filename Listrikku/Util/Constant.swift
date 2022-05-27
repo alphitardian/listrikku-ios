@@ -14,6 +14,7 @@ struct Constant {
         static let goToEstimation = "goToEstimation"
         static let goToAddReminder = "goToAddReminder"
         static let goToInputProfile = "goToInputProfile"
+        static let goToProfile = "goToProfile"
         static let goToMain = "goToMain"
     }
     

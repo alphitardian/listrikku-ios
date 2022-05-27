@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct User {
+struct User: Identifiable {
+    var id: UUID
     var name: String?
     var category: String?
     var paymentMethod: String?
