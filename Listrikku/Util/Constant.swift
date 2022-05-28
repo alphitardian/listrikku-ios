@@ -16,6 +16,7 @@ struct Constant {
         static let goToInputProfile = "goToInputProfile"
         static let goToProfile = "goToProfile"
         static let goToMain = "goToMain"
+        static let goToGreeting = "goToGreeting"
     }
     
     struct CellID {

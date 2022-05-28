@@ -14,12 +14,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var powerButton: UIButton!
     
     var homeViewModel: HomeViewModel?
+    var modalDelegate: ModalControllerDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         homeViewModel?.loadUserProfile()
         loadUser()
         setCustomView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        modalDelegate?.moveToRoot(self)
     }
     
     @IBAction func onCategoryClick(_ sender: Any) {
@@ -74,7 +80,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func onDeleteClick(_ sender: UIButton) {
         homeViewModel?.deleteUserProfile()
-        // Move to welcome screen
+        self.dismiss(animated: true)
     }
     
     private func loadUser() {
@@ -133,3 +139,4 @@ extension ProfileViewController {
         self.navigationController?.navigationBar.tintColor = appPrimaryColor()
     }
 }
+

@@ -40,6 +40,10 @@ extension HomeViewController: ModalControllerDelegate {
     func modalWillDisappear<T>(_ modal: T) {
         // Update data when modal closed
     }
+    
+    func moveToRoot<T>(_ modal: T) {
+        performSegue(withIdentifier: Constant.SegueNavigation.goToGreeting, sender: self)
+    }
 }
 
 //MARK: - Set Custom UI & Accessibility
@@ -86,9 +90,14 @@ extension HomeViewController {
         if segue.identifier == Constant.SegueNavigation.goToProfile {
             if let navigationController = segue.destination as? UINavigationController {
                 if let viewController = navigationController.viewControllers.first as? ProfileViewController {
+                    viewController.modalDelegate = self
                     viewController.homeViewModel = homeViewModel
                 }
             }
+        }
+        
+        if segue.identifier == Constant.SegueNavigation.goToGreeting {
+            self.hidesBottomBarWhenPushed = true
         }
     }
 }

@@ -128,6 +128,7 @@
                         <outlet property="backgroundViewSetBill" destination="lht-9Y-hWW" id="ndv-TU-xsl"/>
                         <outlet property="nextBillLabel" destination="vSu-4j-1bh" id="wxA-wh-c1F"/>
                         <outlet property="startLabel" destination="bv0-u8-0gO" id="G7v-i8-qVe"/>
+                        <segue destination="e7U-Mf-0U7" kind="show" identifier="goToGreeting" id="C19-xK-3Cp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9t-iv-s7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,6 +267,16 @@
             </objects>
             <point key="canvasLocation" x="1509.2307692307693" y="2521.5639810426537"/>
         </scene>
+        <!--Greeting-->
+        <scene sceneID="tp1-5d-qhl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" referencedIdentifier="Greeting" id="e7U-Mf-0U7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DSv-RD-hjG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHU-hT-VBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="1899"/>
+        </scene>
         <!--List-->
         <scene sceneID="D6D-Ku-nJN">
             <objects>
@@ -274,7 +285,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIi-eR-iXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="1721"/>
+            <point key="canvasLocation" x="1250" y="1654"/>
         </scene>
         <!--Add-->
         <scene sceneID="jBG-8e-n3n">
@@ -282,7 +293,7 @@
                 <viewControllerPlaceholder storyboardName="ListData" referencedIdentifier="Add" id="s5H-pY-Dh0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOF-Dh-50W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="1834"/>
+            <point key="canvasLocation" x="1252" y="1777"/>
         </scene>
         <!--Home-->
         <scene sceneID="weB-R3-igR">

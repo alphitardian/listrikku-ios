@@ -13,13 +13,11 @@ class GreetingViewController: UIViewController {
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var appNameLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setCustomView()
         setCustomLabel()
     }
-    
-    
 }
 
 //MARK: - Set Custom View & Accessibility
@@ -30,6 +28,7 @@ extension GreetingViewController {
     }
     
     private func setCustomView() {
+        self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.tintColor = appPrimaryColor()
         nextButton.tintColor = appPrimaryColor()
     }

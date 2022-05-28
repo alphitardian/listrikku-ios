@@ -53,6 +53,7 @@ extension NameInputViewController {
     }
     
     private func setCustomView() {
+        self.navigationController?.isNavigationBarHidden = false
         nextButton.tintColor = appPrimaryColor()
         
         nameTextField.attributedPlaceholder = NSAttributedString(
